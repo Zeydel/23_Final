@@ -1,5 +1,6 @@
 package dto;
 
+
 public class RecipeDTO {
 	
 	private int recipeID;
@@ -29,5 +30,5 @@ public class RecipeDTO {
 	public void setRecipeName(String recipeName) {
 		this.recipeName = recipeName;
 	}
-	
+
 }
