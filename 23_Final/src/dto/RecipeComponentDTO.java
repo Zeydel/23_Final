@@ -1,20 +1,20 @@
 package dto;
 
-public class RecipeComponent {
+public class RecipeComponentDTO {
 	
 	private int recipeID;
 	private int rawMaterialID;
 	private float nom_netto;
 	private float tolerance;
 	
-	public RecipeComponent(int recipeID, int rawMaterialID, float nom_netto, float tolerance) {
+	public RecipeComponentDTO(int recipeID, int rawMaterialID, float nom_netto, float tolerance) {
 		this.recipeID = recipeID;
 		this.rawMaterialID = rawMaterialID;
 		this.nom_netto = nom_netto;
 		this.tolerance = tolerance;
 	}
 
-	public RecipeComponent() {
+	public RecipeComponentDTO() {
 	}
 
 	public int getRecipeID() {
