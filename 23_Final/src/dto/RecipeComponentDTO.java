@@ -14,6 +14,7 @@ public class RecipeComponentDTO {
 		this.tolerance = tolerance;
 	}
 
+	//Empty constructor for JSON
 	public RecipeComponentDTO() {
 	}
 
