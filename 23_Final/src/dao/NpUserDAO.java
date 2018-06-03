@@ -45,6 +45,7 @@ public class NpUserDAO {
 		for(int i = 0; i < Users.size(); i++) {
 			if(Users.get(i).getUserID() == userID) {
 				Users.remove(i);
+				return;
 			}
 		} throw new DALException("User with ID" + userID + " not found.");
 	}

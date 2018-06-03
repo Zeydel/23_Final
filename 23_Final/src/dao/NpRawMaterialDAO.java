@@ -34,6 +34,7 @@ public class NpRawMaterialDAO {
 		for(int i = 0; i < RawMaterials.size(); i++) {
 			if(RawMaterials.get(i).getRawMaterialID() == RawMaterial.getRawMaterialID()) {
 				RawMaterials.set(i, RawMaterial);
+				return;
 			}
 		} throw new DALException("Raw matertial with ID" + RawMaterial.getRawMaterialID() + " not found.");
 	}
@@ -42,6 +43,7 @@ public class NpRawMaterialDAO {
 		for(int i = 0; i < RawMaterials.size(); i++) {
 			if(RawMaterials.get(i).getRawMaterialID() == rawMaterialID) {
 				RawMaterials.remove(i);
+				return;
 			}
 		} throw new DALException("Raw matertial with ID" + rawMaterialID + " not found.");
 	}

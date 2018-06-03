@@ -35,6 +35,7 @@ public class NpRecipeDAO {
 		for(int i = 0; i<Recipes.size(); i++) {
 			if(Recipes.get(i).getRecipeID() == Recipe.getRecipeID()) {
 				Recipes.set(i, Recipe);
+				return;
 			}
 		}throw new DALException("Recipe with Recipe ID " + Recipe.getRecipeID() + " doesn't exist");
 	}
@@ -43,6 +44,7 @@ public class NpRecipeDAO {
 		for(int i = 0; i < Recipes.size(); i++) {
 			if(Recipes.get(i).getRecipeID() == recipeID) {
 				Recipes.remove(i);
+				return;
 			}
 		}throw new DALException("Recipe with recipe ID " + recipeID + "Doesn't exist.");
 	}

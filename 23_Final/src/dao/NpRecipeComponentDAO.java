@@ -34,6 +34,7 @@ public class NpRecipeComponentDAO {
 		for(int i = 0; i < RecipeComponents.size(); i++) {
 			if(RecipeComponents.get(i).getRecipeID()==RecipeComponent.getRecipeID() && RecipeComponents.get(i).getRawMaterialID()==RecipeComponent.getRawMaterialID()){
 				RecipeComponents.set(i, RecipeComponent);
+				return;
 			}
 		}throw new DALException("Recipe Component with recipe ID " + RecipeComponent.getRecipeID() + " and " + RecipeComponent.getRawMaterialID() + " Doesn't exist.");
 	}
@@ -41,6 +42,7 @@ public class NpRecipeComponentDAO {
 		for(int i = 0; i < RecipeComponents.size(); i++) {
 			if(RecipeComponents.get(i).getRecipeID()==recipeID && RecipeComponents.get(i).getRawMaterialID()==rawMaterialID){
 				RecipeComponents.remove(i);
+				return;
 			}
 		}throw new DALException("Recipe Component with recipe ID " + recipeID + " and " + rawMaterialID + " Doesn't exist.");
 

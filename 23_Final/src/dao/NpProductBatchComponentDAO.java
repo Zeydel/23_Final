@@ -35,6 +35,7 @@ public class NpProductBatchComponentDAO {
 		for(int i = 0; i < productBatchComponents.size(); i++) {
 			if(productBatchComponents.get(i).getProductbatchID() == productBatchComponent.getProductbatchID() && productBatchComponents.get(i).getRawMaterialID() == productBatchComponent.getRawMaterialID()) {
 				productBatchComponents.set(i, productBatchComponent);
+				return;
 			}
 		} throw new DALException("ProductBatchComponent with productBatchID " + productBatchComponent.getProductbatchID() + " and " + productBatchComponent.getRawMaterialID() + " not found");
 	}
@@ -43,6 +44,7 @@ public class NpProductBatchComponentDAO {
 		for(int i = 0; i < productBatchComponents.size(); i++) {
 			if(productBatchComponents.get(i).getProductbatchID() == produktBatchID && productBatchComponents.get(i).getRawMaterialID() == rawMaterialID) {
 				productBatchComponents.remove(i);
+				return;
 			}
 		} throw new DALException("ProductBatchComponent with productBatchID " + produktBatchID + " and " + rawMaterialID + " not found");
 	}

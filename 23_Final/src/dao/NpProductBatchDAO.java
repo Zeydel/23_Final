@@ -35,6 +35,7 @@ public class NpProductBatchDAO {
 		for(int i = 0; i < ProductBatches.size(); i++) {
 			if(ProductBatches.get(i).getProductBatchID() == productBatch.getReceptID()) {
 				ProductBatches.set(i, productBatch);
+				return;
 			}
 		} throw new DALException("Productbatch with ID" + productBatch.getProductBatchID() + " not found.");
 	}
@@ -43,6 +44,7 @@ public class NpProductBatchDAO {
 		for(int i = 0; i < ProductBatches.size(); i++) {
 			if(ProductBatches.get(i).getProductBatchID() == productBatchID) {
 				ProductBatches.remove(i);
+				return;
 			}
 		} throw new DALException("Productbatch with ID" + productBatchID + " not found.");
 	}

@@ -34,6 +34,7 @@ public class NpRawMaterialBatchDAO {
 		for(int i = 0; i < RawMaterialBatches.size(); i++) {
 			if(RawMaterialBatches.get(i).getRawMaterialBatchID() == RawMaterialBatch.getRawMaterialBatchID()) {
 				RawMaterialBatches.set(i, RawMaterialBatch);
+				return;
 			}
 		} throw new DALException("Rawmaterialbatch with ID" + RawMaterialBatch.getRawMaterialBatchID() + " not found.");
 	}
@@ -42,6 +43,7 @@ public class NpRawMaterialBatchDAO {
 		for(int i = 0; i < RawMaterialBatches.size(); i++) {
 			if(RawMaterialBatches.get(i).getRawMaterialBatchID() == rawMaterialBatchID) {
 				RawMaterialBatches.remove(i);
+				return;
 			}
 		} throw new DALException("Rawmaterialbatch with ID" + rawMaterialBatchID + " not found.");
 	}
