@@ -4,11 +4,11 @@ public class ProductBatchComponentDTO {
 	
 	private int productbatchID;
 	private int rawMaterialID;
-	private int tara;
-	private int netto;
+	private float tara;
+	private float netto;
 	private int userID;
 	
-	public ProductBatchComponentDTO(int productbatchID, int rawMaterialID, int tara, int netto, int userID) {
+	public ProductBatchComponentDTO(int productbatchID, int rawMaterialID, float tara, float netto, int userID) {
 		this.productbatchID = productbatchID;
 		this.rawMaterialID = rawMaterialID;
 		this.tara = tara;
@@ -36,19 +36,19 @@ public class ProductBatchComponentDTO {
 		this.rawMaterialID = rawMaterialID;
 	}
 
-	public int getTara() {
+	public float getTara() {
 		return tara;
 	}
 
-	public void setTara(int tara) {
+	public void setTara(float tara) {
 		this.tara = tara;
 	}
 
-	public int getNetto() {
+	public float getNetto() {
 		return netto;
 	}
 
-	public void setNetto(int netto) {
+	public void setNetto(float netto) {
 		this.netto = netto;
 	}
 
