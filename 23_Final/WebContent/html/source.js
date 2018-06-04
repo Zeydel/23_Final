@@ -1,8 +1,10 @@
 $(document).ready(function(){
+	loadUsers();
+})
+
 	function loadUsers(){
-		event.preventDefault();
 		$.ajax({
-			url : 'rest/users',
+			url : '/23_Final/rest/users',
 			type : 'GET',
 			dataType : 'json',
 			success : function(data){
@@ -21,4 +23,3 @@ $(document).ready(function(){
 				'<td>' + UserDTO.cpr + '</td>' +
 				'<td>' + UserDTO.roles + '</td>' + '</tr>';
 	}
-})

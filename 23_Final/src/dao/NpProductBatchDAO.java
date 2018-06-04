@@ -3,11 +3,12 @@ package dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import dto.ProductBatchComponentDTO;
 import dto.ProductBatchDTO;
 
 public class NpProductBatchDAO {
 
-	ArrayList<ProductBatchDTO> ProductBatches;
+	ArrayList<ProductBatchDTO> ProductBatches = new ArrayList<ProductBatchDTO>();
 	public NpProductBatchDAO(){
 		ProductBatches.add(new ProductBatchDTO(1, 2, 1));
 		ProductBatches.add(new ProductBatchDTO(2, 2, 1));
