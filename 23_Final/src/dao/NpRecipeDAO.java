@@ -8,7 +8,7 @@ import dto.RecipeDTO;
 
 public class NpRecipeDAO {
 	
-	ArrayList<RecipeDTO> Recipes = new ArrayList<RecipeDTO>();
+	ArrayList<RecipeDTO> Recipes = new ArrayList<RecipeDTO>(); 
 	public NpRecipeDAO() {
 		Recipes.add(new RecipeDTO(1, "Margherita"));
 		Recipes.add(new RecipeDTO(2, "Prosciutto"));
