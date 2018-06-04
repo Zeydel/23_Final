@@ -3,11 +3,12 @@ package dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import dto.ProductBatchDTO;
 import dto.RawMaterialBatchDTO;
 
 public class NpRawMaterialBatchDAO {
 	
-	ArrayList<RawMaterialBatchDTO> RawMaterialBatches;
+	ArrayList<RawMaterialBatchDTO> RawMaterialBatches = new ArrayList<RawMaterialBatchDTO>();
 	NpRawMaterialBatchDAO(){
 		RawMaterialBatches.add(new RawMaterialBatchDTO(1, 1, 1000F));
 		RawMaterialBatches.add(new RawMaterialBatchDTO(2, 2, 300F));

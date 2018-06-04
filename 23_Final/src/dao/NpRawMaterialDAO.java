@@ -3,11 +3,12 @@ package dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import dto.RawMaterialBatchDTO;
 import dto.RawMaterialDTO;
 
 public class NpRawMaterialDAO {
 
-	ArrayList<RawMaterialDTO> RawMaterials;
+	ArrayList<RawMaterialDTO> RawMaterials = new ArrayList<RawMaterialDTO>();
 	public NpRawMaterialDAO() {
 		RawMaterials.add(new RawMaterialDTO(1, "dej", "Wawelka"));
 		RawMaterials.add(new RawMaterialDTO(2, "tomat", "Knoor"));

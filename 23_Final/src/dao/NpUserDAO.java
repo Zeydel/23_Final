@@ -4,11 +4,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import dto.RecipeDTO;
 import dto.UserDTO;
 
 public class NpUserDAO {
 	
-	ArrayList<UserDTO> Users;
+	ArrayList<UserDTO> Users = new ArrayList<UserDTO>();
 	public NpUserDAO() {
 		Users.add(new UserDTO(1, "Angelo A", "AA", "lKie4fa", "080197-0761", new ArrayList<String>(Arrays.asList("Admin", "Pharmacist"))));
 		Users.add(new UserDTO(2, "Antonella B", "AB", "atoJ21v", "123456-7890", new ArrayList<String>(Arrays.asList("Pharmacist"))));
