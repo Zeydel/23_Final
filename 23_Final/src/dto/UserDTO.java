@@ -18,6 +18,9 @@ public class UserDTO {
 		this.cpr = cpr;
 		this.roles = roles;
 	}
+	public String toString() {
+		return (userID + userName + initials + password + cpr + roles);
+	}
 
 	//Empty constructor for JSON
 	public UserDTO() {
@@ -70,6 +73,16 @@ public class UserDTO {
 	public void setRoles(ArrayList<String> roles) {
 		this.roles = roles;
 	}
+
+	public String getRepeat_password() {
+		return repeat_password;
+	}
+
+	public void setRepeat_password(String repeat_password) {
+		this.repeat_password = repeat_password;
+	}
+	
+	
 	
 	
 }

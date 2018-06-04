@@ -1,5 +1,12 @@
 $(document).ready(function(){
 	loadUsers();
+	
+	$('#createUserForm').submit(function(){
+		event.preventDefault();
+		createUser();
+		loadUsers();
+		return false;
+	})
 })
 
 	function loadUsers(){
@@ -22,4 +29,19 @@ $(document).ready(function(){
 				'<td>' + UserDTO.password + '</td>' +
 				'<td>' + UserDTO.cpr + '</td>' +
 				'<td>' + UserDTO.roles + '</td>' + '</tr>';
+	}
+	
+	function createUser(){
+		event.preventDefault();
+		var data = $('#createUserForm').serializeJSON();
+		$.ajax({
+			url : '/23_Final/rest/users',
+			type : 'POST',
+			data: data,
+			dataType : 'json',
+			contentType : ("application/json"),
+			success : function(data){
+				alert("hej");
+			}
+		})
 	}

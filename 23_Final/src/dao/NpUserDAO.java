@@ -31,6 +31,9 @@ public class NpUserDAO {
 	
 	public void createUser(UserDTO user) {
 		Users.add(user);
+		for(int i = 0; i<Users.size();i++) {
+			System.out.println(Users.get(i).toString());
+		}
 	}
 	
 	public void updateUser(UserDTO user) throws DALException {
