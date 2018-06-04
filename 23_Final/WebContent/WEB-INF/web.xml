@@ -10,15 +10,4 @@
     <welcome-file>html/default.jsp</welcome-file>
   </welcome-file-list>
   
-  <servlet>
-  <servlet-name>GetServlet</servlet-name>
-  <servlet-class>servlet.GetServlet</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-  
-  <servlet-name>GetServlet</servlet-name>
-  <url-pattern>/getServlet</url-pattern>
-  </servlet-mapping>
-  
 </web-app>

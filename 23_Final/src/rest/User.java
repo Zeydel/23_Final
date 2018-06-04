@@ -12,7 +12,7 @@ import javax.ws.rs.core.MediaType;
 import dao.NpStorage;
 import dto.UserDTO;
 
-@Path("/users")
+@Path("users")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class User {
@@ -28,6 +28,4 @@ public class User {
 		return Storage.getUser().getUserList();
 	}
 	
-	
-
 }

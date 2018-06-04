@@ -8,7 +8,7 @@ import dto.UserDTO;
 
 public class NpProductBatchComponentDAO {
 
-	ArrayList<ProductBatchComponentDTO> productBatchComponents;
+	ArrayList<ProductBatchComponentDTO> productBatchComponents = new ArrayList<ProductBatchComponentDTO>();
 	public NpProductBatchComponentDAO() {
 		productBatchComponents.add(new ProductBatchComponentDTO(1, 1, 0.5f, 10.05f, 1));
 		productBatchComponents.add(new ProductBatchComponentDTO(2, 1, 0.5f, 10.01f, 2));

@@ -3,11 +3,12 @@ package dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import dto.RawMaterialDTO;
 import dto.RecipeComponentDTO;
 
 public class NpRecipeComponentDAO {
 
-	ArrayList<RecipeComponentDTO> RecipeComponents;
+	ArrayList<RecipeComponentDTO> RecipeComponents = new ArrayList<RecipeComponentDTO>();
 	public NpRecipeComponentDAO() {
 		RecipeComponents.add(new RecipeComponentDTO(1, 1, 10f, 0.1f));
 		RecipeComponents.add(new RecipeComponentDTO(1, 2, 2f, 0.1f));
