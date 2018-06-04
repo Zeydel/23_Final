@@ -41,7 +41,7 @@ $(document).ready(function(){
 			dataType : 'json',
 			contentType : ("application/json"),
 			success : function(data){
-				alert("hej");
+				
 			}
 		})
 	}
