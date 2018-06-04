@@ -6,20 +6,20 @@
 <title>Insert title here</title>
 </head>
 <div class="login">
-	<h1>Login</h1>
+	<h1>Create User</h1>
     <form method="post">
-        <input type="number" name="id" placeholder="ID" required="required" />
-    		<input type="text" name="full_name" placeholder="Full Name" required="required" />
+        <input type="number" name="userID" placeholder="ID" required="required" />
+    		<input type="text" name="userName" placeholder="Username" required="required" />
+    		<input type="text" name="initials" placeholder="Initials" required="required"/>
         <input type="password" name="password" placeholder="Password" required="required" />
-        <input type="password_repeat" name="password_repeat" placeholder="Repeat Password" required="required" />
+        <input type="password_repeat" name="repeat_password" placeholder="Repeat Password" required="required" />
         <input type="number" name="cpr" placeholder="CPR number" required="required" />
 
         <label><h3>Roles</h3></label>
-        <input type="checkbox" name="administrator" value="administrator">Administrator<br>
-
-        <input type="checkbox" name="administrator" value="administrator">Pharmacologist<br>
-        <input type="checkbox" name="administrator" value="administrator">Production Manager<br>
-        <input type="checkbox" name="administrator" value="administrator">Lab Technician<br>
+        <input type="checkbox" name="roles" value="administrator">Administrator<br>
+        <input type="checkbox" name="roles" value="Pharmacologist">Pharmacologist<br>
+        <input type="checkbox" name="roles" value="Production Manager">Production Manager<br>
+        <input type="checkbox" name="roles" value="Lab Technician">Lab Technician<br>
 
 
         <button type="submit" class="btn btn-primary btn-block btn-large">New year, new me #salty</button>

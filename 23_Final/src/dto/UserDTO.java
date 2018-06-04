@@ -8,6 +8,7 @@ public class UserDTO {
 	private String password;
 	private String cpr;
 	private ArrayList<String> roles;
+	private String repeat_password;
 	
 	public UserDTO(int userID, String userName, String initials, String password, String cpr, ArrayList<String> roles) {
 		this.userID = userID;
