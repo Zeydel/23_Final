@@ -11,6 +11,7 @@ public class NpProductBatchViewDAO {
 	ArrayList<ProductBatchViewDTO> ProductBatchViews = new ArrayList<ProductBatchViewDTO>();
 	
 	public NpProductBatchViewDAO() {
+		ProductBatchViews.add(new ProductBatchViewDTO(1, 1, 1, "Torben"));
 	}
 
 	public ProductBatchViewDTO getProductBatchView(int productBatchID) throws DALException {

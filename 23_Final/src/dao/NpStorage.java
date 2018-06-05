@@ -8,6 +8,7 @@ public class NpStorage {
 	NpRawMaterialDAO RawMaterial;
 	NpRecipeDAO Recipe;
 	NpUserDAO User;
+	NpProductBatchViewDAO ProductBatchView;
 	public NpStorage() {
 		this.ProductBatchComponent  = new NpProductBatchComponentDAO();
 		this.ProductBatch = new NpProductBatchDAO();
@@ -15,6 +16,7 @@ public class NpStorage {
 		this.RawMaterial = new NpRawMaterialDAO();
 		this.Recipe = new NpRecipeDAO();
 		this.User = new NpUserDAO();
+		this.ProductBatchView = new NpProductBatchViewDAO();
 	}
 	public NpProductBatchComponentDAO getProductBatchComponent() {
 		return ProductBatchComponent;
@@ -52,7 +54,11 @@ public class NpStorage {
 	public void setUser(NpUserDAO user) {
 		User = user;
 	}
-	
-	
+	public NpProductBatchViewDAO getProductBatchView() {
+		return ProductBatchView;
+	}
+	public void setProductBatchView(NpProductBatchViewDAO productBatchView) {
+		ProductBatchView = productBatchView;
+	}
 
 }
