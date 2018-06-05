@@ -1,6 +1,7 @@
 package dao;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import dto.ProductBatchComponentDTO;
@@ -34,7 +35,7 @@ public class NpProductBatchDAO {
 	
 	public void updateProductBatch(ProductBatchDTO productBatch) throws DALException {
 		for(int i = 0; i < ProductBatches.size(); i++) {
-			if(ProductBatches.get(i).getProductBatchID() == productBatch.getReceptID()) {
+			if(ProductBatches.get(i).getProductBatchID() == productBatch.getProductBatchID()) {
 				ProductBatches.set(i, productBatch);
 				return;
 			}
