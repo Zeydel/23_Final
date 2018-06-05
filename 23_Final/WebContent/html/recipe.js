@@ -18,6 +18,6 @@ $(document).ready(function(){
 	
 	function generateRecipeHTML(RecipeDTO) {
 		return '<tr><td>' + RecipeDTO.recipeID + '</td>' +
-				'<td>' + RecipeDTO.recipeName + '</td>' +;
+				'<td>' + RecipeDTO.recipeName + '</td>';
 
 	}
