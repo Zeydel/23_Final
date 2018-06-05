@@ -1,13 +1,13 @@
 package dto;
 
-public class RawMaterialViewDTO {
+public class RawMaterialBatchViewDTO {
 	private int rawMaterialBatchID;
 	private int rawMaterialID;
 	private String rawMaterialName;
 	private int amount;
 	private String supplier;
 	
-	public RawMaterialViewDTO(int rawMaterialBatchID, int rawMaterialID, String rawMaterialName, int amount, String supplier) {
+	public RawMaterialBatchViewDTO(int rawMaterialBatchID, int rawMaterialID, String rawMaterialName, int amount, String supplier) {
 		this.rawMaterialBatchID = rawMaterialBatchID;
 		this.rawMaterialID = rawMaterialID;
 		this.rawMaterialName = rawMaterialName;

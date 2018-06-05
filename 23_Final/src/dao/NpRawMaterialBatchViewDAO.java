@@ -3,17 +3,17 @@ package dao;
 import java.util.ArrayList;
 import java.util.List;
 
-import dto.RawMaterialViewDTO;
+import dto.RawMaterialBatchViewDTO;
 
-public class NpRawMaterialViewDAO {
+public class NpRawMaterialBatchViewDAO {
 	
-	ArrayList<RawMaterialViewDTO> RawMaterialViews = new ArrayList<RawMaterialViewDTO>();
-	public NpRawMaterialViewDAO() {
+	ArrayList<RawMaterialBatchViewDTO> RawMaterialViews = new ArrayList<RawMaterialBatchViewDTO>();
+	public NpRawMaterialBatchViewDAO() {
 		
 	}
 	
-	public RawMaterialViewDTO getRawMaterialView(int rawMaterialBatchID, int rawMaterialID) throws DALException {
-		for(RawMaterialViewDTO rawMaterialView : RawMaterialViews) {
+	public RawMaterialBatchViewDTO getRawMaterialView(int rawMaterialBatchID, int rawMaterialID) throws DALException {
+		for(RawMaterialBatchViewDTO rawMaterialView : RawMaterialViews) {
 			if(rawMaterialView.getRawMaterialBatchID() == rawMaterialBatchID && rawMaterialView.getRawMaterialID() == rawMaterialID) {
 				return rawMaterialView;
 			}
@@ -21,15 +21,15 @@ public class NpRawMaterialViewDAO {
 		
 	}
 	
-	public List<RawMaterialViewDTO> getRawMaterialViewList(){
+	public List<RawMaterialBatchViewDTO> getRawMaterialViewList(){
 		return RawMaterialViews;
 	}
 	
-	public void createRawMaterialBatchView(RawMaterialViewDTO RawMaterialView) {
+	public void createRawMaterialBatchView(RawMaterialBatchViewDTO RawMaterialView) {
 		RawMaterialViews.add(RawMaterialView);
 	}
 	
-	public void updateRawMaterialView(RawMaterialViewDTO RawMaterialView) throws DALException {
+	public void updateRawMaterialView(RawMaterialBatchViewDTO RawMaterialView) throws DALException {
 		for(int i = 0; i<RawMaterialViews.size(); i++) {
 			if(RawMaterialViews.get(i).getRawMaterialBatchID()==RawMaterialView.getRawMaterialBatchID() && RawMaterialViews.get(i).getRawMaterialID()==RawMaterialView.getRawMaterialID()) {
 				RawMaterialViews.set(i, RawMaterialView);
