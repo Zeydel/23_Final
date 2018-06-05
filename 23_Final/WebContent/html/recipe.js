@@ -5,12 +5,12 @@ $(document).ready(function(){
 
 	function loadRecipes(){
 		$.ajax({
-			url : '/23_Final/rest/recipe',
+			url : '/23_Final/rest/recipes',
 			type : 'GET',
 			dataType : 'json',
 			success : function(data){
 				$.each(data, function(i, el){
-					$('#recipeTableBody').append(generateUserHTML(el));
+					$('#recipeTableBody').append(generateRecipeHTML(el));
 				})
 			}
 		})
