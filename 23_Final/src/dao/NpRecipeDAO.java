@@ -28,7 +28,7 @@ public class NpRecipeDAO {
 		return Recipes;
 	}
 
-	public void createRecipe(RecipeDTO Recipe) throws DALException{
+	public void createRecipe(RecipeDTO Recipe){
 		Recipes.add(Recipe);
 	}
 	
