@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	loadUsers();
-	
+
 	$('#createUserForm').submit(function(){
 		event.preventDefault();
 		createUser();
@@ -21,15 +21,17 @@ $(document).ready(function(){
 			}
 		})
 	}
-	
+
 	function generateUserHTML(UserDTO) {
 		return '<tr><td>' + UserDTO.userID + '</td>' +
 				'<td>' + UserDTO.userName + '</td>' +
-				'<td>' + UserDTO.initials + '</td>' + 
+				'<td>' + UserDTO.initials + '</td>' +
 				'<td>' + UserDTO.password + '</td>' +
 				'<td>' + UserDTO.cpr + '</td>' +
-				'<td>' + UserDTO.roles + '</td>' + '</tr>';
+				'<td>' + UserDTO.roles + '</td>' +
+				'<td>' + '<button class="options" onclick="" value="' + UserDTO.userID +'"> <i class="fas fa-trash-alt"></i> </button>' + '</td>' +'</tr>';
 	}
+
 	
 	function createUser(){
 		event.preventDefault();
@@ -41,7 +43,9 @@ $(document).ready(function(){
 			dataType : 'json',
 			contentType : ("application/json"),
 			success : function(data){
-				
+
 			}
 		})
 	}
+	
+    
