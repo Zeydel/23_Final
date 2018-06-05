@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src=".\jquery-3.3.1.js"></script>
+<script src=".\source.js"></script>
+<script type="text/javascript" src=".\jquery.serialze-objects.js"></script>
+</head>
+<div class="login">
+	<h1>Create User</h1>
+    <form id="createUserForm">
+        <input type="number" name="userID" placeholder="ID" required="required" id="userID"/>
+    		<input type="text" name="userName" placeholder="Username" required="required" />
+    		<input type="text" name="initials" placeholder="Initials" required="required"/>
+        <input type="password" name="password" placeholder="Password" required="required" />
+        <input type="password_repeat" name="repeat_password" placeholder="Repeat Password" required="required" />
+        <input type="number" name="cpr" placeholder="CPR number" required="required" />
+<!--
+        <label><h3>Roles</h3></label>
+        <input type="checkbox" name="roles" value="administrator">Administrator<br>
+        <input type="checkbox" name="roles" value="Pharmacologist">Pharmacologist<br>
+        <input type="checkbox" name="roles" value="Production Manager">Production Manager<br>
+        <input type="checkbox" name="roles" value="Lab Technician">Lab Technician<br>
+-->
+
+        <input type="submit" class="btn btn-primary btn-block btn-large" id="createUserButton" value="New year, new me #salty">
+    </form>
+</div>
+</html>
