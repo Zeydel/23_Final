@@ -24,7 +24,7 @@ public class NpRecipeDAO {
 		} throw new DALException("Recipe with recipe ID" + recipeID + " Not found");
 	}
 	
-	public List<RecipeDTO> getRecipeList(){
+	public List<RecipeDTO> getRecipeList(){  
 		return Recipes;
 	}
 
