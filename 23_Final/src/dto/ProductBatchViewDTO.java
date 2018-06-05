@@ -3,18 +3,14 @@ package dto;
 public class ProductBatchViewDTO {
 	private int productBatchID;
 	private int status;
-	private int receptID;
+	private int recipeID;
 	private String recipeName;
 	
-	public ProductBatchViewDTO(int productBatchID, int status, int receptID, String recipeName) {
+	public ProductBatchViewDTO(int productBatchID, int status, int recipeID, String recipeName) {
 		this.productBatchID = productBatchID;
 		this.status = status;
-		this.receptID = receptID;
+		this.recipeID = recipeID;
 		this.recipeName = recipeName;
-	}
-	
-	public ProductBatchViewDTO() {
-	
 	}
 
 	public int getProductBatchID() {
@@ -33,12 +29,12 @@ public class ProductBatchViewDTO {
 		this.status = status;
 	}
 
-	public int getReceptID() {
-		return receptID;
+	public int getRecipeID() {
+		return recipeID;
 	}
 
-	public void setReceptID(int receptID) {
-		this.receptID = receptID;
+	public void setRecipeID(int recipeID) {
+		this.recipeID = recipeID;
 	}
 
 	public String getRecipeName() {
@@ -48,7 +44,7 @@ public class ProductBatchViewDTO {
 	public void setRecipeName(String recipeName) {
 		this.recipeName = recipeName;
 	}
-	
+
 	
 
 }
