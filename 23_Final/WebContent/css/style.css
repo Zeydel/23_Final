@@ -31,7 +31,7 @@ body {
 }
 
 
-.login { 
+.login {
 	position: absolute;
 	top: 30%;
 	left: 50%;
@@ -67,7 +67,7 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 
 /**
 
-user table 
+user table
 
 **/
 
@@ -87,7 +87,7 @@ table{
   width:100%;
   table-layout: fixed;
    cellpadding:0;
-   cellspacing:0; 
+   cellspacing:0;
    border:0;
    border-spacing:0;
 }
@@ -184,4 +184,26 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 .overview button:focus {
 	outline:0;
 	background
+	}
+
+
+
+
+	/**
+
+	**/
+
+
+	.back-button {
+		background-color: purple;
+		border: none;
+		border-radius: 20px;
+		color: white;
+		padding: 15px 32px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		margin: 4px 2px;
+		cursor: pointer;
 	}
