@@ -52,14 +52,13 @@ $(document).ready(function(){
 	function deleteUser(userID){
 		event.preventDefault();
 		$.ajax({
-			url : '/23_Final/rest/users',
+			url : '/23_Final/rest/users/' + userID,
 			type : 'DELETE',
-			data : userID,
 			dataype : 'json',
 			contentType : ("application/json"),
-			succes : function(){
+			success : function(){
 				$('#userTableBody').empty();
-				//loadUsers();
+				loadUsers();
 			}
 		})
 	}
