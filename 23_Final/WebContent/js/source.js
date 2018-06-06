@@ -7,6 +7,7 @@ $(document).ready(function(){
 		loadUsers();
 		return false;
 	})
+	
 })
 
 	function loadUsers(){
@@ -29,7 +30,7 @@ $(document).ready(function(){
 				'<td>' + UserDTO.password + '</td>' +
 				'<td>' + UserDTO.cpr + '</td>' +
 				'<td>' + UserDTO.roles + '</td>' +
-				'<td>' + '<button class="options" onclick="" value="' + UserDTO.userID +'"> <i class="fas fa-trash-alt"></i> </button>' + '</td>' +'</tr>';
+				'<td>' + '<button class="options" onclick="deleteUser($(this).val())" value="' + UserDTO.userID +'"> <i class="fas fa-trash-alt"></i> </button>' + '</td>' +'</tr>';
 	}
 
 	
@@ -44,6 +45,21 @@ $(document).ready(function(){
 			contentType : ("application/json"),
 			success : function(data){
 
+			}
+		})
+	}
+	
+	function deleteUser(userID){
+		event.preventDefault();
+		$.ajax({
+			url : '/23_Final/rest/users',
+			type : 'DELETE',
+			data : userID,
+			dataype : 'json',
+			contentType : ("application/json"),
+			succes : function(){
+				$('#userTableBody').empty();
+				//loadUsers();
 			}
 		})
 	}
