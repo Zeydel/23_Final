@@ -19,13 +19,12 @@
         <input type="password" name="password" placeholder="Password" required="required" />
         <input type="password_repeat" name="repeat_password" placeholder="Repeat Password" required="required" />
         <input type="number" name="cpr" placeholder="CPR number" required="required" />
-<!--
+
         <label><h3>Roles</h3></label>
-        <input type="checkbox" name="roles" value="administrator">Administrator<br>
-        <input type="checkbox" name="roles" value="Pharmacologist">Pharmacologist<br>
-        <input type="checkbox" name="roles" value="Production Manager">Production Manager<br>
-        <input type="checkbox" name="roles" value="Lab Technician">Lab Technician<br>
--->
+        <input type="checkbox" name="roles[]" value="administrator" id="roles">Administrator<br>
+        <input type="checkbox" name="roles[]" value="Pharmacologist">Pharmacologist<br>
+        <input type="checkbox" name="roles[]" value="Production Manager">Production Manager<br>
+        <input type="checkbox" name="roles[]" value="Lab Technician">Lab Technician<br>
 
         <input type="submit" class="btn btn-primary btn-block btn-large" id="createUserButton" value="New year, new me #salty">
     </form>

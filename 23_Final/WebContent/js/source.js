@@ -36,7 +36,13 @@ $(document).ready(function(){
 	
 	function createUser(){
 		event.preventDefault();
+		var roles = [];
+		$("input:checkbox[name=roles]:checked").each(function(){
+			roles.push($(this).val());
+		})
+		$('#roles').value=roles;
 		var data = $('#createUserForm').serializeJSON();
+		
 		$.ajax({
 			url : '/23_Final/rest/users',
 			type : 'POST',
