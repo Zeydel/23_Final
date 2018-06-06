@@ -6,4 +6,9 @@ document.addEventListener('DOMContentLoaded',function(){
 	var id = URL2.searchParams.get("id");
 	console.log(id);
 	getUser(id);
+	
+	$('#editUserForm').submit(function(){
+		event.preventDefault();
+		updateUser();
+	})
 })

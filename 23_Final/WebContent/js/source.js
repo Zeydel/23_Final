@@ -8,12 +8,6 @@ $(document).ready(function(){
 		return false;
 	})
 	
-	$('#updateUserForm').submit(function(){
-		event.preventDefault();
-		updateUser();
-	})
-	
-	
 })
 
 	function loadUsers(){
@@ -78,10 +72,10 @@ $(document).ready(function(){
 		})
 	}
 	
-	function deleteUser(userID){
+	function deleteUser(){
 		event.preventDefault();
 		$.ajax({
-			url : '/23_Final/rest/users/' + userID,
+			url : '/23_Final/rest/users/',
 			type : 'DELETE',
 			dataype : 'json',
 			contentType : ("application/json"),
@@ -95,8 +89,9 @@ $(document).ready(function(){
 	function updateUser(){
 		var data = $('#editUserForm').serializeJSON();
 		$.ajax({
-			url : '/23_Final/rest/users/' + userID,
+			url : '/23_Final/rest/users/edit',
 			type : 'POST',
+			data : data,
 			datatype : 'json',
 			contentType : ("application/json"),
 			success : function(){

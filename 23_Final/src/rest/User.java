@@ -32,6 +32,17 @@ public class User {
 		return true;
 	}
 	
+	@POST
+	@Path("/edit")
+	public void editUser(UserDTO user) {
+		try {
+			Storage.getUser().updateUser(user);
+		} catch (DALException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	@GET
 	public List<UserDTO> getUsers() {
 		return Storage.getUser().getUserList();
@@ -65,16 +76,7 @@ public class User {
 		}
 	}
 	
-//	@POST
-//	@Path("{userID}")
-//	public void editUser(@PathParam("userID") UserDTO user) {
-//		try {
-//			Storage.getUser().updateUser(user);
-//		} catch (DALException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//	}
+
 	
 	
 	
