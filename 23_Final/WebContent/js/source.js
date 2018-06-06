@@ -8,6 +8,12 @@ $(document).ready(function(){
 		return false;
 	})
 	
+	$('#updateUserForm').submit(function(){
+		event.preventDefault();
+		updateUser();
+	})
+	
+	
 })
 
 	function loadUsers(){
@@ -30,9 +36,26 @@ $(document).ready(function(){
 				'<td>' + UserDTO.password + '</td>' +
 				'<td>' + UserDTO.cpr + '</td>' +
 				'<td>' + UserDTO.roles + '</td>' +
+				'<td>' + '<button class="options" id="edituserbutton" onclick="location.href=\'editUserForm.html?id=' + UserDTO.userID +'\'' + '"> <i class="fas fa-trash-alt"></i> </button>' +
 				'<td>' + '<button class="options" onclick="deleteUser($(this).val())" value="' + UserDTO.userID +'"> <i class="fas fa-trash-alt"></i> </button>' + '</td>' +'</tr>';
 	}
-
+	
+	function getUser(userID){
+		$.ajax({
+			url : '/23_Final/rest/users/' + userID,
+			type : 'GET',
+			dataType : 'json',
+			success : function(data){
+				$('#userID').val(data.userID);
+				$('#userName').val(data.userName);
+				$('#initials').val(data.initials);
+				$('#password').val(data.password);
+				$('#repeat_password').val(data.password);
+				$('#cpr').val(data.cpr);
+			}
+		})
+	}
+	
 	
 	function createUser(){
 		event.preventDefault();
@@ -65,6 +88,18 @@ $(document).ready(function(){
 			success : function(){
 				$('#userTableBody').empty();
 				loadUsers();
+			}
+		})
+	}
+	
+	function updateUser(){
+		var data = $('#editUserForm').serializeJSON();
+		$.ajax({
+			url : '/23_Final/rest/users/' + userID,
+			type : 'POST',
+			datatype : 'json',
+			contentType : ("application/json"),
+			success : function(){
 			}
 		})
 	}

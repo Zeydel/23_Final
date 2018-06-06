@@ -37,6 +37,23 @@ public class User {
 		return Storage.getUser().getUserList();
 	}
 	
+	@GET
+	@Path("{userID}")
+	public UserDTO getUser(@PathParam("userID")String userID) {
+		try {
+			return Storage.getUser().getUser(Integer.parseInt(userID));
+		} catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (DALException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+		return null;
+	}
+	
+	
 	@DELETE
 	@Path("{userID}")
 	public void deleteUser(@PathParam("userID")String userID) {
@@ -47,5 +64,18 @@ public class User {
 			e.printStackTrace();
 		}
 	}
+	
+//	@POST
+//	@Path("{userID}")
+//	public void editUser(@PathParam("userID") UserDTO user) {
+//		try {
+//			Storage.getUser().updateUser(user);
+//		} catch (DALException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
+	
+	
 	
 }
