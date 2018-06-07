@@ -16,7 +16,10 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import dbdao.DbStorage;
+import dto.CprDTO;
 import dto.DALException;
+import dto.RoleDTO;
+import dto.UserDTO;
 import dto.UserViewDTO;
 import npdao.NpStorage;
 import npdao.NpUserDAO;
@@ -27,28 +30,42 @@ import npdao.NpUserDAO;
 public class User {
 	//static NpStorage Storage = new NpStorage();
 	DbStorage Storage = new DbStorage();
-//	
-//	@POST
-//	public boolean createUser(UserViewDTO user) {
-//		Storage.getUser().createUser(user);
-//		return true;
-//	}
-//	
-//	@POST
-//	@Path("/edit")
-//	public void editUser(UserViewDTO user) {
-//		try {
-//			Storage.getUser().updateUser(user);
-//		} catch (DALException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//	}
+	
+	@POST
+	public boolean createUser(UserViewDTO user) {
+		try {
+			Storage.getUser().createUser(new UserDTO(user.getUserID(), user.getUserName(), user.getInitials(), user.getPassword()));
+			Storage.getCpr().createCpr(new CprDTO(user.getUserID(), user.getCpr()));
+			for(int i = 0; i < user.getRoles().size(); i++) {
+				Storage.getRole().createRole(new RoleDTO(user.getUserID(), user.getRoles().get(i)));
+			}
+		} catch (DALException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return true;
+	}
+	
+	@POST
+	@Path("/edit")
+	public void editUser(UserViewDTO user) {
+		try {
+			Storage.getUser().updateUser(new UserDTO(user.getUserID(), user.getUserName(), user.getInitials(), user.getPassword()));
+			Storage.getCpr().updateCpr(new CprDTO(user.getUserID(), user.getCpr()));
+			Storage.getRole().deleteRole(user.getUserID());
+			for(int i = 0; i < user.getRoles().size(); i++) {
+				Storage.getRole().createRole(new RoleDTO(user.getUserID(), user.getRoles().get(i)));
+			}
+		} catch (DALException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 	@GET
 	public List<UserViewDTO> getUsers() {
 		try {
-			return Storage.getUser().getUserList();
+			return Storage.getUserView().getUserList();
 		} catch (DALException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -60,7 +77,7 @@ public class User {
 	@Path("{userID}")
 	public UserViewDTO getUser(@PathParam("userID")String userID) {
 		try {
-			return Storage.getUser().getUser(Integer.parseInt(userID));
+			return Storage.getUserView().getUser(Integer.parseInt(userID));
 		} catch (NumberFormatException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -71,21 +88,23 @@ public class User {
 		}
 		return null;
 	}
-//	
-//	
-//	@DELETE
-//	@Path("{userID}")
-//	public void deleteUser(@PathParam("userID")String userID) {
-//		try {
-//			Storage.getUser().deleteUser(Integer.parseInt(userID));
-//		} catch (DALException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//	}
-//	
-//
-//	
-//	
+	
+	
+	@DELETE
+	@Path("{userID}")
+	public void deleteUser(@PathParam("userID")String userID) {
+		try {
+			Storage.getRole().deleteRole(Integer.parseInt(userID));
+			Storage.getCpr().deleteCpr(Integer.parseInt(userID));
+			Storage.getUser().deleteUser(Integer.parseInt(userID));
+		} catch (DALException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+
+	
+	
 	
 }

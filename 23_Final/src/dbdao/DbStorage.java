@@ -3,11 +3,17 @@ package dbdao;
 public class DbStorage {
 	
 	DbRecipeDAO Recipe;
-	DbUserViewDAO User;
+	DbUserDAO User;
+	DbUserViewDAO UserView;
+	DbRoleDAO Role;
+	DbCprDAO Cpr;
 
 	public DbStorage() {
 		Recipe = new DbRecipeDAO();
-		User = new DbUserViewDAO();
+		UserView = new DbUserViewDAO();
+		User = new DbUserDAO();
+		Role = new DbRoleDAO();
+		Cpr = new DbCprDAO();
 	}
 
 	public DbRecipeDAO getRecipe() {
@@ -18,14 +24,37 @@ public class DbStorage {
 		Recipe = recipe;
 	}
 
-	public DbUserViewDAO getUser() {
+	public DbUserDAO getUser() {
 		return User;
 	}
 
-	public void setUser(DbUserViewDAO user) {
+	public void setUser(DbUserDAO user) {
 		User = user;
 	}
-	
-	
 
+	public DbUserViewDAO getUserView() {
+		return UserView;
+	}
+
+	public void setUserView(DbUserViewDAO userView) {
+		UserView = userView;
+	}
+
+	public DbRoleDAO getRole() {
+		return Role;
+	}
+
+	public void setRole(DbRoleDAO role) {
+		Role = role;
+	}
+
+	public DbCprDAO getCpr() {
+		return Cpr;
+	}
+
+	public void setCpr(DbCprDAO cpr) {
+		Cpr = cpr;
+	}
+
+	
 }

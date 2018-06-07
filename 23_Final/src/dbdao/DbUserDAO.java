@@ -25,7 +25,7 @@ public class DbUserDAO {
 		try {
 		Connector.doUpdate(
 				"INSERT INTO user(userID, userName, initials, password) VALUES " +
-				"(" + user.getUserID() + ", '" + user.getUserName() + ", '" + user.getInitials() + ",'" + user.getPassword() + "')"
+				"('" + user.getUserID() + "', '" + user.getUserName() + "', '" + user.getInitials() + "', '" + user.getPassword() + "')"
 			);
 		} catch(DALException e) {throw new DALException("User not created"); }
 	}
@@ -33,8 +33,8 @@ public class DbUserDAO {
 	public void updateUser(UserDTO user) throws DALException {
 		try {
 		Connector.doUpdate(
-				"UPDATE user SET userName = '" + user.getUserName() + "', initials = '" + user.getInitials() + "', password = "
-						+ user.getPassword() + " WHERE userID = " + user.getUserID());
+				"UPDATE user SET userName = '" + user.getUserName() + "', initials = '" + user.getInitials() + "', password = '"
+						+ user.getPassword() + "' WHERE userID = " + user.getUserID());
 		
 		}
 		catch (DALException e) {throw new DALException("User with user id " + user.getUserID() + " doesn't exist"); }
@@ -45,9 +45,9 @@ public class DbUserDAO {
 		try {
 		Connector.doUpdate(
 				"DELETE FROM user "
-				+ "WHERE userID = " + userID
+				+ "WHERE userID = " + userID + ""
 				);
-		} catch (DALException e) {throw new DALException("Recipe with user ID " + userID + "Doesn't exist.");}
+		} catch (DALException e) {throw new DALException("User with user ID " + userID + " Doesn't exist.");}
 	}
 
 }

@@ -20,10 +20,10 @@ public class DbRecipeDAO {
 	}
 
 	public RecipeDTO getRecept(int recipeID) throws DALException {
-		ResultSet rs = Connector.doQuery("SELECT * FROM recept WHERE recept_id = " + recipeID);
+		ResultSet rs = Connector.doQuery("SELECT * FROM recipe WHERE recipeID = " + recipeID);
 	    try {
 	    	if (!rs.first()) throw new DALException("Recepten " + recipeID + " findes ikke");
-	    	return new RecipeDTO (rs.getInt("recept_id"), rs.getString("recept_navn"));
+	    	return new RecipeDTO (rs.getInt("recipeID"), rs.getString("recipeName"));
 	    }
 	    catch (SQLException e) {throw new DALException("Recipe with recipe ID" + recipeID + " Not found"); }
 	}
@@ -36,7 +36,6 @@ public class DbRecipeDAO {
 			while (rs.next()) 
 			{
 				list.add(new RecipeDTO (rs.getInt("recipeID"), rs.getString("recipeName")));
-				System.out.println("hej");
 			}
 		}
 		catch (SQLException e) { throw new DALException("No list found", e); }
@@ -46,7 +45,7 @@ public class DbRecipeDAO {
 	public void createRecipe(RecipeDTO recipe) throws DALException {
 		try {
 		Connector.doUpdate(
-				"INSERT INTO recept(recept_id, recept_navn) VALUES " +
+				"INSERT INTO recipe(recipeID, recipeName) VALUES " +
 				"(" + recipe.getRecipeID() + ", '" + recipe.getRecipeName() + "')"
 			);
 		} catch(DALException e) {throw new DALException("Recipe Not Created"); }
@@ -55,7 +54,7 @@ public class DbRecipeDAO {
 	public void updateRecept(RecipeDTO recipe) throws DALException {
 		try {
 		Connector.doUpdate(
-				"UPDATE recept SET recept_navn = '" + recipe.getRecipeName() + "' WHERE recept_id = " +
+				"UPDATE recipe SET recipeName = '" + recipe.getRecipeName() + "' WHERE recipeID = " +
 				recipe.getRecipeID()
 		);
 		}

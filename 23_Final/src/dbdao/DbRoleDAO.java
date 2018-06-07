@@ -7,6 +7,7 @@ import java.util.List;
 
 import dto.DALException;
 import dto.RecipeDTO;
+import dto.RoleDTO;
 
 public class DbRoleDAO {
 	
@@ -19,33 +20,33 @@ public class DbRoleDAO {
 		}
 	}
 
-	public void createRecipe(RecipeDTO recipe) throws DALException {
+	public void createRole(RoleDTO role) throws DALException {
 		try {
 		Connector.doUpdate(
-				"INSERT INTO recept(recept_id, recept_navn) VALUES " +
-				"(" + recipe.getRecipeID() + ", '" + recipe.getRecipeName() + "')"
+				"INSERT INTO roles(userID, role) VALUES " +
+				"('" + role.getUserID() + "', '" + role.getRole() + "')"
 			);
-		} catch(DALException e) {throw new DALException("Recipe Not Created"); }
+		} catch(DALException e) {throw new DALException("Role Not Created"); }
 	}
 
-	public void updateRecept(RecipeDTO recipe) throws DALException {
+	public void updateRecept(RoleDTO role) throws DALException {
 		try {
 		Connector.doUpdate(
-				"UPDATE recept SET recept_navn = '" + recipe.getRecipeName() + "' WHERE recept_id = " +
-				recipe.getRecipeID()
+				"UPDATE role SET role = '" + role.getRole() + "' WHERE userID = " +
+				role.getUserID()
 		);
 		}
-		catch (DALException e) {throw new DALException("Recipe with Recipe ID " + recipe.getRecipeID() + " doesn't exist"); }
+		catch (DALException e) {throw new DALException("User with ID " + role.getUserID() + " doesn't exist"); }
 
 	}
 	
 	public void deleteRole(int userID) throws DALException {
 		try {
 		Connector.doUpdate(
-				"DELETE FROM role "
-				+ "WHERE userID = " + userID
+				"DELETE FROM roles "
+				+ "WHERE userID = '" + userID + "';"
 				);
-		} catch (DALException e) {throw new DALException("Recipe with recipe ID " + userID + "Doesn't exist.");}
+		} catch (DALException e) {throw new DALException("User with ID " + userID + " Doesn't exist.");}
 	}
 
 }

@@ -41,6 +41,7 @@ $(document).ready(function(){
 			dataType : 'json',
 			success : function(data){
 				$('#userID').val(data.userID);
+				$('#userID').value = data.userID;
 				$('#userName').val(data.userName);
 				$('#initials').val(data.initials);
 				$('#password').val(data.password);
