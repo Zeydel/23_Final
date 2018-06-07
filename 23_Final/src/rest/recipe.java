@@ -8,6 +8,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import dbdao.DbStorage;
+import dto.DALException;
 import dto.RecipeDTO;
 import npdao.NpStorage;
 
@@ -18,17 +20,29 @@ import npdao.NpStorage;
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class recipe {
-	static NpStorage Storage = new NpStorage();
+	//static NpStorage Storage = new NpStorage();
+	DbStorage Storage = new DbStorage();
 	
 	@POST
 	public boolean createRecipe(RecipeDTO recipe) {
-		Storage.getRecipe().createRecipe(recipe);
+		try {
+			Storage.getRecipe().createRecipe(recipe);
+		} catch (DALException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return true;
 	}
 	
 	@GET
 	public List<RecipeDTO> getRecipes() {
-		return Storage.getRecipe().getRecipeList();
+		try {
+			return Storage.getRecipe().getRecipeList();
+		} catch (DALException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 	
 }

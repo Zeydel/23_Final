@@ -9,6 +9,15 @@ import dto.DALException;
 import dto.RecipeDTO;
 
 public class DbRecipeDAO {
+	
+	public DbRecipeDAO() {
+		try {
+			Connector Connector = new Connector();
+		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 	public RecipeDTO getRecept(int recipeID) throws DALException {
 		ResultSet rs = Connector.doQuery("SELECT * FROM recept WHERE recept_id = " + recipeID);
@@ -19,21 +28,22 @@ public class DbRecipeDAO {
 	    catch (SQLException e) {throw new DALException("Recipe with recipe ID" + recipeID + " Not found"); }
 	}
 
-	public List<RecipeDTO> getReceptList() throws DALException {
+	public List<RecipeDTO> getRecipeList() throws DALException {
 		List<RecipeDTO> list = new ArrayList<RecipeDTO>();
-		ResultSet rs = Connector.doQuery("SELECT * FROM recept");
+		ResultSet rs = Connector.doQuery("SELECT * FROM recipe;");
 		try
 		{
 			while (rs.next()) 
 			{
-				list.add(new RecipeDTO (rs.getInt("recept_id"), rs.getString("recept_navn")));
+				list.add(new RecipeDTO (rs.getInt("recipeID"), rs.getString("recipeName")));
+				System.out.println("hej");
 			}
 		}
 		catch (SQLException e) { throw new DALException("No list found", e); }
 		return list;
 	}
 
-	public void createRecept(RecipeDTO recipe) throws DALException {
+	public void createRecipe(RecipeDTO recipe) throws DALException {
 		try {
 		Connector.doUpdate(
 				"INSERT INTO recept(recept_id, recept_navn) VALUES " +
