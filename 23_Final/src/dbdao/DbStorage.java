@@ -2,10 +2,12 @@ package dbdao;
 
 public class DbStorage {
 	
-	DbRecipeDAO Recipe = new DbRecipeDAO();
+	DbRecipeDAO Recipe;
+	DbUserViewDAO User;
 
 	public DbStorage() {
 		Recipe = new DbRecipeDAO();
+		User = new DbUserViewDAO();
 	}
 
 	public DbRecipeDAO getRecipe() {
@@ -15,5 +17,15 @@ public class DbStorage {
 	public void setRecipe(DbRecipeDAO recipe) {
 		Recipe = recipe;
 	}
+
+	public DbUserViewDAO getUser() {
+		return User;
+	}
+
+	public void setUser(DbUserViewDAO user) {
+		User = user;
+	}
+	
+	
 
 }

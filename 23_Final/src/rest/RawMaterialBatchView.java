@@ -13,7 +13,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import dto.RawMaterialBatchViewDTO;
-import dto.UserDTO;
+import dto.UserViewDTO;
 import npdao.NpStorage;
 import npdao.NpUserDAO;
 

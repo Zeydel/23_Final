@@ -5,7 +5,7 @@ import java.util.List;
 
 import dto.DALException;
 import dto.ProductBatchComponentDTO;
-import dto.UserDTO;
+import dto.UserViewDTO;
 
 public class NpProductBatchComponentDAO {
 

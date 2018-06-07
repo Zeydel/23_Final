@@ -1,7 +1,7 @@
 package dto;
 import java.util.ArrayList;
 
-public class UserDTO {
+public class UserViewDTO {
 	private int userID;
 	private String userName;
 	private String initials;
@@ -10,7 +10,7 @@ public class UserDTO {
 	private ArrayList<String> roles;
 	private String repeat_password;
 	
-	public UserDTO(int userID, String userName, String initials, String password, String cpr, ArrayList<String> roles) {
+	public UserViewDTO(int userID, String userName, String initials, String password, String cpr, ArrayList<String> roles) {
 		this.userID = userID;
 		this.userName = userName;
 		this.initials = initials;
@@ -23,7 +23,7 @@ public class UserDTO {
 	}
 
 	//Empty constructor for JSON
-	public UserDTO() {
+	public UserViewDTO() {
 	}
 
 	public int getUserID() {

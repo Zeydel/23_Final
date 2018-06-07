@@ -15,8 +15,9 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import dbdao.DbStorage;
 import dto.DALException;
-import dto.UserDTO;
+import dto.UserViewDTO;
 import npdao.NpStorage;
 import npdao.NpUserDAO;
 
@@ -24,33 +25,40 @@ import npdao.NpUserDAO;
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class User {
-	static NpStorage Storage = new NpStorage();
+	//static NpStorage Storage = new NpStorage();
+	DbStorage Storage = new DbStorage();
+//	
+//	@POST
+//	public boolean createUser(UserViewDTO user) {
+//		Storage.getUser().createUser(user);
+//		return true;
+//	}
+//	
+//	@POST
+//	@Path("/edit")
+//	public void editUser(UserViewDTO user) {
+//		try {
+//			Storage.getUser().updateUser(user);
+//		} catch (DALException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
 	
-	@POST
-	public boolean createUser(UserDTO user) {
-		Storage.getUser().createUser(user);
-		return true;
-	}
-	
-	@POST
-	@Path("/edit")
-	public void editUser(UserDTO user) {
+	@GET
+	public List<UserViewDTO> getUsers() {
 		try {
-			Storage.getUser().updateUser(user);
+			return Storage.getUser().getUserList();
 		} catch (DALException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
-	
-	@GET
-	public List<UserDTO> getUsers() {
-		return Storage.getUser().getUserList();
+		return null;
 	}
 	
 	@GET
 	@Path("{userID}")
-	public UserDTO getUser(@PathParam("userID")String userID) {
+	public UserViewDTO getUser(@PathParam("userID")String userID) {
 		try {
 			return Storage.getUser().getUser(Integer.parseInt(userID));
 		} catch (NumberFormatException e) {
@@ -63,21 +71,21 @@ public class User {
 		}
 		return null;
 	}
-	
-	
-	@DELETE
-	@Path("{userID}")
-	public void deleteUser(@PathParam("userID")String userID) {
-		try {
-			Storage.getUser().deleteUser(Integer.parseInt(userID));
-		} catch (DALException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
-
-	
-	
+//	
+//	
+//	@DELETE
+//	@Path("{userID}")
+//	public void deleteUser(@PathParam("userID")String userID) {
+//		try {
+//			Storage.getUser().deleteUser(Integer.parseInt(userID));
+//		} catch (DALException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
+//	
+//
+//	
+//	
 	
 }

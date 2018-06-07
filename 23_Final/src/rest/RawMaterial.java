@@ -10,7 +10,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import dto.RawMaterialDTO;
-import dto.UserDTO;
+import dto.UserViewDTO;
 import npdao.NpStorage;
 
 @Path("rawmaterial")
@@ -20,7 +20,7 @@ public class RawMaterial {
 	static NpStorage Storage = new NpStorage();
 	
 	@POST
-	public boolean createUser(UserDTO user) {
+	public boolean createUser(UserViewDTO user) {
 		Storage.getUser().createUser(user);
 		return true;
 	}

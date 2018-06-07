@@ -6,19 +6,19 @@ import java.util.List;
 
 import dto.DALException;
 import dto.RecipeDTO;
-import dto.UserDTO;
+import dto.UserViewDTO;
 
 public class NpUserDAO {
 	
-	ArrayList<UserDTO> Users = new ArrayList<UserDTO>();
+	ArrayList<UserViewDTO> Users = new ArrayList<UserViewDTO>();
 	public NpUserDAO() {
-		Users.add(new UserDTO(1, "Angelo A", "AA", "lKie4fa", "080197-0761", new ArrayList<String>(Arrays.asList("Admin", "Pharmacist"))));
-		Users.add(new UserDTO(2, "Antonella B", "AB", "atoJ21v", "123456-7890", new ArrayList<String>(Arrays.asList("Pharmacist"))));
-		Users.add(new UserDTO(3, "Luigi C", "LC", "iEfm5aO", "987654-3210", new ArrayList<String>(Arrays.asList("Admin"))));
+		Users.add(new UserViewDTO(1, "Angelo A", "AA", "lKie4fa", "080197-0761", new ArrayList<String>(Arrays.asList("Admin", "Pharmacist"))));
+		Users.add(new UserViewDTO(2, "Antonella B", "AB", "atoJ21v", "123456-7890", new ArrayList<String>(Arrays.asList("Pharmacist"))));
+		Users.add(new UserViewDTO(3, "Luigi C", "LC", "iEfm5aO", "987654-3210", new ArrayList<String>(Arrays.asList("Admin"))));
 	}
 	
-	public UserDTO getUser(int userID) throws DALException {
-		for(UserDTO user : Users) {
+	public UserViewDTO getUser(int userID) throws DALException {
+		for(UserViewDTO user : Users) {
 			if(user.getUserID() == userID) {
 				return user;
 			}
@@ -26,18 +26,18 @@ public class NpUserDAO {
 		throw new DALException("User with ID" + userID + " not found.");
 	}
 	
-	public List<UserDTO> getUserList(){
+	public List<UserViewDTO> getUserList(){
 		return Users;
 	}
 	
-	public void createUser(UserDTO user) {
+	public void createUser(UserViewDTO user) {
 		Users.add(user);
 		for(int i = 0; i<Users.size();i++) {
 			System.out.println(Users.get(i).toString());
 		}
 	}
 	
-	public void updateUser(UserDTO user) throws DALException {
+	public void updateUser(UserViewDTO user) throws DALException {
 		for(int i = 0; i < Users.size(); i++) {
 			if(Users.get(i).getUserID() == user.getUserID()) {
 				Users.set(i, user);
