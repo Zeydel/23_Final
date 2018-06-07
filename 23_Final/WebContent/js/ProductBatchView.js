@@ -26,7 +26,8 @@ $(document).ready(function(){
 		return '<tr><td>' + ProductBatchViewDTO.productBatchID + '</td>' +
 				'<td>' + ProductBatchViewDTO.status + '</td>' +
 				'<td>' + ProductBatchViewDTO.recipeID + '</td>' + 
-				'<td>' + ProductBatchViewDTO.recipeName + '</td>' + '</tr>';
+				'<td>' + ProductBatchViewDTO.recipeName + '</td>' + '<td>' + '<button class="options" id="edituserbutton" onclick="location.href="> <i class="fas fa-edit"></i> </button>' +
+				'<button class="options" onclick="deleteUser($(this).val())" value=""> <i class="fas fa-trash-alt"></i> </button>' + '</td>' + '</tr>';
 	}
 	
 	function createUser(){

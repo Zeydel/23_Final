@@ -19,5 +19,6 @@ function loadRawMaterials(){
 function generateRawMaterialHTML(RawMaterialDTO){
 	return '<tr><td>' + RawMaterialDTO.rawMaterialID + '</td>' +
 	'<td>' + RawMaterialDTO.rawMaterialName + '</td>' +
-	'<td>' + RawMaterialDTO.supplier + '</td><tr>'
+	'<td>' + RawMaterialDTO.supplier + '<td>' + '<button class="options" id="edituserbutton" onclick="location.href="> <i class="fas fa-edit"></i> </button>' +
+	'<button class="options" onclick="deleteUser($(this).val())" value=""> <i class="fas fa-trash-alt"></i> </button>' + '</td>' + '</tr>' + '<tr>'
 }

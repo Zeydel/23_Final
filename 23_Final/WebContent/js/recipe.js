@@ -18,6 +18,8 @@ $(document).ready(function(){
 	
 	function generateRecipeHTML(RecipeDTO){
 		return '<tr><td>' + RecipeDTO.recipeID + '</td>' +
-				'<td>' + RecipeDTO.recipeName + '</td>';
+				'<td>' + RecipeDTO.recipeName + '</td>' +
+				'<td>' + '<button class="options" id="edituserbutton" onclick="location.href="> <i class="fas fa-edit"></i> </button>' +
+				'<button class="options" onclick="deleteUser($(this).val())" value=""> <i class="fas fa-trash-alt"></i> </button>' + '</td>' + '</tr>'
 
 	}

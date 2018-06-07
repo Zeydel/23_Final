@@ -2,17 +2,17 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="../css/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"><meta charset="UTF-8">
 <meta charset="UTF-8">
-<title>Product Batches</title>
+<title>Product Batch Overview</title>
 <script src="../js/jquery-3.3.1.js"></script>
 <script src="../js/ProductBatchView.js"></script>
 <script type="text/javascript" src="../js/jquery.serialze-objects.js"></script>
 <script src="../js/header.js"></script>
-<title>View of product batches</title>
 </head>
 <section>
   <!--for demo wrap-->
-  <h1>View of Product Batches</h1>
+  <h1>Product Batch Overview</h1>
   <div>
     <table>
       <thead>
@@ -21,6 +21,7 @@
           <th>Status</th>
           <th>Recipe ID</th>
           <th>Recipe Name</th>
+          <th></th>
         </tr>
       </thead>
        <tbody id='productBatchViewTableBody'>
@@ -29,3 +30,6 @@
     </table>
   </div>
 </section>
+<div class="centered-div">
+<button class="create-button"  onclick="location.href=''">Create Product Batch </button>
+</div>
