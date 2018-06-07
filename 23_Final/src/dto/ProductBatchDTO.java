@@ -4,12 +4,12 @@ public class ProductBatchDTO {
 	
 	private int productBatchID;
 	private int status;
-	private int receptID;
+	private int recipeID;
 	
-	public ProductBatchDTO(int productBatchID, int status, int receptID) {
+	public ProductBatchDTO(int productBatchID, int status, int recipeID) {
 		this.productBatchID = productBatchID;
 		this.status = status;
-		this.receptID = receptID;
+		this.recipeID = recipeID;
 	}
 
 	//Empty constructor for JSON
@@ -32,12 +32,14 @@ public class ProductBatchDTO {
 		this.status = status;
 	}
 
-	public int getReceptID() {
-		return receptID;
+	public int getRecipeID() {
+		return recipeID;
 	}
 
-	public void setReceptID(int receptID) {
-		this.receptID = receptID;
+	public void setRecipeID(int recipeID) {
+		this.recipeID = recipeID;
 	}
+
+	
 	
 }

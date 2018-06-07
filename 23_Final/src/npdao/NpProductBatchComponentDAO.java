@@ -18,7 +18,7 @@ public class NpProductBatchComponentDAO {
 
 	public ProductBatchComponentDTO getProductBatchComponent(int produktBatchID, int rawMaterialID) throws DALException {
 		for(ProductBatchComponentDTO productBatchComponent : productBatchComponents) {
-			if(productBatchComponent.getProductbatchID() == produktBatchID && productBatchComponent.getRawMaterialID() == rawMaterialID) {
+			if(productBatchComponent.getProductbatchID() == produktBatchID && productBatchComponent.getRawMaterialBatchID() == rawMaterialID) {
 				return productBatchComponent;
 			}
 		} throw new DALException("ProductBatchComponent with productBatchID " + produktBatchID + " and " + rawMaterialID + " not found");
@@ -34,16 +34,16 @@ public class NpProductBatchComponentDAO {
 
 	public void updateProductBatchComponent(ProductBatchComponentDTO productBatchComponent) throws DALException {
 		for(int i = 0; i < productBatchComponents.size(); i++) {
-			if(productBatchComponents.get(i).getProductbatchID() == productBatchComponent.getProductbatchID() && productBatchComponents.get(i).getRawMaterialID() == productBatchComponent.getRawMaterialID()) {
+			if(productBatchComponents.get(i).getProductbatchID() == productBatchComponent.getProductbatchID() && productBatchComponents.get(i).getRawMaterialBatchID() == productBatchComponent.getRawMaterialBatchID()) {
 				productBatchComponents.set(i, productBatchComponent);
 				return;
 			}
-		} throw new DALException("ProductBatchComponent with productBatchID " + productBatchComponent.getProductbatchID() + " and " + productBatchComponent.getRawMaterialID() + " not found");
+		} throw new DALException("ProductBatchComponent with productBatchID " + productBatchComponent.getProductbatchID() + " and " + productBatchComponent.getRawMaterialBatchID() + " not found");
 	}
 
 	public void deleteProductBatchComponent(int produktBatchID, int rawMaterialID) throws DALException {
 		for(int i = 0; i < productBatchComponents.size(); i++) {
-			if(productBatchComponents.get(i).getProductbatchID() == produktBatchID && productBatchComponents.get(i).getRawMaterialID() == rawMaterialID) {
+			if(productBatchComponents.get(i).getProductbatchID() == produktBatchID && productBatchComponents.get(i).getRawMaterialBatchID() == rawMaterialID) {
 				productBatchComponents.remove(i);
 				return;
 			}

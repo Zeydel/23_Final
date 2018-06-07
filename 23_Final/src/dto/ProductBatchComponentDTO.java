@@ -3,14 +3,14 @@ package dto;
 public class ProductBatchComponentDTO {
 	
 	private int productbatchID;
-	private int rawMaterialID;
+	private int rawMaterialBatchID;
 	private float tara;
 	private float netto;
 	private int userID;
 	
-	public ProductBatchComponentDTO(int productbatchID, int rawMaterialID, float tara, float netto, int userID) {
+	public ProductBatchComponentDTO(int productbatchID, int rawMaterialBatchID, float tara, float netto, int userID) {
 		this.productbatchID = productbatchID;
-		this.rawMaterialID = rawMaterialID;
+		this.rawMaterialBatchID = rawMaterialBatchID;
 		this.tara = tara;
 		this.netto = netto;
 		this.userID = userID;
@@ -28,12 +28,12 @@ public class ProductBatchComponentDTO {
 		this.productbatchID = productbatchID;
 	}
 
-	public int getRawMaterialID() {
-		return rawMaterialID;
+	public int getRawMaterialBatchID() {
+		return rawMaterialBatchID;
 	}
 
-	public void setRawMaterialID(int rawMaterialID) {
-		this.rawMaterialID = rawMaterialID;
+	public void setRawMaterialBatchID(int rawMaterialBatchID) {
+		this.rawMaterialBatchID = rawMaterialBatchID;
 	}
 
 	public float getTara() {
