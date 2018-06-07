@@ -30,8 +30,8 @@ $(document).ready(function(){
 				'<td>' + UserDTO.password + '</td>' +
 				'<td>' + UserDTO.cpr + '</td>' +
 				'<td>' + UserDTO.roles + '</td>' +
-				'<td>' + '<button class="options" id="edituserbutton" onclick="location.href=\'editUserForm.html?id=' + UserDTO.userID +'\'' + '"> <i class="fas fa-trash-alt"></i> </button>' +
-				'<td>' + '<button class="options" onclick="deleteUser($(this).val())" value="' + UserDTO.userID +'"> <i class="fas fa-trash-alt"></i> </button>' + '</td>' +'</tr>';
+				'<td>' + '<button class="options" id="edituserbutton" onclick="location.href=\'editUserForm.html?id=' + UserDTO.userID +'\'' + '"> <i class="fas fa-edit"></i> </button>' +
+				'<button class="options" onclick="deleteUser($(this).val())" value="' + UserDTO.userID +'"> <i class="fas fa-trash-alt"></i> </button>' + '' + '</td>' +'</tr>';
 	}
 	
 	function getUser(userID){
