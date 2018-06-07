@@ -19,5 +19,5 @@ function loadRawMaterials(){
 function generateRawMaterialHTML(RawMaterialDTO){
 	return '<tr><td>' + RawMaterialDTO.rawMaterialID + '</td>' +
 	'<td>' + RawMaterialDTO.rawMaterialName + '</td>' +
-	'<td>' + RawMaterialDTO.supplier + '</td><td>'
+	'<td>' + RawMaterialDTO.supplier + '</td><tr>'
 }
