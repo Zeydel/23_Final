@@ -72,10 +72,10 @@ $(document).ready(function(){
 		})
 	}
 	
-	function deleteUser(){
+	function deleteUser(value){
 		event.preventDefault();
 		$.ajax({
-			url : '/23_Final/rest/users/',
+			url : '/23_Final/rest/users/' + value,
 			type : 'DELETE',
 			dataype : 'json',
 			contentType : ("application/json"),
