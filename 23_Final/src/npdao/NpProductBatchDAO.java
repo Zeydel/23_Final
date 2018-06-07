@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import java.util.List;
 
+import dto.DALException;
 import dto.ProductBatchComponentDTO;
 import dto.ProductBatchDTO;
 

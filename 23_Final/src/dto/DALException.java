@@ -1,4 +1,4 @@
-package npdao;
+package dto;
 
 public class DALException extends Exception {
 	

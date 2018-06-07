@@ -15,8 +15,8 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import dto.DALException;
 import dto.UserDTO;
-import npdao.DALException;
 import npdao.NpStorage;
 import npdao.NpUserDAO;
 
