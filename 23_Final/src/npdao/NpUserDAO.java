@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import dto.DALException;
 import dto.RecipeDTO;
 import dto.UserDTO;
 

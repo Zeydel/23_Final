@@ -3,6 +3,7 @@ package npdao;
 import java.util.ArrayList;
 import java.util.List;
 
+import dto.DALException;
 import dto.RecipeComponentDTO;
 import dto.RecipeDTO;
 
