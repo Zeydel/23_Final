@@ -1,4 +1,4 @@
-package dao;
+package npdao;
 
 import java.util.ArrayList;
 

@@ -15,10 +15,10 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import dao.DALException;
-import dao.NpStorage;
-import dao.NpUserDAO;
 import dto.UserDTO;
+import npdao.DALException;
+import npdao.NpStorage;
+import npdao.NpUserDAO;
 
 @Path("/users")
 @Consumes(MediaType.APPLICATION_JSON)
