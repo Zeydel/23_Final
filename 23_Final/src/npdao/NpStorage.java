@@ -1,5 +1,5 @@
 
-package dao;
+package npdao;
 
 public class NpStorage {
 	

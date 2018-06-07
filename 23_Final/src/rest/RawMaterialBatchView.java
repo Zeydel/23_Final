@@ -12,10 +12,10 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import dao.NpStorage;
-import dao.NpUserDAO;
 import dto.RawMaterialBatchViewDTO;
 import dto.UserDTO;
+import npdao.NpStorage;
+import npdao.NpUserDAO;
 
 	@Path("rawMaterialBatchView")
 	@Consumes(MediaType.APPLICATION_JSON)

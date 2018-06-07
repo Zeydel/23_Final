@@ -9,9 +9,9 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import dao.NpStorage;
 import dto.RawMaterialDTO;
 import dto.UserDTO;
+import npdao.NpStorage;
 
 @Path("rawmaterial")
 @Consumes(MediaType.APPLICATION_JSON)
