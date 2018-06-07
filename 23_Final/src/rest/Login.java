@@ -11,7 +11,7 @@
 //
 //import dto.UserDTO;
 //
-//@Path("users")
+//@Path("login")
 //@Consumes(MediaType.APPLICATION_JSON)
 //@Produces(MediaType.APPLICATION_JSON)
 //public class Login {
