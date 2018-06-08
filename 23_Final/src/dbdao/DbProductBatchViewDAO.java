@@ -21,12 +21,12 @@ public class DbProductBatchViewDAO {
 
 		public List<ProductBatchViewDTO> getProductBatchViewList() throws DALException {
 			List<ProductBatchViewDTO> list = new ArrayList<ProductBatchViewDTO>();
-			ResultSet rs = Connector.doQuery("SELECT * FROM productBatchView");
+			ResultSet rs = Connector.doQuery("SELECT * FROM productbatchview");
 			try
 			{
 				while (rs.next()) 
 				{
-					list.add(new ProductBatchViewDTO(rs.getInt("productBatchID"), rs.getInt("status"), rs.getInt("recipeID"), rs.getString("recipeName")));
+					list.add(new ProductBatchViewDTO(rs.getInt("productBatchID"), rs.getString("status"), rs.getInt("recipeID"), rs.getString("recipeName")));
 				}
 			}
 			catch (SQLException e) { throw new DALException("No list found"); }

@@ -2,11 +2,11 @@ package dto;
 
 public class ProductBatchViewDTO {
 	private int productBatchID;
-	private int status;
+	private String status;
 	private int recipeID;
 	private String recipeName;
 	
-	public ProductBatchViewDTO(int productBatchID, int status, int recipeID, String recipeName) {
+	public ProductBatchViewDTO(int productBatchID, String status, int recipeID, String recipeName) {
 		this.productBatchID = productBatchID;
 		this.status = status;
 		this.recipeID = recipeID;
@@ -21,11 +21,12 @@ public class ProductBatchViewDTO {
 		this.productBatchID = productBatchID;
 	}
 
-	public int getStatus() {
+	
+	public String getStatus() {
 		return status;
 	}
 
-	public void setStatus(int status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 
