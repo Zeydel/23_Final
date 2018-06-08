@@ -2,36 +2,35 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="../css/style.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"><meta charset="UTF-8">
 <meta charset="UTF-8">
-<title>Product Batch Component Overview</title>
+<title>Edit User</title>
 <script src="../js/jquery-3.3.1.js"></script>
-<script src="../js/productBatchComponent.js"></script>
+<script src="../js/source.js"></script>
+<script src="../js/editUserForm.js"></script>
 <script type="text/javascript" src="../js/jquery.serialze-objects.js"></script>
 <script src="../js/header.js"></script>
 </head>
-<section>
-  <!--for demo wrap-->
-  <h1>Product Batch Component Overview</h1>
-  <div>
-    <table>
-      <thead>
-        <tr>
-          <th>	Productbatch ID</th>
-          <th> 	rawMaterialID</th>
-		  <th> 	tara</th>
-		  <th>	netto</th>
-		 <th>	userID</th>
-		 <th></th>
-        </tr>
-      </thead>
-       <tbody id='TableBody'>
 
-      </tbody>
-    </table>
-  </div>
-</section>
-<div class="centered-div">
-<button class="create-button"  onclick="location.href=''">Create Batch Component </button>
+<div class="login">
+	<h1>Create User</h1>
+    <form id="editUserForm">
+        <input type="number" name="userID" placeholder="ID" required="required" id="userID" readonly/>
+    		<input type="text" name="userName" placeholder="Username" required="required" id="userName" value=""/>
+    		<input type="text" name="initials" placeholder="Initials" required="required" id="initials"/>
+        <input type="password" name="password" placeholder="Password" required="required" id="password" />
+        <input type="password_repeat" name="repeat_password" placeholder="Repeat Password" required="required" id="repeat_password" />
+        <input type="number" name="cpr" placeholder="CPR number" required="required" id="cpr" />
+<!-- 
+        <label><h3>Roles</h3></label>
+        <input type="checkbox" name="roles[]" value="administrator" id="roles">Administrator<br>
+        <input type="checkbox" name="roles[]" value="Pharmacologist" id="roles">Pharmacologist<br>
+        <input type="checkbox" name="roles[]" value="Production Manager" id="roles">Production Manager<br>
+        <input type="checkbox" name="roles[]" value="Lab Technician" id="roles">Lab Technician<br>
+-->
+
+        <input type="submit" class="btn btn-primary btn-block btn-large" id="updateUserButton" value="Update User">
+    </form>
 </div>
+
+
 </html>

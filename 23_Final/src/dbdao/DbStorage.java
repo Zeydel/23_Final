@@ -7,6 +7,10 @@ public class DbStorage {
 	DbUserViewDAO UserView;
 	DbRoleDAO Role;
 	DbCprDAO Cpr;
+	DbProductBatchDAO ProductBatch;
+	DbProductBatchViewDAO ProductBatchView;
+
+
 
 	public DbStorage() {
 		Recipe = new DbRecipeDAO();
@@ -14,6 +18,9 @@ public class DbStorage {
 		User = new DbUserDAO();
 		Role = new DbRoleDAO();
 		Cpr = new DbCprDAO();
+		ProductBatch = new DbProductBatchDAO();
+		ProductBatchView = new DbProductBatchViewDAO();
+		
 	}
 
 	public DbRecipeDAO getRecipe() {
@@ -55,6 +62,24 @@ public class DbStorage {
 	public void setCpr(DbCprDAO cpr) {
 		Cpr = cpr;
 	}
+
+	public DbProductBatchDAO getProductBatch() {
+		return ProductBatch;
+	}
+
+	public void setProductBatch(DbProductBatchDAO productBatch) {
+		ProductBatch = productBatch;
+	}
+
+	public DbProductBatchViewDAO getProductBatchView() {
+		return ProductBatchView;
+	}
+
+	public void setProductBatchView(DbProductBatchViewDAO productBatchView) {
+		ProductBatchView = productBatchView;
+	}
+	
+	
 
 	
 }
