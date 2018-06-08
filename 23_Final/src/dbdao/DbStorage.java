@@ -22,7 +22,7 @@ public class DbStorage {
 		Cpr = new DbCprDAO();
 		ProductBatch = new DbProductBatchDAO();
 		ProductBatchView = new DbProductBatchViewDAO();
-    RawMaterial = DbRawMaterialDAO();
+		RawMaterial = new DbRawMaterialDAO();
 		
 	}
 
