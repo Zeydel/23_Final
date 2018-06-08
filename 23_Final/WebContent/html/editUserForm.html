@@ -12,7 +12,7 @@
 </head>
 
 <div class="login">
-	<h1>Create User</h1>
+	<h1>Edit User</h1>
     <form id="editUserForm">
         <input type="number" name="userID" placeholder="ID" required="required" id="userID" readonly/>
     		<input type="text" name="userName" placeholder="Username" required="required" id="userName" value=""/>
@@ -20,13 +20,13 @@
         <input type="password" name="password" placeholder="Password" required="required" id="password" />
         <input type="password_repeat" name="repeat_password" placeholder="Repeat Password" required="required" id="repeat_password" />
         <input type="number" name="cpr" placeholder="CPR number" required="required" id="cpr" />
-<!-- 
+ 
         <label><h3>Roles</h3></label>
-        <input type="checkbox" name="roles[]" value="administrator" id="roles">Administrator<br>
-        <input type="checkbox" name="roles[]" value="Pharmacologist" id="roles">Pharmacologist<br>
-        <input type="checkbox" name="roles[]" value="Production Manager" id="roles">Production Manager<br>
-        <input type="checkbox" name="roles[]" value="Lab Technician" id="roles">Lab Technician<br>
--->
+        <input type="checkbox" name="roles[]" value="1" id="Administrator">Administrator<br>
+        <input type="checkbox" name="roles[]" value="2" id="Pharmacologist">Pharmacologist<br>
+        <input type="checkbox" name="roles[]" value=3 id="Production Manager">Production Manager<br>
+        <input type="checkbox" name="roles[]" value="4" id="Lab Technician">Lab Technician<br>
+
 
         <input type="submit" class="btn btn-primary btn-block btn-large" id="updateUserButton" value="Update User">
     </form>
