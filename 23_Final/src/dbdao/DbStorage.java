@@ -10,7 +10,7 @@ public class DbStorage {
 	DbCprDAO Cpr;
 	DbProductBatchDAO ProductBatch;
 	DbProductBatchViewDAO ProductBatchView;
-  DbRawMaterialDAO RawMaterial;
+	DbRawMaterialDAO RawMaterial;
 
 
 
