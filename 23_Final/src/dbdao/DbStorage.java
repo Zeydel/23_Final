@@ -7,6 +7,7 @@ public class DbStorage {
 	DbUserViewDAO UserView;
 	DbRoleDAO Role;
 	DbCprDAO Cpr;
+	DbRawMaterialDAO RawMaterial;
 
 	public DbStorage() {
 		Recipe = new DbRecipeDAO();
@@ -14,7 +15,7 @@ public class DbStorage {
 		User = new DbUserDAO();
 		Role = new DbRoleDAO();
 		Cpr = new DbCprDAO();
-		
+		RawMaterial = new DbRawMaterialDAO();
 	}
 
 	public DbRecipeDAO getRecipe() {
@@ -57,5 +58,12 @@ public class DbStorage {
 		Cpr = cpr;
 	}
 
+	public DbRawMaterialDAO getRawMaterial() {
+		return RawMaterial;
+	}
+	
+	public void setRawMaterial(DbRawMaterialDAO rawMaterial) {
+		RawMaterial = rawMaterial;
+	}
 	
 }
