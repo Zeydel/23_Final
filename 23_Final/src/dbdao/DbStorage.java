@@ -14,6 +14,7 @@ public class DbStorage {
 		User = new DbUserDAO();
 		Role = new DbRoleDAO();
 		Cpr = new DbCprDAO();
+		
 	}
 
 	public DbRecipeDAO getRecipe() {

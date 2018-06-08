@@ -54,11 +54,9 @@ public class DbUserViewDAO {
 			else {
 				substring += string.charAt(i);
 			}
-			if(i == string.length()-1) {
+
 				roles.add(substring);
 			}
-		}
-		System.out.println(roles);
 		return roles;
 	}
 

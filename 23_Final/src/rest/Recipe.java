@@ -16,10 +16,10 @@ import npdao.NpStorage;
 
 
 
-@Path("recipes")
+@Path("/recipes")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
-public class recipe {
+public class Recipe {
 	//static NpStorage Storage = new NpStorage();
 	DbStorage Storage = new DbStorage();
 	

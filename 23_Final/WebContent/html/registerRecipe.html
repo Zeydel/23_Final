@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"><meta charset="UTF-8">
+<meta charset="UTF-8">
+<title>Create Recipe</title>
+<script src="../js/jquery-3.3.1.js"></script>
+<script src="../js/registerRecipe.js"></script>
+<script type="text/javascript" src="../js/jquery.serialze-objects.js"></script>
+<script src="../js/header.js"></script>
 </head>
 <body>
+
+<div class="login">
+	<h1>Create User</h1>
+    <form id="createRecipeForm">
+        <input type="number" name="recipeID" placeholder="ID" required="required" />
+    		<input type="text" name="recipeName" placeholder="Recipe Name" required="required" />
+
+        <input type="submit" class="btn btn-primary btn-block btn-large" id="createRecipeButton" value="Create Recipe">
+    </form>
+</div>
 
 </body>
 </html>
