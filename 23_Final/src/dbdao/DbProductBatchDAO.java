@@ -11,7 +11,7 @@ import rest.ProductBatchComponent;
 
 public class DbProductBatchDAO {
 
-	public ProductBatchDTO getProduktBatch(int productBatchID) throws DALException {
+	public ProductBatchDTO getProductBatch(int productBatchID) throws DALException {
 		ResultSet rs = Connector.doQuery("SELECT * FROM ProductBatch WHERE productBatchID = " + productBatchID);
 		try {
 			if (!rs.first()) throw new DALException("ProductBatch with ID " + productBatchID + " not found");
@@ -34,7 +34,7 @@ public class DbProductBatchDAO {
 		return list;
 	}
 
-	public void createProduktBatch(ProductBatchDTO ProductBatch) throws DALException {
+	public void createProductBatch(ProductBatchDTO ProductBatch) throws DALException {
 		Connector.doUpdate(
 				"INSERT INTO ProductBatch(productBatchID, status, recipeID) VALUES " +
 						"(" + ProductBatch.getProductBatchID() + ", '" + ProductBatch.getStatus() + "', '" + ProductBatch.getRecipeID() +"')"
@@ -42,7 +42,7 @@ public class DbProductBatchDAO {
 
 	}
 
-	public void updateProduktBatch(ProductBatchDTO produktbatch) throws DALException {
+	public void updateProductBatch(ProductBatchDTO produktbatch) throws DALException {
 		try {
 			Connector.doUpdate(
 					"UPDATE ProductBatch SET status = " + produktbatch.getStatus() + 
@@ -50,6 +50,16 @@ public class DbProductBatchDAO {
 					);
 		}catch(DALException e) {throw new DALException("ProductBatch with ID " + produktbatch.getProductBatchID() + "Doesn't exist.");}
 	}
+	
+	public void deleteProductBatch(int productBatchID) throws DALException{
+		try {
+			Connector.doUpdate("DELETE FROM productBatch "
+					+ "WHERE productBatchID = " + productBatchID);
+		} catch(DALException e) {throw new DALException("Product Batch with id " + productBatchID + " doesn't exist.");
+		
+		
+	}
 
 
+}
 }

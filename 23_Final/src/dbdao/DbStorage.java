@@ -1,3 +1,4 @@
+
 package dbdao;
 
 public class DbStorage {
@@ -7,7 +8,11 @@ public class DbStorage {
 	DbUserViewDAO UserView;
 	DbRoleDAO Role;
 	DbCprDAO Cpr;
-	DbRawMaterialDAO RawMaterial;
+	DbProductBatchDAO ProductBatch;
+	DbProductBatchViewDAO ProductBatchView;
+  DbRawMaterialDAO RawMaterial;
+
+
 
 	public DbStorage() {
 		Recipe = new DbRecipeDAO();
@@ -15,7 +20,10 @@ public class DbStorage {
 		User = new DbUserDAO();
 		Role = new DbRoleDAO();
 		Cpr = new DbCprDAO();
-		RawMaterial = new DbRawMaterialDAO();
+		ProductBatch = new DbProductBatchDAO();
+		ProductBatchView = new DbProductBatchViewDAO();
+    RawMaterial = DbRawMaterialDAO();
+		
 	}
 
 	public DbRecipeDAO getRecipe() {
@@ -58,6 +66,23 @@ public class DbStorage {
 		Cpr = cpr;
 	}
 
+	public DbProductBatchDAO getProductBatch() {
+		return ProductBatch;
+	}
+
+	public void setProductBatch(DbProductBatchDAO productBatch) {
+		ProductBatch = productBatch;
+	}
+
+	public DbProductBatchViewDAO getProductBatchView() {
+		return ProductBatchView;
+	}
+
+	public void setProductBatchView(DbProductBatchViewDAO productBatchView) {
+		ProductBatchView = productBatchView;
+	}
+	
+
 	public DbRawMaterialDAO getRawMaterial() {
 		return RawMaterial;
 	}
@@ -67,3 +92,4 @@ public class DbStorage {
 	}
 	
 }
+
