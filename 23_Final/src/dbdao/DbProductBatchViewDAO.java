@@ -14,7 +14,7 @@ public class DbProductBatchViewDAO {
 			ResultSet rs = Connector.doQuery("SELECT * FROM productBatchView WHERE productBatchID = " + productBatchID);
 			try {
 				if (!rs.first()) throw new DALException("ProductBatchView with ID " + productBatchID + " not found");
-				return new ProductBatchViewDTO (rs.getInt("productBatchID"), rs.getInt("status"), rs.getInt("recipeID"), rs.getString("recipeName"));
+				return new ProductBatchViewDTO (rs.getInt("productBatchID"), rs.getString("status"), rs.getInt("recipeID"), rs.getString("recipeName"));
 			}
 			catch (SQLException e) {throw new DALException(null, e); }
 		}

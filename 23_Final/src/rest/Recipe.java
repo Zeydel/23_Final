@@ -81,6 +81,7 @@ public class Recipe {
 	@Path("/edit")
 	public void editUser(RecipeDTO recipe) {
 		try {
+			recipe.setRecipeID(recipe.getRecipeID()+1);
 			Storage.getRecipe().updateRecipe(recipe);
 		} catch (DALException e) {
 			// TODO Auto-generated catch block

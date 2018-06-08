@@ -26,7 +26,8 @@ DbStorage Storage = new DbStorage();
 	@POST
 	public boolean createProductBatch(ProductBatchDTO productBatch) {
 		try {
-			Storage.getProductBatch().createProductBatch(new ProductBatchDTO(productBatch.getProductBatchID(), productBatch.getStatus(), productBatch.getRecipeID()));
+			productBatch.setStatus(productBatch.getStatus()+1);
+			Storage.getProductBatch().createProductBatch(productBatch);
 		} catch (DALException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -38,7 +39,8 @@ DbStorage Storage = new DbStorage();
 	@Path("/edit")
 	public void editProductBatch(ProductBatchDTO productBatch) {
 		try{
-			Storage.getProductBatch().updateProductBatch(new ProductBatchDTO(productBatch.getProductBatchID(), productBatch.getStatus(), productBatch.getRecipeID()));
+			productBatch.setStatus(productBatch.getStatus()+1);
+			Storage.getProductBatch().updateProductBatch(productBatch);
 		} catch (DALException e) {
 			e.printStackTrace();
 		}
@@ -57,9 +59,9 @@ DbStorage Storage = new DbStorage();
 	
 	@GET
 	@Path("{productBatchID}")
-	public ProductBatchDTO getProductBatch(@PathParam("productBatchID")String productBatchID) {
+	public ProductBatchViewDTO getProductBatch(@PathParam("productBatchID")String productBatchID) {
 		try {
-			return Storage.getProductBatch().getProductBatch(Integer.parseInt(productBatchID));
+			return Storage.getProductBatchView().getProductBatchView(Integer.parseInt(productBatchID));
 		} catch (NumberFormatException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

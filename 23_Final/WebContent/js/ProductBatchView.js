@@ -7,6 +7,8 @@ $(document).ready(function(){
 		loadProductBatctView();
 		return false;
 	})
+	
+	
 })
 
 	function loadProductBatchView(){
@@ -26,15 +28,16 @@ $(document).ready(function(){
 		return '<tr><td>' + ProductBatchViewDTO.productBatchID + '</td>' +
 				'<td>' + ProductBatchViewDTO.status + '</td>' +
 				'<td>' + ProductBatchViewDTO.recipeID + '</td>' + 
-				'<td>' + ProductBatchViewDTO.recipeName + '</td>' + '<td>' + '<button class="options" id="edituserbutton" onclick="location.href="> <i class="fas fa-edit"></i> </button>' +
-				'<button class="options" onclick="deleteUser($(this).val())" value=""> <i class="fas fa-trash-alt"></i> </button>' + '</td>' + '</tr>';
+				'<td>' + ProductBatchViewDTO.recipeName + '</td>' + 
+				'<td>' + '<button class="options" id="editProductBatchButton" onclick="location.href=\'editProductBatchForm.html?id=' + ProductBatchViewDTO.productBatchID +'\'' + '"><i class="fas fa-edit"></i> </button>' +
+				'<button class="options" onclick="deleteProductBatch($(this).val())" value="' + ProductBatchViewDTO.productBatchID + '"> <i class="fas fa-trash-alt"></i> </button>' + '</td>' + '</tr>';
 	}
 	
 	function createProductBatch(){
 		event.preventDefault();
 		var data = $('#createProductBatch').serializeJSON();
 		$.ajax({
-			url : '/23_Final/rest/users',
+			url : '/23_Final/rest/productbatchviews',
 			type : 'POST',
 			data: data,
 			dataType : 'json',
@@ -46,16 +49,16 @@ $(document).ready(function(){
 	}
 	
 	
-	function deleteProductBatch(value){
+	function deleteProductBatch(productBatchID){
 		event.preventDefault();
 		$.ajax({
-			url : '/23_Final/rest/users/' + value,
+			url : '/23_Final/rest/productbatchviews/' + productBatchID,
 			type : 'DELETE',
 			dataype : 'json',
 			contentType : ("application/json"),
 			success : function(){
 				$('#productBatchViewTableBody').empty();
-				loadUsers();
+				loadProductBatchView();
 			}
 		})
 	}
@@ -63,7 +66,7 @@ $(document).ready(function(){
 	function updateProductBatch(){
 		var data = $('#editProductBatch').serializeJSON();
 		$.ajax({
-			url : '/23_Final/rest/users/edit',
+			url : '/23_Final/rest/productbatchviews/edit',
 			type : 'POST',
 			data : data,
 			datatype : 'json',
