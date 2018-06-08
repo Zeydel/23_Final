@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	loadProductBatchView();
 	
-	$('#confirmCreateProductBatch').submit(function(){
+	$('#createProductBatch').submit(function(){
 		event.preventDefault();
 		createProductBatch();
 		loadProductBatctView();
