@@ -1,10 +1,10 @@
 $(document).ready(function(){
 	loadProductBatchView();
 	
-	$('#createUserForm').submit(function(){
+	$('#confirmCreateProductBatch').submit(function(){
 		event.preventDefault();
-		createUser();
-		loadUsers();
+		createProductBatch();
+		loadProductBatctView();
 		return false;
 	})
 })
@@ -30,9 +30,9 @@ $(document).ready(function(){
 				'<button class="options" onclick="deleteUser($(this).val())" value=""> <i class="fas fa-trash-alt"></i> </button>' + '</td>' + '</tr>';
 	}
 	
-	function createUser(){
+	function createProductBatch(){
 		event.preventDefault();
-		var data = $('#createUserForm').serializeJSON();
+		var data = $('#createProductBatch').serializeJSON();
 		$.ajax({
 			url : '/23_Final/rest/users',
 			type : 'POST',
@@ -44,3 +44,32 @@ $(document).ready(function(){
 			}
 		})
 	}
+	
+	
+	function deleteProductBatch(value){
+		event.preventDefault();
+		$.ajax({
+			url : '/23_Final/rest/users/' + value,
+			type : 'DELETE',
+			dataype : 'json',
+			contentType : ("application/json"),
+			success : function(){
+				$('#productBatchViewTableBody').empty();
+				loadUsers();
+			}
+		})
+	}
+	
+	function updateProductBatch(){
+		var data = $('#editProductBatch').serializeJSON();
+		$.ajax({
+			url : '/23_Final/rest/users/edit',
+			type : 'POST',
+			data : data,
+			datatype : 'json',
+			contentType : ("application/json"),
+			success : function(){
+			}
+		})
+	}
+	
