@@ -9,24 +9,25 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import dto.DALException;
 import dto.RawMaterialDTO;
 import dto.UserViewDTO;
-import npdao.NpStorage;
+import dbdao.DbStorage;
 
 @Path("rawmaterial")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class RawMaterial {
-	static NpStorage Storage = new NpStorage();
+	static DbStorage Storage = new DbStorage();
 	
 	@POST
-	public boolean createUser(UserViewDTO user) {
-		Storage.getUser().createUser(user);
+	public boolean createRawMaterial(RawMaterialDTO rawMaterial) throws DALException {
+		Storage.getRawMaterial().createRawMaterial(rawMaterial);
 		return true;
 	}
 	
 	@GET
-	public List<RawMaterialDTO> getUsers() {
+	public List<RawMaterialDTO> getUsers() throws DALException {
 		return Storage.getRawMaterial().getRawMaterialList();
 	}
 

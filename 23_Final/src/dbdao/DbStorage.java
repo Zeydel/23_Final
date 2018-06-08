@@ -1,3 +1,4 @@
+
 package dbdao;
 
 public class DbStorage {
@@ -9,6 +10,7 @@ public class DbStorage {
 	DbCprDAO Cpr;
 	DbProductBatchDAO ProductBatch;
 	DbProductBatchViewDAO ProductBatchView;
+  DbRawMaterialDAO RawMaterial;
 
 
 
@@ -20,6 +22,7 @@ public class DbStorage {
 		Cpr = new DbCprDAO();
 		ProductBatch = new DbProductBatchDAO();
 		ProductBatchView = new DbProductBatchViewDAO();
+    RawMaterial = DbRawMaterialDAO();
 		
 	}
 
@@ -79,7 +82,14 @@ public class DbStorage {
 		ProductBatchView = productBatchView;
 	}
 	
-	
 
+	public DbRawMaterialDAO getRawMaterial() {
+		return RawMaterial;
+	}
+	
+	public void setRawMaterial(DbRawMaterialDAO rawMaterial) {
+		RawMaterial = rawMaterial;
+	}
 	
 }
+

@@ -47,6 +47,9 @@ $(document).ready(function(){
 				$('#password').val(data.password);
 				$('#repeat_password').val(data.password);
 				$('#cpr').val(data.cpr);
+				for(var i = 0; i < data.roles.length; i++){
+					$('#' + data.roles[i]).prop("checked", true);
+				}
 			}
 		})
 	}

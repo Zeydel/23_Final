@@ -12,3 +12,16 @@ document.addEventListener('DOMContentLoaded',function(){
 		updateUser();
 	})
 })
+
+function updateUser(){
+		var data = $('#editRecipeForm').serializeJSON();
+		$.ajax({
+			url : '/23_Final/rest/recipes/edit',
+			type : 'POST',
+			data : data,
+			datatype : 'json',
+			contentType : ("application/json"),
+			success : function(){
+			}
+		})
+	}

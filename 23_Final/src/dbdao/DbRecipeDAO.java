@@ -19,7 +19,7 @@ public class DbRecipeDAO {
 		}
 	}
 
-	public RecipeDTO getRecept(int recipeID) throws DALException {
+	public RecipeDTO getRecipe(int recipeID) throws DALException {
 		ResultSet rs = Connector.doQuery("SELECT * FROM recipe WHERE recipeID = " + recipeID);
 	    try {
 	    	if (!rs.first()) throw new DALException("Recepten " + recipeID + " findes ikke");
@@ -51,7 +51,7 @@ public class DbRecipeDAO {
 		} catch(DALException e) {throw new DALException("Recipe Not Created"); }
 	}
 
-	public void updateRecept(RecipeDTO recipe) throws DALException {
+	public void updateRecipe(RecipeDTO recipe) throws DALException {
 		try {
 		Connector.doUpdate(
 				"UPDATE recipe SET recipeName = '" + recipe.getRecipeName() + "' WHERE recipeID = " +
@@ -66,7 +66,7 @@ public class DbRecipeDAO {
 		try {
 		Connector.doUpdate(
 				"DELETE FROM recipe "
-				+ "WHERE recipeID = " + recipeID
+				+ "WHERE recipeID = '" + recipeID + " ';"
 				);
 		} catch (DALException e) {throw new DALException("Recipe with recipe ID " + recipeID + "Doesn't exist.");}
 	}

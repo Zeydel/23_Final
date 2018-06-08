@@ -30,7 +30,7 @@ import npdao.NpUserDAO;
 public class User {
 	//static NpStorage Storage = new NpStorage();
 	DbStorage Storage = new DbStorage();
-	
+
 	@POST
 	public boolean createUser(UserViewDTO user) {
 		try {
@@ -45,7 +45,7 @@ public class User {
 		}
 		return true;
 	}
-	
+
 	@POST
 	@Path("/edit")
 	public void editUser(UserViewDTO user) {
@@ -53,15 +53,17 @@ public class User {
 			Storage.getUser().updateUser(new UserDTO(user.getUserID(), user.getUserName(), user.getInitials(), user.getPassword()));
 			Storage.getCpr().updateCpr(new CprDTO(user.getUserID(), user.getCpr()));
 			Storage.getRole().deleteRole(user.getUserID());
-			for(int i = 0; i < user.getRoles().size(); i++) {
-				Storage.getRole().createRole(new RoleDTO(user.getUserID(), user.getRoles().get(i)));
+			if(user.getRoles() != null) {
+				for(int i = 0; i < user.getRoles().size(); i++) {
+					Storage.getRole().createRole(new RoleDTO(user.getUserID(), user.getRoles().get(i)));
+				}
 			}
 		} catch (DALException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
+
 	@GET
 	public List<UserViewDTO> getUsers() {
 		try {
@@ -72,7 +74,7 @@ public class User {
 		}
 		return null;
 	}
-	
+
 	@GET
 	@Path("{userID}")
 	public UserViewDTO getUser(@PathParam("userID")String userID) {
@@ -88,23 +90,21 @@ public class User {
 		}
 		return null;
 	}
-	
-	
+
+
 	@DELETE
 	@Path("{userID}")
 	public void deleteUser(@PathParam("userID")String userID) {
 		try {
-			Storage.getRole().deleteRole(Integer.parseInt(userID));
-			Storage.getCpr().deleteCpr(Integer.parseInt(userID));
 			Storage.getUser().deleteUser(Integer.parseInt(userID));
 		} catch (DALException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
 
-	
-	
-	
+
+
+
+
 }
