@@ -66,7 +66,7 @@ public class WeightController {
 			List<ProductBatchComponentDTO> productBatchComponents = null;
 			try {
 				recipeComponents = Storage.getRecipeComponent().getRecipeComponentList(recipe.getRecipeID());
-				productBatchComponents = Storage.getProductBatchCompoent().getProductBatchKomponentList(ProductBatch.getProductBatchID());
+				productBatchComponents = Storage.getProductBatchComponent().getProductBatchKomponentList(ProductBatch.getProductBatchID());
 			} catch (DALException e) {
 				// TODO Auto-generated caftch block
 				e.printStackTrace();
@@ -135,7 +135,7 @@ public class WeightController {
 					if(desiredWeight > min && desiredWeight < max) {
 						ProductBatchComponentDTO ProductBatchComponent = new ProductBatchComponentDTO(ProductBatch.getProductBatchID(), RawMaterialBatch.getRawMaterialBatchID(), tara, weight, user.getUserID());
 						try {
-							Storage.getProductBatchCompoent().createProductBatchComponent(ProductBatchComponent);
+							Storage.getProductBatchComponent().createProductBatchComponent(ProductBatchComponent);
 						} catch (DALException e) {
 							Weight.writeLongStringInDisplay("An error happened");
 						}
