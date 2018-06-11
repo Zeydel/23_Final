@@ -21,7 +21,7 @@ public class DbRecipeComponentDAO {
 
 	public List<RecipeComponentDTO> getRecipeComponentList(int recipeID) throws DALException {
 		List<RecipeComponentDTO> list = new ArrayList<RecipeComponentDTO>();
-		ResultSet rs = Connector.doQuery("SELECT * FROM receptkomponent WHERE recipeID = " + recipeID);
+		ResultSet rs = Connector.doQuery("SELECT * FROM recipeComponent WHERE recipeID = " + recipeID);
 		try
 		{
 			while (rs.next()) 

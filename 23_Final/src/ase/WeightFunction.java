@@ -17,9 +17,11 @@ public class WeightFunction {
 
 	public WeightFunction() {
 		try {
-			this.pingSocket = new Socket("169.254.2.2", 8000);
+			this.pingSocket = new Socket("169.254.2.3", 8000);
 			this.out = new PrintWriter(pingSocket.getOutputStream(), true);
 			this.in = new BufferedReader(new InputStreamReader(pingSocket.getInputStream()));
+			in.readLine();
+			out.println("K 3");
 		} catch(IOException e) {
 			System.out.println("Connection Failed");
 		}
@@ -82,12 +84,9 @@ public class WeightFunction {
 	}
 	
 	public String getStringFromDisplay(String msg) throws IOException {
+		out.flush();
 		out.println("RM20 8 \""+ msg + "\" \"\" \"&3\"");
-		in.readLine();
-		in.readLine();
-		while(!in.ready()) {
-			
-		}
+		String strtest = in.readLine();
 		in.skip(6);
 		String str = in.readLine();
 		return str;
@@ -103,18 +102,20 @@ public class WeightFunction {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 	}
 	
 	public void clearInputStream() {
+		String str;
 		try {
-			while(in.ready()) {
-				in.readLine();
+			while((str = in.readLine()) != null) {
+				System.out.println(str);
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
+	
+	
 
 }

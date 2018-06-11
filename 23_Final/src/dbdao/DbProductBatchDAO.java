@@ -15,9 +15,9 @@ public class DbProductBatchDAO {
 		ResultSet rs = Connector.doQuery("SELECT * FROM ProductBatch WHERE productBatchID = " + productBatchID);
 		try {
 			if (!rs.first()) throw new DALException("ProductBatch with ID " + productBatchID + " not found");
-			return new ProductBatchDTO (rs.getInt("productBatchID"), rs.getInt("status"), rs.getInt("recipeID"));
+			return new ProductBatchDTO (rs.getInt("productBatchID"), getStatus(rs.getString("status")), rs.getInt("recipeID"));
 		}
-		catch (SQLException e) {throw new DALException(null, e); }
+		catch (SQLException e) {throw new DALException("FEJL", e); }
 	}
 
 	public List<ProductBatchDTO> getProduktBatchList() throws DALException {
@@ -50,16 +50,25 @@ public class DbProductBatchDAO {
 					);
 		}catch(DALException e) {throw new DALException("ProductBatch with ID " + produktbatch.getProductBatchID() + "Doesn't exist.");}
 	}
-	
+
 	public void deleteProductBatch(int productBatchID) throws DALException{
 		try {
 			Connector.doUpdate("DELETE FROM productBatch "
 					+ "WHERE productBatchID = " + productBatchID);
 		} catch(DALException e) {throw new DALException("Product Batch with id " + productBatchID + " doesn't exist.");
-		
-		
+
+
+		}
 	}
 
-
-}
+	public int getStatus(String str) {
+		if(str.equals("created")) {
+			return 0;
+		} else if (str.equals("under process")){
+			return 1;
+		} else if (str.equals("completed")) {
+			return 2;
+		}
+		return -1;
+	}
 }
