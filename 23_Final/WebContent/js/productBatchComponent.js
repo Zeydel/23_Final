@@ -21,7 +21,7 @@ $(document).ready(function(){
 				'<td>' + ProductBatchComponentDTO.rawMaterialID + '</td>'+
 				'<td>' + ProductBatchComponentDTO.tara + '</td>'+
 				'<td>' + ProductBatchComponentDTO.netto + '</td>'+
-				'<td>' + ProductBatchComponentDTO.userID + '</td>' + '<td>' + '<button class="options" id="edituserbutton" onclick="location.href="> <i class="fas fa-edit"></i> </button>' +
+				'<td>' + ProductBatchComponentDTO.userID + '</td>' + '<td>' + '<button class="options" id="edituserbutton"> <i class="fas fa-edit"></i> </button>' +
 				'<button class="options" onclick="deleteUser($(this).val())" value=""> <i class="fas fa-trash-alt"></i> </button>' + '</td>' + '</tr>';
 
 	}

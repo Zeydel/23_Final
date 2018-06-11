@@ -18,4 +18,5 @@ function createRecipe(){
 
 		}
 	})
+	location.href="recipeTable.html"
 }

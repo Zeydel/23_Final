@@ -24,4 +24,5 @@ function updateUser(){
 			success : function(){
 			}
 		})
+		location.href="user-tabel.html"
 	}

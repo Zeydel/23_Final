@@ -37,4 +37,5 @@ function updateUser(){
 		success : function(){
 		}
 	})
+	location.href="recipeTable.html"
 }

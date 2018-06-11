@@ -74,6 +74,7 @@ $(document).ready(function(){
 
 			}
 		})
+		location.href="user-tabel.html"
 	}
 	
 	function deleteUser(value){

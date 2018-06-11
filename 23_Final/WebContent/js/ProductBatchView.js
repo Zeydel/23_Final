@@ -46,6 +46,7 @@ $(document).ready(function(){
 				
 			}
 		})
+		location.href="ProductBatchTabel.html"
 	}
 	
 	
