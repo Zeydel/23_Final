@@ -33,8 +33,8 @@ public class DbRawMaterialDAO {
 	public void createRawMaterial(RawMaterialDTO rawMaterial) throws DALException {
 		try {
 			Connector.doUpdate("INSERT INTO rawMaterial(rawMaterialID, rawMaterialName, supplier) VALUES"
-					+ "(" + rawMaterial.getRawMaterialID() + ", '" + rawMaterial.getRawMaterialName() + ", '" + rawMaterial.getSupplier() +"')");
-		} catch(DALException e) {throw new DALException("Rawmaterial not created");}
+					+ "(" + rawMaterial.getRawMaterialID() + ", '" + rawMaterial.getRawMaterialName() + "', '" + rawMaterial.getSupplier() +"')");
+		} catch(DALException e) {throw new DALException("Raw material not created");}
 	}
 	
 	

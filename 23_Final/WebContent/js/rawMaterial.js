@@ -3,12 +3,31 @@ $(document).ready(function(){
 
 	$('#createRawMaterialForm').submit(function(){
 		event.preventDefault();
-		createUser();
-		loadUsers();
+		createRawMaterial();
+		//loadRawMaterials();
 		return false;
 	})
 	
 })
+
+function createRawMaterial(){
+		event.preventDefault();
+		var data = $('#createRawMaterialForm').serializeJSON();
+		
+		$.ajax({
+			url : '/23_Final/rest/rawmaterial',
+			type : 'POST',
+			data: data,
+			dataType : 'json',
+			contentType : ("application/json"),
+			success : function(data){
+
+			}
+		})
+		location.href="rawMaterialTable.html"
+}
+
+
 
 function loadRawMaterials(){
 	$.ajax({
@@ -40,6 +59,6 @@ function deleteRawMaterial(value){
 function generateRawMaterialHTML(RawMaterialDTO){
 	return '<tr><td>' + RawMaterialDTO.rawMaterialID + '</td>' +
 	'<td>' + RawMaterialDTO.rawMaterialName + '</td>' +
-	'<td>' + RawMaterialDTO.supplier + '</td>'+ '<td>' + '<button class="options" id="edituserbutton" onclick="location.href=""> <i class="fas fa-edit"></i> </button>' +
+	'<td>' + RawMaterialDTO.supplier + '</td>'+ '<td>' + '<button class="options" id="edituserbutton" onclick="location.href=\'editRawMaterial.html?id=' + RawMaterialDTO.rawMaterialID +'\'"> <i class="fas fa-edit"></i> </button>' +
 	'<button class="options" onclick="deleteRawMaterial($(this).val())" value="' + RawMaterialDTO.rawMaterialID + '"> <i class="fas fa-trash-alt"></i> </button>' + '</td>' + '</tr>';
 }

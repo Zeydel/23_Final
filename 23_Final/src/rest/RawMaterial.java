@@ -13,6 +13,7 @@ import javax.ws.rs.core.MediaType;
 
 import dto.DALException;
 import dto.RawMaterialDTO;
+import dto.RecipeDTO;
 import dto.UserViewDTO;
 import dbdao.DbStorage;
 
@@ -25,12 +26,40 @@ public class RawMaterial {
 	@POST
 	public boolean createRawMaterial(RawMaterialDTO rawMaterial) throws DALException {
 		Storage.getRawMaterial().createRawMaterial(rawMaterial);
+		System.out.println("registration worked");
 		return true;
 	}
 	
+	@POST
+	@Path("/edit")
+	public void editRawMaterial(RawMaterialDTO rawMaterial) {
+		try {
+			//rawMaterial.setRawMaterialID(rawMaterial.getRawMaterialID());
+			Storage.getRawMaterial().updateRawMaterial(rawMaterial);
+		} catch (DALException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	@GET
-	public List<RawMaterialDTO> getUsers() throws DALException {
+	public List<RawMaterialDTO> getRawMaterials() throws DALException {
 		return Storage.getRawMaterial().getRawMaterialList();
+	}
+	
+	@GET
+	@Path("{rawMaterialID}")
+	public RawMaterialDTO getRecipe(@PathParam("rawMaterialID")String rawMaterialID){
+		try {
+			return Storage.getRawMaterial().getRawMaterial(Integer.parseInt(rawMaterialID));
+		} catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (DALException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 	
 	@DELETE
