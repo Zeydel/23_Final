@@ -14,7 +14,7 @@ import npdao.NpStorage;
 
 
 
-@Path("ProductBatchComponent")
+@Path("/ProductBatchComponent")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class ProductBatchComponent {

@@ -9,12 +9,6 @@ $(document).ready(function(){
 	
 	$('#editRawMaterialBatchForm').submit(function(){
 		event.preventDefault();
-		createRawMaterialBatch();
-		location.href='RawMaterialBatchViewTabel.html';
-	})
-	
-	$('#createRawMaterialBatchForm').submit(function(){
-		event.preventDefault();
 		updateRawMaterialBatch();
 		location.href='RawMaterialBatchViewTabel.html';
 	})
@@ -48,19 +42,3 @@ function updateRawMaterialBatch(){
 	})
 }
 
-function createRawMaterialBatch(){
-	event.preventDefault();
-	var data = $('#createRawMaterialBatchForm').serializeJSON();
-	
-	$.ajax({
-		url : '/23_Final/rest/rawMaterialBatch',
-		type : 'POST',
-		data: data,
-		dataType : 'json',
-		contentType : ("application/json"),
-		success : function(data){
-
-		}
-	})
-	location.href="rawMaterialBatchView.html"
-}

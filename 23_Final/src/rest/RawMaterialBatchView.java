@@ -18,7 +18,7 @@ import dbdao.DbStorage;
 import dto.DALException;
 import dto.RawMaterialBatchDTO;
 import dto.RawMaterialBatchViewDTO;
-import dto.RawMaterialDTO;
+
 
 	@Path("rawMaterialBatch")
 	@Consumes(MediaType.APPLICATION_JSON)

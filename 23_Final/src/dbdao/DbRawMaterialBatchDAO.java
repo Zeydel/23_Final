@@ -70,10 +70,9 @@ public class DbRawMaterialBatchDAO {
 //	}
 
 	public void createRawMaterialBatch(RawMaterialBatchDTO rawMaterialBatch) throws DALException {
-		Connector.doUpdate("INSERT INTO rawMaterialBatch(rawMaterialBatchID, rawMaterialID, amount) VALUES " +
-						"('" + rawMaterialBatch.getRawMaterialBatchID() + "', '" + rawMaterialBatch.getRawMaterialID() + "', '" + rawMaterialBatch.getAmount() +"')"
-				);
-
+		Connector.doUpdate("INSERT INTO rawMaterialBatch (rawMaterialBatchID, rawMaterialID, amount) VALUES ('" + rawMaterialBatch.getRawMaterialBatchID() + " ' ,' " + rawMaterialBatch.getRawMaterialID() + " ' ,' " + rawMaterialBatch.getAmount() + "')");
+		Connector.doUpdate("INSERT INTO rawMaterialBatch (rawMaterialBatchID, rawMaterialID, amount) VALUES (1234, 333, 999) ");
+		System.out.println("we got this far");
 	}
 
 	public void updateRawMaterialBatch(RawMaterialBatchDTO rawMaterialBatch) throws DALException {
