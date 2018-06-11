@@ -3,16 +3,14 @@ package dto;
 public class RawMaterialBatchViewDTO {
 	private int rawMaterialBatchID;
 	private int rawMaterialID;
+	private float amount;
 	private String rawMaterialName;
-	private int amount;
-	private String supplier;
 	
-	public RawMaterialBatchViewDTO(int rawMaterialBatchID, int rawMaterialID, String rawMaterialName, int amount, String supplier) {
+	public RawMaterialBatchViewDTO(int rawMaterialBatchID, int rawMaterialID, float amount, String rawMaterialName) {
 		this.rawMaterialBatchID = rawMaterialBatchID;
 		this.rawMaterialID = rawMaterialID;
-		this.rawMaterialName = rawMaterialName;
 		this.amount = amount;
-		this.supplier = supplier;
+		this.rawMaterialName = rawMaterialName;
 	}
 
 	public int getRawMaterialBatchID() {
@@ -39,7 +37,7 @@ public class RawMaterialBatchViewDTO {
 		this.rawMaterialName = rawMaterialName;
 	}
 
-	public int getAmount() {
+	public float getAmount() {
 		return amount;
 	}
 
@@ -47,11 +45,5 @@ public class RawMaterialBatchViewDTO {
 		this.amount = amount;
 	}
 
-	public String getSupplier() {
-		return supplier;
-	}
 
-	public void setSupplier(String supplier) {
-		this.supplier = supplier;
-	}
 }

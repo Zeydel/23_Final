@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"><meta charset="UTF-8">
+<meta charset="UTF-8">
+<title>Edit Raw Material Batch </title>
+<script src="../js/jquery-3.3.1.js"></script>
+<script src="../js/editRawMaterialBatchView.js"></script>
+<script type="text/javascript" src="../js/jquery.serialze-objects.js"></script>
+<script src="../js/header.js"></script>
+</head>
+<body>
+
+<div class="login">
+	<h1>Edit Raw Material Batch</h1>
+    <form id="editRawMaterialBatchForm">
+        <input type="number" id="rawMaterialBatchID" name="rawMaterialBatchID" placeholder="ID" readonly/>
+        <input type="number" id="rawMaterialID" name="rawMaterialID" placeholder="Raw Material ID" required="required" />
+    		<input type="text" id="rawMaterialName" name="rawMaterialName" placeholder="Raw Material Name" required="required" />
+    		<input type="number" id="amount" name="amount" placeholder="amount" required="required" />
+    		
+    		
+        <input type="submit" class="btn btn-primary btn-block btn-large" id="createRawMaterialButton" value="Edit Raw Material">
+    </form>
+</div>
+
+</body>
+</html>

@@ -4,33 +4,35 @@
 <link rel="stylesheet" type="text/css" href="../css/style.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"><meta charset="UTF-8">
 <meta charset="UTF-8">
-<title>Raw Material Batch Overivew</title>
+<title>Raw Material Overview</title>
 <script src="../js/jquery-3.3.1.js"></script>
-<script src="../js/RawMaterialBatchView.js"></script>
+<script src="../js/productBatchComponent.js"></script>
 <script type="text/javascript" src="../js/jquery.serialze-objects.js"></script>
 <script src="../js/header.js"></script>
+
 </head>
 <section>
-  <!--for demo wrap-->
-  <h1>Raw Material Batch Overivew</h1>
+  <h1>Raw Material Overview</h1>
   <div>
     <table>
       <thead>
         <tr>
+          <th>Product Batch ID</th>
           <th>Raw Material Batch ID</th>
-          <th>Raw Material ID</th>
-          <th>Raw Material Name</th>
-          <th>Amount</th>
+          <th>TARA</th>
+          <th>NETTO</th>
+          <th>User ID</th>
           <th></th>
         </tr>
       </thead>
-       <tbody id='rawMaterialBatchView'>
+       <tbody id='PBCTableBody'>
 
       </tbody>
     </table>
   </div>
 </section>
-
 <div class="centered-div">
-<button class="create-button"  onclick="location.href=''">Create Raw Material Batch</button>
+<button class="create-button"  onclick="location.href='registerRawMateria.html'">Create PBC</button>
 </div>
+</html>
+

@@ -11,6 +11,7 @@ public class DbStorage {
 	DbProductBatchDAO ProductBatch;
 	DbProductBatchViewDAO ProductBatchView;
 	DbRawMaterialDAO RawMaterial;
+	DbRawMaterialBatchDAO RawMaterialBatch;
 
 
 
@@ -23,6 +24,7 @@ public class DbStorage {
 		ProductBatch = new DbProductBatchDAO();
 		ProductBatchView = new DbProductBatchViewDAO();
 		RawMaterial = new DbRawMaterialDAO();
+		RawMaterialBatch = new DbRawMaterialBatchDAO();
 		
 	}
 
@@ -90,6 +92,15 @@ public class DbStorage {
 	public void setRawMaterial(DbRawMaterialDAO rawMaterial) {
 		RawMaterial = rawMaterial;
 	}
+	
+	public DbRawMaterialBatchDAO getRawMaterialBatch() {
+		return RawMaterialBatch;
+	}
+	
+	public void setRawMaterialBatch(DbRawMaterialBatchDAO rawMaterialBatch) {
+		RawMaterialBatch = rawMaterialBatch;
+	}
+	
 	
 }
 
