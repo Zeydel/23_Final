@@ -12,7 +12,8 @@ public class DbStorage {
 	DbProductBatchViewDAO ProductBatchView;
 	DbRawMaterialDAO RawMaterial;
 	DbRawMaterialBatchDAO RawMaterialBatch;
-
+	DbRecipeComponentDAO RecipeComponent;
+	DbProductBatchComponentDAO ProductBatchComponent;
 
 
 	public DbStorage() {
@@ -25,6 +26,8 @@ public class DbStorage {
 		ProductBatchView = new DbProductBatchViewDAO();
 		RawMaterial = new DbRawMaterialDAO();
 		RawMaterialBatch = new DbRawMaterialBatchDAO();
+		RecipeComponent = new DbRecipeComponentDAO();
+		ProductBatchComponent = new DbProductBatchComponentDAO();
 		
 	}
 
@@ -100,7 +103,22 @@ public class DbStorage {
 	public void setRawMaterialBatch(DbRawMaterialBatchDAO rawMaterialBatch) {
 		RawMaterialBatch = rawMaterialBatch;
 	}
-	
+
+	public DbRecipeComponentDAO getRecipeComponent() {
+		return RecipeComponent;
+	}
+
+	public void setRecipeComponent(DbRecipeComponentDAO recipeComponent) {
+		RecipeComponent = recipeComponent;
+	}
+
+	public DbProductBatchComponentDAO getProductBatchComponent() {
+		return ProductBatchComponent;
+	}
+
+	public void setProductBatchComponent(DbProductBatchComponentDAO productBatchComponent) {
+		ProductBatchComponent = productBatchComponent;
+	}
 	
 }
 
