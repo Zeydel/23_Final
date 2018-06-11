@@ -31,6 +31,15 @@ public class DbRawMaterialBatchDAO {
 		}
 		catch (SQLException e) {throw new DALException(null, e); }
 	}
+	
+	public RawMaterialBatchViewDTO getRawMaterialBatchView(int rawMaterialBatchID) throws DALException {
+		ResultSet rs = Connector.doQuery("SELECT * FROM rawmaterialbatchview WHERE rawMaterialBatchID = " + rawMaterialBatchID);
+		try {
+			if (!rs.first()) throw new DALException("Rawmaterialbatch with ID" + rawMaterialBatchID + " not found.");
+			return new RawMaterialBatchViewDTO (rs.getInt("rawMaterialBatchID"), rs.getInt("rawMaterialID"), rs.getFloat("amount"), rs.getString("rawMaterialName"));
+		}
+		catch (SQLException e) {throw new DALException(null, e); }
+	}
 
 	public List<RawMaterialBatchViewDTO> getRawMaterialBatchList() throws DALException {
 		List<RawMaterialBatchViewDTO> list = new ArrayList<RawMaterialBatchViewDTO>();
@@ -61,16 +70,15 @@ public class DbRawMaterialBatchDAO {
 //	}
 
 	public void createRawMaterialBatch(RawMaterialBatchDTO rawMaterialBatch) throws DALException {
-		Connector.doUpdate(
-				"INSERT INTO raavarebatch(rawMaterialBatchID, rawMaterialID, amount) VALUES " +
-						"(" + rawMaterialBatch.getRawMaterialBatchID() + ", '" + rawMaterialBatch.getRawMaterialID() + "', '" + rawMaterialBatch.getAmount() +"')"
+		Connector.doUpdate("INSERT INTO rawMaterialBatch(rawMaterialBatchID, rawMaterialID, amount) VALUES " +
+						"('" + rawMaterialBatch.getRawMaterialBatchID() + "', '" + rawMaterialBatch.getRawMaterialID() + "', '" + rawMaterialBatch.getAmount() +"')"
 				);
 
 	}
 
 	public void updateRawMaterialBatch(RawMaterialBatchDTO rawMaterialBatch) throws DALException {
 		Connector.doUpdate(
-				"UPDATE raavarebatch SET rawMaterialID = " + rawMaterialBatch.getRawMaterialID() + 
+				"UPDATE rawMaterialBatch SET rawMaterialID = " + rawMaterialBatch.getRawMaterialID() + 
 				", amount = " + rawMaterialBatch.getAmount() + " WHERE rawMaterialBatchID = " + rawMaterialBatch.getRawMaterialBatchID()
 				);
 

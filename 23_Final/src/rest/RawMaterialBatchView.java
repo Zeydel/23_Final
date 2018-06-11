@@ -16,7 +16,9 @@ import javax.ws.rs.core.MediaType;
 
 import dbdao.DbStorage;
 import dto.DALException;
+import dto.RawMaterialBatchDTO;
 import dto.RawMaterialBatchViewDTO;
+import dto.RawMaterialDTO;
 
 	@Path("rawMaterialBatch")
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -25,8 +27,20 @@ public class RawMaterialBatchView {
 		static DbStorage Storage = new DbStorage();
 		
 		@POST
-		public boolean createRawMaterialBatch(RawMaterialBatchViewDTO RawMaterialBatchView) {
-			return true;
+		public void createRawMaterialBatch(RawMaterialBatchDTO rawMaterialBatch) throws DALException {
+			Storage.getRawMaterialBatch().createRawMaterialBatch(rawMaterialBatch);
+		}
+		
+		@POST
+		@Path("/edit")
+		public void editRawMaterialBatch(RawMaterialBatchDTO rawMaterialBatch) {
+			try {
+				//rawMaterial.setRawMaterialID(rawMaterial.getRawMaterialID());
+				Storage.getRawMaterialBatch().updateRawMaterialBatch(rawMaterialBatch);
+			} catch (DALException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		
 		@GET
@@ -34,6 +48,20 @@ public class RawMaterialBatchView {
 			return Storage.getRawMaterialBatch().getRawMaterialBatchList();
 		}
 		
+		@GET
+		@Path("{rawMaterialBatchID}")
+		public RawMaterialBatchViewDTO getRawMaterialBatch(@PathParam("rawMaterialBatchID")String rawMaterialBatchID){
+			try {
+				return Storage.getRawMaterialBatch().getRawMaterialBatchView(Integer.parseInt(rawMaterialBatchID));
+			} catch (NumberFormatException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (DALException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return null;
+		}
 		
 		@DELETE
 		@Path("{rawMaterialBatchID}")

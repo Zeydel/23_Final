@@ -1,6 +1,8 @@
 $(document).ready(function(){
 	loadRawMaterialBatchViews();
 	
+	
+	
 })
 
 	function loadRawMaterialBatchViews(){
@@ -21,7 +23,7 @@ $(document).ready(function(){
 				'<td>' + RawMaterialBatchViewDTO.rawMaterialID + '</td>' +
 				'<td>' + RawMaterialBatchViewDTO.rawMaterialName + '</td>' +
 				'<td>' + RawMaterialBatchViewDTO.amount + '</td>' + 
-				'<td>' + '<button class="options" id="editRecipeButton" onClick="location.href=\'editRecipeForm.html?id=' + RawMaterialBatchViewDTO.rawMaterialBatchID +'\'' + '"> <i class="fas fa-edit"></i> </button>' +
+				'<td>' + '<button class="options" id="editRecipeButton" onClick="location.href=\'editRawMaterialBatch.html?id=' + RawMaterialBatchViewDTO.rawMaterialBatchID +'\'' + '"> <i class="fas fa-edit"></i> </button>' +
 				'<button class="options" onclick="deleteRawMaterialBatch($(this).val())" value="' + RawMaterialBatchViewDTO.rawMaterialBatchID + '"> <i class="fas fa-trash-alt"></i> </button>' + '</td>' + '</tr>';
 
 	}
@@ -39,3 +41,6 @@ $(document).ready(function(){
 			}
 		})
 	}
+	
+	
+	

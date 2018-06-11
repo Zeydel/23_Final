@@ -5,32 +5,40 @@ $(document).ready(function(){
 	var URL2 = new URL(urr);
 	var id = URL2.searchParams.get("id");
 	console.log(id);
-	getRawMaterial(id);
+	getRawMaterialBatch(id);
 	
 	$('#editRawMaterialBatchForm').submit(function(){
 		event.preventDefault();
-		updateRawMaterial();
-		location.href='rawMaterialBatchViewTable.html';
+		createRawMaterialBatch();
+		location.href='RawMaterialBatchViewTabel.html';
 	})
+	
+	$('#createRawMaterialBatchForm').submit(function(){
+		event.preventDefault();
+		updateRawMaterialBatch();
+		location.href='RawMaterialBatchViewTabel.html';
+	})
+	
 })
 
-function getRawMaterial(rawMaterialID){
+function getRawMaterialBatch(rawMaterialBatchID){
 		$.ajax({
-			url : '/23_Final/rest/rawmaterial/' + rawMaterialID,
+			url : '/23_Final/rest/rawMaterialBatch/' + rawMaterialBatchID,
 			type : 'GET',
 			dataType : 'json',
 			success : function(data){
+				$('#rawMaterialBatchID').val(data.rawMaterialBatchID);
 				$('#rawMaterialID').val(data.rawMaterialID);
 				$('#rawMaterialName').val(data.rawMaterialName);
-				$('#supplier').val(data.supplier);
+				$('#amount').val(data.amount);
 			}
 		})
 	}
 
-function updateRawMaterial(){
-	var data = $('#editRawMaterialForm').serializeJSON();
+function updateRawMaterialBatch(){
+	var data = $('#editRawMaterialBatchForm').serializeJSON();
 	$.ajax({
-		url : '/23_Final/rest/rawmaterial/edit',
+		url : '/23_Final/rest/rawMaterialBatch/edit',
 		type : 'POST',
 		data : data,
 		datatype : 'json',
@@ -38,4 +46,21 @@ function updateRawMaterial(){
 		success : function(){
 		}
 	})
+}
+
+function createRawMaterialBatch(){
+	event.preventDefault();
+	var data = $('#createRawMaterialBatchForm').serializeJSON();
+	
+	$.ajax({
+		url : '/23_Final/rest/rawMaterialBatch',
+		type : 'POST',
+		data: data,
+		dataType : 'json',
+		contentType : ("application/json"),
+		success : function(data){
+
+		}
+	})
+	location.href="rawMaterialBatchView.html"
 }
