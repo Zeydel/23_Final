@@ -3,13 +3,17 @@
 <head>
 <link rel="stylesheet" type="text/css" href="../css/style.css">
 <meta charset="UTF-8">
-<title>Gruppe 23</title>
+<script src="../js/jquery-3.3.1.js"></script>
+<script src="../js/source.js"></script>
+<script src="../js/login.js"></script>
+<script type="text/javascript" src="../js/jquery.serialze-objects.js"></script>
+<title>Log In</title>
 </head>
 
 <div class="login">
 	<h1>Login</h1>
-    <form action="login">
-    	<input type="text" name="username" placeholder="Username" required="required" />
+    <form id="loginContainer">
+    	<input type="number" name="userID" placeholder="userID" required="required" id="userID" />
         <input type="password" name="p" placeholder="Password" required="required" />
         <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
     </form>
