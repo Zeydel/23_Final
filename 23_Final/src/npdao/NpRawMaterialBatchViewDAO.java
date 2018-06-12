@@ -10,7 +10,7 @@ public class NpRawMaterialBatchViewDAO {
 	
 	ArrayList<RawMaterialBatchViewDTO> RawMaterialViews = new ArrayList<RawMaterialBatchViewDTO>();
 	public NpRawMaterialBatchViewDAO() {
-		RawMaterialViews.add(new RawMaterialBatchViewDTO(1, 2, "Banan", 3, "hej"));
+		RawMaterialViews.add(new RawMaterialBatchViewDTO(1, 2, 3, "hej"));
 	}
 	
 	public RawMaterialBatchViewDTO getRawMaterialView(int rawMaterialBatchID, int rawMaterialID) throws DALException {

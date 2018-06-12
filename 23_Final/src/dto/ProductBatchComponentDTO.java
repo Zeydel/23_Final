@@ -28,14 +28,6 @@ public class ProductBatchComponentDTO {
 		this.productbatchID = productbatchID;
 	}
 
-	public int getRawMaterialBatchID() {
-		return rawMaterialBatchID;
-	}
-
-	public void setRawMaterialBatchID(int rawMaterialBatchID) {
-		this.rawMaterialBatchID = rawMaterialBatchID;
-	}
-
 	public float getTara() {
 		return tara;
 	}
@@ -59,5 +51,14 @@ public class ProductBatchComponentDTO {
 	public void setUserID(int userID) {
 		this.userID = userID;
 	}
+
+	public int getRawMaterialBatchID() {
+		return rawMaterialBatchID;
+	}
+
+	public void setRawMaterialBatchID(int rawMaterialBatchID) {
+		this.rawMaterialBatchID = rawMaterialBatchID;
+	}
+	
 
 }

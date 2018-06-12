@@ -8,6 +8,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import dbdao.DbStorage;
+import dto.DALException;
 import dto.ProductBatchComponentDTO;
 import npdao.NpStorage;
 
@@ -18,7 +20,7 @@ import npdao.NpStorage;
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class ProductBatchComponent {
-	static NpStorage Storage = new NpStorage();
+	static DbStorage Storage = new DbStorage();
 	
 	@POST
 	public boolean createProductBatchComponent() {
@@ -27,6 +29,12 @@ public class ProductBatchComponent {
 	
 	@GET
 	public List<ProductBatchComponentDTO> getProductBatchComponent() {
-		return Storage.getProductBatchComponent().getProductBatchKomponentList();
+		try {
+			return Storage.getProductBatchComponent().getProductBatchKomponentList();
+		} catch (DALException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 }
