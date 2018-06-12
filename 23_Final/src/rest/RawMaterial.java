@@ -26,7 +26,6 @@ public class RawMaterial {
 	@POST
 	public boolean createRawMaterial(RawMaterialDTO rawMaterial) throws DALException {
 		Storage.getRawMaterial().createRawMaterial(rawMaterial);
-		System.out.println("registration worked");
 		return true;
 	}
 	

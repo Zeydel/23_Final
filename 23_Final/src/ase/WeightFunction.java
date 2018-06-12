@@ -15,17 +15,13 @@ public class WeightFunction {
 	PrintWriter out = null;
 	BufferedReader in = null;
 
-	DbStorage Storage = new DbStorage();
 	public WeightFunction() {
 		try {
 			this.pingSocket = new Socket("169.254.2.2", 8000);
-			System.out.println("step one");
 			this.out = new PrintWriter(pingSocket.getOutputStream(), true);
-			System.out.println("step two");
 			this.in = new BufferedReader(new InputStreamReader(pingSocket.getInputStream()));
-			System.out.println("step three");
 		} catch(IOException e) {
-			System.out.println("fail");
+			System.out.println("Connection Failed");
 		}
 	}
 	// S crlf
@@ -75,7 +71,7 @@ public class WeightFunction {
 	}
 
 	//P111 "text" crlf
-	public void writeLongStringInDisplay(String text, int seconds) {
+	public void writeLongStringInDisplay(String text) {
 		out.println("P111 \"" + text + "\"");
 		try {
 			in.readLine();
@@ -92,18 +88,28 @@ public class WeightFunction {
 		while(!in.ready()) {
 			
 		}
-		
 		in.skip(6);
 		String str = in.readLine();
 		return str;
 	}
-
-	public void resetInputStream() {
-		String str = null;
+	
+	public void waitForInput() {
 		try {
-			while(str != null) {
-				str = in.readLine();
-				System.out.println(str);
+			while(!in.ready()) {
+				
+			};
+		in.readLine();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public void clearInputStream() {
+		try {
+			while(in.ready()) {
+				in.readLine();
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
