@@ -1,8 +1,5 @@
 package dbdao;
 
-
-// erstat konstanterne nedenfor
-
 public abstract class Constant
 {
 	public static final String

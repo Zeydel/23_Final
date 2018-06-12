@@ -21,7 +21,6 @@ public class WeightController {
 		UserViewDTO user = null;
 
 		try {
-			//Weight.clearInputStream();
 			String usrID = Weight.getStringFromDisplay("Enter user ID");
 			while(user == null) {
 				try {
