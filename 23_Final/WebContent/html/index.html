@@ -4,7 +4,6 @@
 <link rel="stylesheet" type="text/css" href="../css/style.css">
 <meta charset="UTF-8">
 <script src="../js/jquery-3.3.1.js"></script>
-<script src="../js/source.js"></script>
 <script src="../js/login.js"></script>
 <script type="text/javascript" src="../js/jquery.serialze-objects.js"></script>
 <title>Log In</title>
@@ -13,7 +12,8 @@
 <div class="login">
 	<h1>Login</h1>
     <form id="loginContainer">
-    	<input type="number" name="userID" placeholder="userID" required="required" id="userID" />
+    		<div id="message"></div>
+    		<input type="number" name="userID" placeholder="userID" required="required" id="userID" />
         <input type="password" name="p" placeholder="Password" required="required" />
         <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
     </form>

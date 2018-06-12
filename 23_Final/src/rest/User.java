@@ -47,6 +47,18 @@ public class User {
 	}
 	
 	@POST
+	@Path("/validate")
+	public UserViewDTO validateUser(int userID) {
+		try {
+			return Storage.getUserView().getUser(userID);
+		} catch (DALException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	@POST
 	@Path("/edit")
 	public void editUser(UserViewDTO user) {
 		try {

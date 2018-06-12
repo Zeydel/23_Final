@@ -1,8 +1,23 @@
 $(document).ready(function(){
 
 	$('#loginContainer').submit(function(){
-		event.preventDefault();
-		location.href="menu.html?id" + $("#userID").val();
+		alert("test")
+;
+		 var url = "/23_Final/rest/users/validate"; // the script where you handle the form input.
+
+		    $.ajax({
+		           type: "POST",
+		           url: url,
+		           data: $("#loginContainer").serialize(), // serializes the form's elements.
+		           success: function(data)
+		           {
+		               alert(data.userID); // show response from the php script.
+		           }
+		         });
+
+		    e.preventDefault(); // avoid to execute the actual submit of the form.
+		
+		
 	})
 
 	
@@ -10,12 +25,5 @@ $(document).ready(function(){
 
 
 function getUser(userID){
-		$.ajax({
-			url : '/23_Final/rest/users/' + userID,
-			type : 'GET',
-			dataType : 'json',
-			success : function(data){
-			}
-		})
-		location.href="menu.html"
-	}
+	
+}
