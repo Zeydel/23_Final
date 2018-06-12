@@ -3,6 +3,7 @@ package dbdao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import dto.DALException;
@@ -43,20 +44,7 @@ public class DbUserViewDAO {
 	}
 	
 	public ArrayList<String> stringToList(String string){
-		System.out.println(string);
-		ArrayList<String> roles = new ArrayList<String>();
-		String substring =  "";
-		for(int i = 0; i < string.length(); i++) {
-			if(string.charAt(i) == ',') {
-				roles.add(substring);
-				substring = "";
-			}
-			else {
-				substring += string.charAt(i);
-			}
-
-				roles.add(substring);
-			}
+		ArrayList<String> roles = new ArrayList<String>(Arrays.asList(string));
 		return roles;
 	}
 
