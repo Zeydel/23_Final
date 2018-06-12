@@ -44,7 +44,7 @@ public class DbUserViewDAO {
 	}
 
 	public ArrayList<String> stringToList(String string){
-		ArrayList<String> roles = new ArrayList<String>(Arrays.asList(string));
+		ArrayList<String> roles = new ArrayList<String>(Arrays.asList(string.split(",")));
 		return roles;
 	}
 }

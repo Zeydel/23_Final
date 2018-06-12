@@ -15,10 +15,13 @@ function getUser(userID){
 			type : 'GET',
 			dataType : 'json',
 			success : function(data){
-				if(data)
+				if(data == null){
+					alert("user not found");
+				}else{
+					setIdCookie(data.userID);
+					location.href = "menu.html"
+				}
 				}
 		})
-
-		
 }
 	

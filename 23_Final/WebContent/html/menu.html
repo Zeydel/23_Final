@@ -4,6 +4,10 @@
 <link rel="stylesheet" type="text/css" href="../css/style.css">
 <meta charset="UTF-8">
 <title>User Page</title>
+<script type="text/javascript" src="../js/jquery.serialze-objects.js"></script>
+<script src="../js/jquery-3.3.1.js"></script>
+<script src="../js/cookie.js"></script>
+<script src="../js/menu.js"></script>
 </head>
 <style>
 
@@ -17,12 +21,12 @@
     <table class="overview">
       <thead id="menu">
         <tr>
-          <th><button onclick="location.href='user-tabel.html'" type="button">User Overview</button></th>
-          <th><button onclick="location.href='recipeTable.html'" type="button">Recipes</button></th>
-          <th><button onclick="location.href='ProductBatchTabel.html'" type="button">Product Batches</button></th>
-          <th><button onclick="location.href='rawMaterialTable.html'" type="button">Raw Materials</button></th>
-          <th><button onclick="location.href='productBatchComponentTable.html'" type="button">Product Batch Components</button></th>
-          <th><button onclick="location.href='RawMaterialBatchViewTabel.html'" type="button">Raw Material Batches</button></th>
+          <th id='userTable' hidden><button onclick="location.href='user-tabel.html'" type="button">User Overview</button></th>
+          <th id='recipeTable' hidden><button onclick="location.href='recipeTable.html'" type="button" >Recipes</button></th>
+          <th id='productBatchTable' hidden><button onclick="location.href='ProductBatchTabel.html'" type="button" id='productBatchTable'>Product Batches</button></th>
+          <th id='rawMaterialTable' hidden><button onclick="location.href='rawMaterialTable.html'" type="button" >Raw Materials</button></th>
+          <th id='productBatchComponentTable' hidden><button onclick="location.href='productBatchComponentTable.html'" type="button" >Product Batch Components</button></th>
+          <th id='rawMateriablBatchTable' hidden><button onclick="location.href='RawMaterialBatchViewTabel.html'" type="button" >Raw Material Batches</button></th>
           
         </tr>
       </thead>
