@@ -82,7 +82,8 @@ public class User {
 	public UserViewDTO getUser(@PathParam("userID")String userID) {
 		try {
 			System.out.println("tes 3432t");
-			return Storage.getUserView().getUser(Integer.parseInt(userID));
+			UserViewDTO user = Storage.getUserView().getUser(Integer.parseInt(userID));
+			return user;
 		} catch (NumberFormatException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
