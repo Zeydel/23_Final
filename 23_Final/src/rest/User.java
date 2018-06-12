@@ -46,6 +46,8 @@ public class User {
 		return true;
 	}
 	
+	
+	
 	@POST
 	@Path("/edit")
 	public void editUser(UserViewDTO user) {
@@ -73,11 +75,15 @@ public class User {
 		return null;
 	}
 	
+	
+	
 	@GET
 	@Path("{userID}")
 	public UserViewDTO getUser(@PathParam("userID")String userID) {
 		try {
-			return Storage.getUserView().getUser(Integer.parseInt(userID));
+			System.out.println("tes 3432t");
+			UserViewDTO user = Storage.getUserView().getUser(Integer.parseInt(userID));
+			return user;
 		} catch (NumberFormatException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

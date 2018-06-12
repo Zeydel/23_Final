@@ -2,10 +2,10 @@ $(document).ready(function(){
 
 	$('#loginContainer').submit(function(){
 		event.preventDefault();
-		location.href="menu.html?id" + $("#userID").val();
-	})
+		var userID = getUser(document.getElementById("userID").value)
+		
 
-	
+	})
 })
 
 
@@ -15,7 +15,10 @@ function getUser(userID){
 			type : 'GET',
 			dataType : 'json',
 			success : function(data){
-			}
+				if(data)
+				}
 		})
-		location.href="menu.html"
-	}
+
+		
+}
+	

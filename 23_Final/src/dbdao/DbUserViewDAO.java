@@ -3,13 +3,14 @@ package dbdao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import dto.DALException;
 import dto.UserViewDTO;
 
 public class DbUserViewDAO {
-	
+
 	public DbUserViewDAO() {
 		try {
 			Connector Connector = new Connector();
@@ -21,11 +22,11 @@ public class DbUserViewDAO {
 
 	public UserViewDTO getUser(int userID) throws DALException {
 		ResultSet rs = Connector.doQuery("SELECT * FROM userview WHERE userID = " + userID);
-	    try {
-	    	if (!rs.first()) throw new DALException("The user with ID " + userID + " could not be found");
-	    	return new UserViewDTO (rs.getInt("userID"), rs.getString("userName"), rs.getString("initials"), rs.getString("password"), rs.getString("cpr"), stringToList(rs.getString("roles")) );
-	    }
-	    catch (SQLException e) {throw new DALException("Recipe with recipe ID" + userID + " Not found"); }
+		try {
+			if (!rs.first()) throw new DALException("The user with ID " + userID + " could not be found");
+			return new UserViewDTO (rs.getInt("userID"), rs.getString("userName"), rs.getString("initials"), rs.getString("password"), rs.getString("cpr"), stringToList(rs.getString("roles")) );
+		}
+		catch (SQLException e) {throw new DALException("Recipe with recipe ID" + userID + " Not found"); }
 	}
 
 	public List<UserViewDTO> getUserList() throws DALException {
@@ -41,23 +42,10 @@ public class DbUserViewDAO {
 		catch (SQLException e) { throw new DALException("No list found", e); }
 		return list;
 	}
-	
-	public ArrayList<String> stringToList(String string){
-		System.out.println(string);
-		ArrayList<String> roles = new ArrayList<String>();
-		String substring =  "";
-		for(int i = 0; i < string.length(); i++) {
-			if(string.charAt(i) == ',') {
-				roles.add(substring);
-				substring = "";
-			}
-			else {
-				substring += string.charAt(i);
-			}
 
-				roles.add(substring);
-			}
+	public ArrayList<String> stringToList(String string){
+		ArrayList<String> roles = new ArrayList<String>(Arrays.asList(string));
 		return roles;
 	}
-
 }
+

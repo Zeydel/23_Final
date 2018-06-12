@@ -21,6 +21,7 @@ public class WeightController {
 		UserViewDTO user = null;
 
 		try {
+			//Weight.clearInputStream();
 			String usrID = Weight.getStringFromDisplay("Enter user ID");
 			while(user == null) {
 				try {
@@ -95,7 +96,8 @@ public class WeightController {
 				}
 			}
 
-			for(int i = 0; i < recipeComponents.size(); i++) {
+			int cur = -1;
+			while(recipeComponents.size() != 0) {
 				Weight.getStringFromDisplay("Place");
 				int tare = Weight.WeightTare();
 
@@ -103,8 +105,8 @@ public class WeightController {
 				RawMaterialBatch = null;
 				RawMaterial = null;
 
-				while(true) {
-					while(RawMaterialBatch == null) {
+				while(cur == -1) {
+					while(RawMaterial == null) {
 						try {
 							RawMaterialBatch = Storage.getRawMaterialBatch().getRawMaterialBatch(Integer.parseInt(rbID.replaceAll("[\\D]", "")));
 							RawMaterial = Storage.getRawMaterial().getRawMaterial(RawMaterialBatch.getRawMaterialID());
@@ -114,39 +116,54 @@ public class WeightController {
 							rbID = Weight.getStringFromDisplay("Batch not found. Try again");
 						}
 					}
-					int cur = 0;
+
 					for(int j = 0; j < recipeComponents.size(); j++) {
-						if(recipeComponents.get(i).getRawMaterialID() == RawMaterial.getRawMaterialID()) {
-							Weight.writeLongStringInDisplay("Weighing " + RawMaterial.getRawMaterialName());
+						if(recipeComponents.get(j).getRawMaterialID() == RawMaterial.getRawMaterialID()) {
 							cur = j;
+							System.out.println("found");
 							break;
 						}
+						Weight.writeLongStringInDisplay("Rawmaterial already weighed");
 					}
-					
+				}
+				ProductBatchComponentDTO ProductBatchComponent = null;
+				while(ProductBatchComponent == null) {
+					Weight.writeLongStringInDisplay("Weighing " + RawMaterial.getRawMaterialName());
 					Weight.waitForInput();
-					float weight = Weight.getWeight()/1000;
-					float tara = tare/1000;
-					
+					float weight = Weight.getWeight()/1000.0f;
+					float tara = tare/1000.0f;
+
 					float tolareance = recipeComponents.get(cur).getTolerance();
 					float desiredWeight = recipeComponents.get(cur).getNom_netto();
-					
+
 					float min = desiredWeight - (tolareance * desiredWeight);
 					float max = desiredWeight + (tolareance * desiredWeight);
-					
-					if(desiredWeight > min && desiredWeight < max) {
-						ProductBatchComponentDTO ProductBatchComponent = new ProductBatchComponentDTO(ProductBatch.getProductBatchID(), RawMaterialBatch.getRawMaterialBatchID(), tara, weight, user.getUserID());
+
+					if(weight > min && weight < max) {
+						ProductBatchComponent = new ProductBatchComponentDTO(ProductBatch.getProductBatchID(), RawMaterialBatch.getRawMaterialBatchID(), tara, weight, user.getUserID());
 						try {
 							Storage.getProductBatchComponent().createProductBatchComponent(ProductBatchComponent);
+							recipeComponents.remove(cur);
 						} catch (DALException e) {
 							Weight.writeLongStringInDisplay("An error happened");
 						}
 					} else {
 						Weight.writeLongStringInDisplay("Weight outside of tolerance. Try again");
-						i--;
+						Weight.waitForInput();
 					}
 				}
 
 			}
+			ProductBatch.setStatus(3);
+			try {
+				Storage.getProductBatch().updateProductBatch(ProductBatch);
+			} catch (DALException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			Weight.writeLongStringInDisplay("All components weighed");
+			Weight.waitForInput();
+			Weight.writeLongStringInDisplay("");
 
 
 		} catch (IOException e) {
