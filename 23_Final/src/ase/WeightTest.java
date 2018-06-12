@@ -7,30 +7,14 @@ public class WeightTest {
 
 
 	public static void main(String[] args) {
-		Scanner in = new Scanner(System.in);
-		WeightFunction weight = new WeightFunction();
-		weight.clearInputStream();
-		weight.waitForInput();
-		System.out.println(weight.getWeight());
-
-		weight.writeInDisplay("12345678901234567890", 10);
-		System.out.println(weight.getWeight());
+		WeightFunction Weight = new WeightFunction();
+		//System.out.println(Weight.getWeight());
 		try {
-			weight.WeightTare();
+			System.out.println(Weight.getStringFromDisplay("TEST"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println(weight.getWeight());
-		weight.writeInDisplay("test", 1);
-		weight.returnToWeight();
-		//weight.writeLongStringInDisplay("LAAAAAAAANG TEXT", 1);
-		System.out.println("hej");
-		try {
-			System.out.println(weight.getStringFromDisplay("Tryk på noget"));
-		} catch (IOException e) {
-			System.out.println("IO");
-			e.printStackTrace();
-		}
+		Weight.clearInputStream();
 	}
 }

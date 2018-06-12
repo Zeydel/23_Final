@@ -2,7 +2,6 @@
 package dbdao;
 
 public class DbStorage {
-	
 	DbRecipeDAO Recipe;
 	DbUserDAO User;
 	DbUserViewDAO UserView;

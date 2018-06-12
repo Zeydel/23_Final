@@ -12,7 +12,6 @@ import dto.RawMaterialDTO;
 import dto.RecipeComponentDTO;
 import dto.RecipeDTO;
 import dto.UserViewDTO;
-import rest.Recipe;
 
 public class WeightController {
 
@@ -22,7 +21,6 @@ public class WeightController {
 		UserViewDTO user = null;
 
 		try {
-			Weight.clearInputStream();
 			String usrID = Weight.getStringFromDisplay("Enter user ID");
 			while(user == null) {
 				try {
@@ -33,9 +31,9 @@ public class WeightController {
 					usrID = Weight.getStringFromDisplay("User not found. Try again");
 				}
 			}
-			Weight.getStringFromDisplay("Welcome " + user.getUserName() + "");
-
+			Weight.getStringFromDisplay("Welcome " + user.getUserName());
 			String pbID = Weight.getStringFromDisplay("Enter ProductBatch ID");
+			System.out.println(pbID);
 			ProductBatchDTO ProductBatch = null;
 			while(ProductBatch == null) {
 				try {
@@ -47,15 +45,18 @@ public class WeightController {
 				}
 			}
 			RecipeDTO recipe = null;
+			//Weight.writeLongStringInDisplay("DOING THINGS");
 			try {
 				recipe = Storage.getRecipe().getRecipe(ProductBatch.getRecipeID());
 			} catch (DALException e) {
 				Weight.writeInDisplay("NO RECIPE", 10);				
 			}
-			Weight.getStringFromDisplay("Current Recipe: " + recipe.getRecipeName());
-			Weight.getStringFromDisplay("Please remove everything from the weight and press OK");
+			//Weight.clearInputStream();
+			Weight.writeLongStringInDisplay("Please clear weight");
+			Weight.waitForInput();
+			Weight.writeLongStringInDisplay("Current Recipe: " + recipe.getRecipeName());
 			Weight.WeightTare();
-			ProductBatch.setStatus(1);
+			ProductBatch.setStatus(2);
 			try {
 				Storage.getProductBatch().updateProductBatch(ProductBatch);
 			} catch (DALException e) {
@@ -86,7 +87,7 @@ public class WeightController {
 						e.printStackTrace();
 					}
 					for(int j = 0; j < recipeComponents.size(); j++) {
-						if(RawMaterial.getRawMaterialID() == recipeComponents.get(i).getRawMaterialID()) {
+						if(RawMaterial.getRawMaterialID() == recipeComponents.get(j).getRawMaterialID()) {
 							recipeComponents.remove(j);
 							break;
 						}
@@ -95,10 +96,10 @@ public class WeightController {
 			}
 
 			for(int i = 0; i < recipeComponents.size(); i++) {
-				Weight.getStringFromDisplay("Please place container on weight");
+				Weight.getStringFromDisplay("Place");
 				int tare = Weight.WeightTare();
 
-				String rbID = Weight.getStringFromDisplay("Enter Rawmaterialbatch ID");
+				String rbID = Weight.getStringFromDisplay("Enter rbid");
 				RawMaterialBatch = null;
 				RawMaterial = null;
 
@@ -140,7 +141,7 @@ public class WeightController {
 							Weight.writeLongStringInDisplay("An error happened");
 						}
 					} else {
-						Weight.getStringFromDisplay("Weight outside of tolerance. Try again");
+						Weight.writeLongStringInDisplay("Weight outside of tolerance. Try again");
 						i--;
 					}
 				}

@@ -90,4 +90,6 @@ public class DbRawMaterialBatchDAO {
 		} catch(DALException e) {throw new DALException("Rawmaterialbatch with ID" + rawMaterialBatchID + " not found.");}
 
 	}
+	
+	
 }

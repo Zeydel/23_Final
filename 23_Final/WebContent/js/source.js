@@ -91,17 +91,6 @@ $(document).ready(function(){
 		})
 	}
 	
-	function updateUser(){
-		var data = $('#editUserForm').serializeJSON();
-		$.ajax({
-			url : '/23_Final/rest/users/edit',
-			type : 'POST',
-			data : data,
-			datatype : 'json',
-			contentType : ("application/json"),
-			success : function(){
-			}
-		})
-	}
+
 	
     
