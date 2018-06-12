@@ -53,7 +53,7 @@ public class Recipe {
 	
 	@DELETE
 	@Path("{recipeID}")
-	public void deleteUser(@PathParam("recipeID")String recipeID) {
+	public void deleteRecipe(@PathParam("recipeID")String recipeID) {
 		try {
 			Storage.getRecipe().deleteRecipe(Integer.parseInt(recipeID));
 		} catch (DALException e) {

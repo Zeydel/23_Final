@@ -53,10 +53,10 @@ public class DbRecipeComponentDAO {
 		try {
 		Connector.doUpdate(
 				"INSERT INTO recipeComponent(recipeID, rawMaterialID, nom_netto, tolerance) VALUES " +
-				"(" + recipeComponent.getRecipeID() + ", '" + recipeComponent.getRawMaterialID()+ "', '" + recipeComponent.getNom_netto() + "', '" + 
-				recipeComponent.getTolerance()+ "')"
+				"('" + recipeComponent.getRecipeID() + "', '" + recipeComponent.getRawMaterialID() + "', '" + recipeComponent.getNom_netto() + "', '" + 
+				recipeComponent.getTolerance() + "')"
 			);
-		} catch (DALException e) {throw new DALException("Recipe not created");}
+		} catch (DALException e) {throw new DALException("Recipe Component not created");}
 
 	}
 

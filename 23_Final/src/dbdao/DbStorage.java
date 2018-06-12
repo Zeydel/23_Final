@@ -119,5 +119,7 @@ public class DbStorage {
 		ProductBatchComponent = productBatchComponent;
 	}
 	
+	
+	
 }
 
