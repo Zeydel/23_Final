@@ -46,17 +46,7 @@ public class User {
 		return true;
 	}
 	
-	@POST
-	@Path("/validate")
-	public UserViewDTO validateUser(int userID) {
-		try {
-			return Storage.getUserView().getUser(userID);
-		} catch (DALException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
-	}
+	
 	
 	@POST
 	@Path("/edit")
@@ -85,10 +75,13 @@ public class User {
 		return null;
 	}
 	
+	
+	
 	@GET
 	@Path("{userID}")
 	public UserViewDTO getUser(@PathParam("userID")String userID) {
 		try {
+			System.out.println("tes 3432t");
 			return Storage.getUserView().getUser(Integer.parseInt(userID));
 		} catch (NumberFormatException e) {
 			// TODO Auto-generated catch block
