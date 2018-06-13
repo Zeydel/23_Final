@@ -15,7 +15,6 @@ import dto.DALException;
 import dto.RawMaterialDTO;
 import dto.RecipeDTO;
 import dto.UserViewDTO;
-import npdao.NpStorage;
 import dbdao.DbStorage;
 
 @Path("rawmaterial")

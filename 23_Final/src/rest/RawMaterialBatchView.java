@@ -18,7 +18,6 @@ import dbdao.DbStorage;
 import dto.DALException;
 import dto.RawMaterialBatchDTO;
 import dto.RawMaterialBatchViewDTO;
-import npdao.NpStorage;
 
 
 	@Path("rawMaterialBatch")

@@ -18,7 +18,6 @@ import dto.RecipeDTO;
 import dto.RoleDTO;
 import dto.UserDTO;
 import dto.UserViewDTO;
-import npdao.NpStorage;
 
 
 
@@ -27,8 +26,8 @@ import npdao.NpStorage;
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class Recipe {
-	static NpStorage Storage = new NpStorage();
-	//DbStorage Storage = new DbStorage();
+	//static NpStorage Storage = new NpStorage();
+	DbStorage Storage = new DbStorage();
 	
 	@POST
 	public boolean createRecipe(RecipeDTO recipe) {
@@ -80,9 +79,9 @@ public class Recipe {
 	
 	@POST
 	@Path("/edit")
-	public void editUser(RecipeDTO recipe) {
+	public void editRecipe(RecipeDTO recipe) {
 		try {
-			recipe.setRecipeID(recipe.getRecipeID()+1);
+			recipe.setRecipeID(recipe.getRecipeID());
 			Storage.getRecipe().updateRecipe(recipe);
 		} catch (DALException e) {
 			// TODO Auto-generated catch block

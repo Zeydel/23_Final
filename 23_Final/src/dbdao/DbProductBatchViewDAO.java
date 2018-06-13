@@ -21,7 +21,7 @@ public class DbProductBatchViewDAO {
 
 		public List<ProductBatchViewDTO> getProductBatchViewList() throws DALException {
 			List<ProductBatchViewDTO> list = new ArrayList<ProductBatchViewDTO>();
-			ResultSet rs = Connector.doQuery("SELECT * FROM productbatchview");
+			ResultSet rs = Connector.doQuery("SELECT * FROM productBatchView");
 			try
 			{
 				while (rs.next()) 

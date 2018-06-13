@@ -16,7 +16,6 @@ import dto.DALException;
 import dto.ProductBatchDTO;
 import dto.ProductBatchViewDTO;
 import dto.UserViewDTO;
-import npdao.NpStorage;
 
 @Path("/productbatchviews")
 @Consumes(MediaType.APPLICATION_JSON)

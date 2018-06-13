@@ -21,8 +21,7 @@ import dto.DALException;
 import dto.RoleDTO;
 import dto.UserDTO;
 import dto.UserViewDTO;
-import npdao.NpStorage;
-import npdao.NpUserDAO;
+
 
 @Path("/users")
 @Consumes(MediaType.APPLICATION_JSON)

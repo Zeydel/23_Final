@@ -4,7 +4,7 @@ $(document).ready(function(){
 	$('#createProductBatch').submit(function(){
 		event.preventDefault();
 		createProductBatch();
-		loadProductBatctView();
+		loadProductBatchView();
 		return false;
 	})
 	
@@ -75,5 +75,6 @@ $(document).ready(function(){
 			success : function(){
 			}
 		})
+		location.href="ProductBatchTabel.html"
 	}
 	

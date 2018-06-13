@@ -1,6 +1,7 @@
 package rest;
 
 import java.util.List;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -11,7 +12,6 @@ import javax.ws.rs.core.MediaType;
 import dbdao.DbStorage;
 import dto.DALException;
 import dto.ProductBatchComponentDTO;
-import npdao.NpStorage;
 
 
 

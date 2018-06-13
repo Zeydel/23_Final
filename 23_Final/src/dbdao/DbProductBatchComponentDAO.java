@@ -35,7 +35,7 @@ public class DbProductBatchComponentDAO {
 
 	public List<ProductBatchComponentDTO> getProductBatchKomponentList() throws DALException {
 		List<ProductBatchComponentDTO> list = new ArrayList<ProductBatchComponentDTO>();
-		ResultSet rs = Connector.doQuery("SELECT * FROM ProductBatchComponent");
+		ResultSet rs = Connector.doQuery("SELECT * FROM productBatchComponent");
 		try
 		{
 			while (rs.next()) 
