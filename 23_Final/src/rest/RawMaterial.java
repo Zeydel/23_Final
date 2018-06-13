@@ -15,13 +15,15 @@ import dto.DALException;
 import dto.RawMaterialDTO;
 import dto.RecipeDTO;
 import dto.UserViewDTO;
+import npdao.NpStorage;
 import dbdao.DbStorage;
 
 @Path("rawmaterial")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class RawMaterial {
-	static DbStorage Storage = new DbStorage();
+	//static DbStorage Storage = new DbStorage();
+	static NpStorage Storage = new NpStorage();
 	
 	@POST
 	public boolean createRawMaterial(RawMaterialDTO rawMaterial) throws DALException {

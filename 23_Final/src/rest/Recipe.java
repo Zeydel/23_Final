@@ -26,8 +26,8 @@ import npdao.NpStorage;
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class Recipe {
-	//static NpStorage Storage = new NpStorage();
-	DbStorage Storage = new DbStorage();
+	static NpStorage Storage = new NpStorage();
+	//DbStorage Storage = new DbStorage();
 	
 	@POST
 	public boolean createRecipe(RecipeDTO recipe) {

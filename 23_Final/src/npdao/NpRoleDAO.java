@@ -5,21 +5,20 @@ import java.util.List;
 
 import dto.CprDTO;
 import dto.DALException;
-import dto.ProductBatchComponentDTO;
-import dto.RecipeDTO;
+import dto.RoleDTO;
 
-public class NpCprDAO {
+public class NpRoleDAO {
 	
-	ArrayList<CprDTO> recipes = new ArrayList<CprDTO>();
+ArrayList<RoleDTO> roles = new ArrayList<RoleDTO>();
 	
-	public NpCprDAO() {
-		recipes.add(new CprDTO(1, 12345678));
-		recipes.add(new CprDTO(2, 12890890));
-		recipes.add(new CprDTO(3, 21898890));
+	public NpRoleDAO() {
+		roles.add(new RoleDTO(1, "Administrator"));
+		roles.add(new RoleDTO(2, "Pharmacologist"));
+		roles.add(new RoleDTO(3, "Administrator"));
 	}
 	
 	public CprDTO getCpr(int userID) throws DALException{
-		for(CprDTO recipe : recipes) {
+		for(CprDTO roles : roles) {
 			if(recipe.getUserID()== userID) {
 				return recipe;
 			}
@@ -52,6 +51,9 @@ public class NpCprDAO {
 			}
 		}throw new DALException("Recipe with recipe ID " + userID + "Doesn't exist.");
 	}
+	
+
+	
 	
 
 }

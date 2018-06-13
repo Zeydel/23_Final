@@ -24,7 +24,7 @@ public class NpProductBatchComponentDAO {
 		} throw new DALException("ProductBatchComponent with productBatchID " + produktBatchID + " and " + rawMaterialID + " not found");
 	}
 
-	public List<ProductBatchComponentDTO> getProductBatchKomponentList(){
+	public List<ProductBatchComponentDTO> getProductBatchKomponentList() throws DALException{
 		return productBatchComponents;
 	}
 

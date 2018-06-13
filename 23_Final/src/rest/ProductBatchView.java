@@ -16,12 +16,14 @@ import dto.DALException;
 import dto.ProductBatchDTO;
 import dto.ProductBatchViewDTO;
 import dto.UserViewDTO;
+import npdao.NpStorage;
 
 @Path("/productbatchviews")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class ProductBatchView {
-DbStorage Storage = new DbStorage();
+//DbStorage Storage = new DbStorage();
+	static NpStorage Storage = new NpStorage();
 	
 	@POST
 	public boolean createProductBatch(ProductBatchDTO productBatch) {
