@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+<meta charset="UTF-8">
+<title>Registration</title>
+<script src="../js/jquery-3.3.1.js"></script>
+<script src="../js/editRecipeComponent.js"></script>
+<script type="text/javascript" src="../js/jquery.serialze-objects.js"></script>
+<script src="../js/header.js"></script>
+</head>
+
+<div class="Edit Recipe Component">
+	<h1>Create Recipe Component</h1>
+    <form id="editRecipeComponentForm">
+        <input type="number" name="recipeID" placeholder="Recipe ID" required="required" id="recipeID"/>
+    		<input type="number" name="rawMaterialID" placeholder="Raw Material ID" required="required" id="rawMaterialID"/>
+    		<input type="number" name="nom_netto" placeholder="Nom-Netto" required="required" id="nom-netto"/>
+        <input type="number" name="tolerance" placeholder="tolerance" required="required" id="tolerance" />
+
+        <input type="submit" class="btn btn-primary btn-block btn-large" id="createRecipeComponent" value="Register">
+    </form>
+</div>
+
+
+</html>
