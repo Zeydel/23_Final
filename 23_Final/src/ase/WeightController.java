@@ -21,28 +21,30 @@ public class WeightController {
 		UserViewDTO user = null;
 
 		try {
-			//Weight.clearInputStream();
-			String usrID = Weight.getStringFromDisplay("Enter user ID");
 			while(user == null) {
 				try {
+					String usrID = Weight.getStringFromDisplay("Enter user ID");
 					user = Storage.getUserView().getUser(Integer.parseInt(usrID.replaceAll("[\\D]", "")));
 				} catch (NumberFormatException e) {
-					usrID = Weight.getStringFromDisplay("Please enter a number");
+					Weight.writeLongStringInDisplay("Please enter a number");
+					Weight.waitForInput();
 				} catch (DALException e) {
-					usrID = Weight.getStringFromDisplay("User not found. Try again");
+					Weight.writeLongStringInDisplay("User not found. Try again");
+					Weight.waitForInput();
 				}
 			}
 			Weight.getStringFromDisplay("Welcome " + user.getUserName());
-			String pbID = Weight.getStringFromDisplay("Enter ProductBatch ID");
-			System.out.println(pbID);
 			ProductBatchDTO ProductBatch = null;
 			while(ProductBatch == null) {
 				try {
+					String pbID = Weight.getStringFromDisplay("Enter ProductBatch ID");
 					ProductBatch = Storage.getProductBatch().getProductBatch(Integer.parseInt(pbID.replaceAll("[\\D]", "")));
 				} catch (NumberFormatException e) {
-					pbID = Weight.getStringFromDisplay("Please enter a number");
+					Weight.writeLongStringInDisplay("Please enter a number");
+					Weight.waitForInput();
 				} catch (DALException e) {
-					pbID = Weight.getStringFromDisplay("User not found. Try again");
+					Weight.writeLongStringInDisplay("User not found. Try again");
+					Weight.waitForInput();
 				}
 			}
 			RecipeDTO recipe = null;
@@ -51,7 +53,6 @@ public class WeightController {
 			} catch (DALException e) {
 				Weight.writeInDisplay("NO RECIPE", 10);				
 			}
-			//Weight.clearInputStream();
 			Weight.writeLongStringInDisplay("Please clear weight");
 			Weight.waitForInput();
 			Weight.writeLongStringInDisplay("Current Recipe: " + recipe.getRecipeName());
@@ -101,26 +102,27 @@ public class WeightController {
 				Weight.waitForInput();
 				int tare = Weight.WeightTare();
 
-				String rbID = Weight.getStringFromDisplay("Enter rbid");
 				RawMaterialBatch = null;
 				RawMaterial = null;
 
 				while(cur == -1) {
 					while(RawMaterial == null) {
 						try {
+							String rbID = Weight.getStringFromDisplay("Enter rbid");
 							RawMaterialBatch = Storage.getRawMaterialBatch().getRawMaterialBatch(Integer.parseInt(rbID.replaceAll("[\\D]", "")));
 							RawMaterial = Storage.getRawMaterial().getRawMaterial(RawMaterialBatch.getRawMaterialID());
 						} catch (NumberFormatException e) {
-							rbID = Weight.getStringFromDisplay("Please enter a number");
+							Weight.writeLongStringInDisplay("Please enter a number");
+							Weight.waitForInput();
 						} catch (DALException e) {
-							rbID = Weight.getStringFromDisplay("Batch not found. Try again");
+							Weight.writeLongStringInDisplay("Batch not found. Try again");
+							Weight.waitForInput();
 						}
 					}
 
 					for(int j = 0; j < recipeComponents.size(); j++) {
 						if(recipeComponents.get(j).getRawMaterialID() == RawMaterial.getRawMaterialID()) {
 							cur = j;
-							System.out.println("found");
 							break;
 						}
 						Weight.writeLongStringInDisplay("Rawmaterial already weighed");
