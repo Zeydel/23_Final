@@ -98,7 +98,8 @@ public class WeightController {
 
 			int cur = -1;
 			while(recipeComponents.size() != 0) {
-				Weight.getStringFromDisplay("Place");
+				Weight.writeLongStringInDisplay("Place empty container");
+				Weight.waitForInput();
 				int tare = Weight.WeightTare();
 
 				String rbID = Weight.getStringFromDisplay("Enter rbid");
@@ -143,7 +144,11 @@ public class WeightController {
 						ProductBatchComponent = new ProductBatchComponentDTO(ProductBatch.getProductBatchID(), RawMaterialBatch.getRawMaterialBatchID(), tara, weight, user.getUserID());
 						try {
 							Storage.getProductBatchComponent().createProductBatchComponent(ProductBatchComponent);
+							RawMaterialBatch.setAmount(RawMaterialBatch.getAmount() - weight);
+							Storage.getRawMaterialBatch().updateRawMaterialBatch(RawMaterialBatch);
 							recipeComponents.remove(cur);
+							Weight.writeLongStringInDisplay("Component Registered");
+							Weight.waitForInput();
 						} catch (DALException e) {
 							Weight.writeLongStringInDisplay("An error happened");
 						}
@@ -152,7 +157,17 @@ public class WeightController {
 						Weight.waitForInput();
 					}
 				}
-
+				ProductBatchComponent = null;
+				RawMaterialBatch = null;
+				RawMaterial = null;
+				cur = -1;
+			}
+			ProductBatch.setStatus(3);
+			try {
+				Storage.getProductBatch().updateProductBatch(ProductBatch);
+			} catch (DALException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 			ProductBatch.setStatus(3);
 			try {
@@ -163,7 +178,7 @@ public class WeightController {
 			}
 			Weight.writeLongStringInDisplay("All components weighed");
 			Weight.waitForInput();
-			Weight.writeLongStringInDisplay("");
+			Weight.writeLongStringInDisplay(" ");
 
 
 		} catch (IOException e) {
