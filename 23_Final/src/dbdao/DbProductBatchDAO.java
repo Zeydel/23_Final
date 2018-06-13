@@ -12,7 +12,7 @@ import rest.ProductBatchComponent;
 public class DbProductBatchDAO {
 
 	public ProductBatchDTO getProductBatch(int productBatchID) throws DALException {
-		ResultSet rs = Connector.doQuery("SELECT * FROM ProductBatch WHERE productBatchID = " + productBatchID);
+		ResultSet rs = Connector.doQuery("SELECT * FROM productBatch WHERE productBatchID = " + productBatchID);
 		try {
 			if (!rs.first()) throw new DALException("ProductBatch with ID " + productBatchID + " not found");
 			return new ProductBatchDTO (rs.getInt("productBatchID"), getStatus(rs.getString("status")), rs.getInt("recipeID"));
@@ -22,7 +22,7 @@ public class DbProductBatchDAO {
 
 	public List<ProductBatchDTO> getProduktBatchList() throws DALException {
 		List<ProductBatchDTO> list = new ArrayList<ProductBatchDTO>();
-		ResultSet rs = Connector.doQuery("SELECT * FROM ProductBatch");
+		ResultSet rs = Connector.doQuery("SELECT * FROM productBatch");
 		try
 		{
 			while (rs.next()) 
@@ -36,7 +36,7 @@ public class DbProductBatchDAO {
 
 	public void createProductBatch(ProductBatchDTO ProductBatch) throws DALException {
 		Connector.doUpdate(
-				"INSERT INTO ProductBatch(productBatchID, status, recipeID) VALUES " +
+				"INSERT INTO productBatch(productBatchID, status, recipeID) VALUES " +
 						"(" + ProductBatch.getProductBatchID() + ", '" + ProductBatch.getStatus() + "', '" + ProductBatch.getRecipeID() +"')"
 				);
 
@@ -45,7 +45,7 @@ public class DbProductBatchDAO {
 	public void updateProductBatch(ProductBatchDTO produktbatch) throws DALException {
 		try {
 			Connector.doUpdate(
-					"UPDATE ProductBatch SET status = " + produktbatch.getStatus() + 
+					"UPDATE productBatch SET status = " + produktbatch.getStatus() + 
 					", recipeID = " + produktbatch.getRecipeID() + " WHERE productBatchID = " + produktbatch.getProductBatchID()
 					);
 		}catch(DALException e) {throw new DALException("ProductBatch with ID " + produktbatch.getProductBatchID() + "Doesn't exist.");}

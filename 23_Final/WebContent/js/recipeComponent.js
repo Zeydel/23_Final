@@ -24,11 +24,11 @@ $(document).ready(function(){
 				'<td>' + RecipeComponentDTO.rawMaterialID + '</td>' +
 				'<td>' + RecipeComponentDTO.nom_netto + '</td>' + 
 				'<td>' + RecipeComponentDTO.tolerance + '</td>' +
-				'<td>' + '<button class="options" onclick="editRecipeComponent($(this).val())" value="' + RecipeComponentDTO.recipeID + '-' + RecipeComponentDTO.rawMaterial + '"> <i class="fas fa-edit"></i> </button>' +
+				'<td>' + '<button class="options" onclick="location.href=\'editRecipeComponent.html?id=' + RecipeComponentDTO.recipeID + '-' + RecipeComponentDTO.rawMaterialID + '\'' + '"> <i class="fas fa-edit"></i> </button>' +
 				'<button class="options" onclick="deleteRecipeComponent($(this).val())" value="' + RecipeComponentDTO.recipeID  + '-' + RecipeComponentDTO.rawMaterialID + '"> <i class="fas fa-trash-alt"></i> </button>'+'</td></tr>';
 	}
 	
-	
+
 	function deleteRecipeComponent(value){
 		event.preventDefault();
 		$.ajax({

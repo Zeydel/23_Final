@@ -9,7 +9,8 @@ var urr = window.location.href;
 	
 	$('#editProductBatchForm').submit(function(){
 		event.preventDefault();
-		udpateProductBatch();
+		updateProductBatch();
+		
 	})
 	
 })
@@ -22,11 +23,11 @@ function getProductBatch(productBatchID){
 			success : function(data){
 				$('#productBatchID').val(data.productBatchID);
 				var status = data.status
-				if(status = 'Not Started'){
+				if(status == 'Not Started'){
 					$('#status').val(0);
-				} else if(status = 'In Progres'){
+				} else if(status == 'In Progress'){
 					$('#status').val(1);
-				} else if(status = 'Completed'){
+				} else if(status == 'Completed'){
 					$('#status').val(2);
 				}
 				//$('#status').val(data.status);
@@ -35,7 +36,7 @@ function getProductBatch(productBatchID){
 		})
 	}
 
-function udpateProductBatch(){
+function updateProductBatch(){
 	var data = $('#editProductBatchForm').serializeJSON();
 	$.ajax({
 		url : '/23_Final/rest/productbatchviews/edit',
@@ -46,4 +47,5 @@ function udpateProductBatch(){
 		success : function(){
 		}
 	})
+	location.href='ProductBatchTabel.html';
 }

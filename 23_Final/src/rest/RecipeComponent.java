@@ -83,8 +83,8 @@ public class RecipeComponent {
 	@Path("/edit")
 	public void editRecipeComponent(RecipeComponentDTO recipeComponent) {
 		try {
-			recipeComponent.setRecipeID(recipeComponent.getRecipeID()+1);
-			recipeComponent.setRawMaterialID(recipeComponent.getRawMaterialID()+1);;
+			recipeComponent.setRecipeID(recipeComponent.getRecipeID());
+			recipeComponent.setRawMaterialID(recipeComponent.getRawMaterialID());;
 			Storage.getRecipeComponent().updateRecipeComponent(recipeComponent);
 		} catch (DALException e) {
 			// TODO Auto-generated catch block
