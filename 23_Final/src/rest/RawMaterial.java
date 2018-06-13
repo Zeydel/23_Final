@@ -22,8 +22,8 @@ import dbdao.DbStorage;
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class RawMaterial {
-	//static DbStorage Storage = new DbStorage();
-	static NpStorage Storage = new NpStorage();
+	static DbStorage Storage = new DbStorage();
+	//static NpStorage Storage = new NpStorage();
 	
 	@POST
 	public boolean createRawMaterial(RawMaterialDTO rawMaterial) throws DALException {

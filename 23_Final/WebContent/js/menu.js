@@ -1,7 +1,6 @@
 $(document).ready(function(){
 	var id = getCookie('id');
 	getUser(id);
-	$("#productBatchComponentTable").show();
 })
 
 function getUser(userID){

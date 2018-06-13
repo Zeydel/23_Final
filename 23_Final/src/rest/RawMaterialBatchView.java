@@ -25,8 +25,8 @@ import npdao.NpStorage;
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 public class RawMaterialBatchView {
-		//static DbStorage Storage = new DbStorage();
-		static NpStorage Storage = new NpStorage();
+		static DbStorage Storage = new DbStorage();
+		//static NpStorage Storage = new NpStorage();
 		
 		@POST
 		public void createRawMaterialBatch(RawMaterialBatchDTO rawMaterialBatch) throws DALException {

@@ -46,7 +46,6 @@ public class WeightController {
 				}
 			}
 			RecipeDTO recipe = null;
-			//Weight.writeLongStringInDisplay("DOING THINGS");
 			try {
 				recipe = Storage.getRecipe().getRecipe(ProductBatch.getRecipeID());
 			} catch (DALException e) {
@@ -153,7 +152,7 @@ public class WeightController {
 							Weight.writeLongStringInDisplay("An error happened");
 						}
 					} else {
-						Weight.writeLongStringInDisplay("Weight outside of tolerance. Try again");
+						Weight.writeLongStringInDisplay("Weight outside of tolerance.");
 						Weight.waitForInput();
 					}
 				}
