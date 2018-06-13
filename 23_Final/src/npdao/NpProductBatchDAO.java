@@ -1,4 +1,4 @@
-package npdao;
+/*package npdao;
 
 import java.util.ArrayList;
 
@@ -52,3 +52,4 @@ public class NpProductBatchDAO {
 		} throw new DALException("Productbatch with ID" + productBatchID + " not found.");
 	}
 }
+*/

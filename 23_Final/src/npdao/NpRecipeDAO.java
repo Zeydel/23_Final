@@ -1,4 +1,4 @@
-package npdao;
+/*package npdao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,3 +52,4 @@ public class NpRecipeDAO {
 	}
 	
 }
+*/

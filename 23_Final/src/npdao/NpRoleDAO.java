@@ -1,4 +1,4 @@
-package npdao;
+/*package npdao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,3 +69,4 @@ ArrayList<RoleDTO> roles = new ArrayList<RoleDTO>();
 	
 
 }
+*/

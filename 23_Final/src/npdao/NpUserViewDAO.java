@@ -1,4 +1,4 @@
-package npdao;
+/*package npdao;
 
 import java.awt.List;
 import java.util.ArrayList;
@@ -48,7 +48,7 @@ public class NpUserViewDAO {
 		} throw new DALException("User with ID " + userID + " doesn't exist");
 	}
 	
-	public List<UserViewDTO> getUserList(){
+	public List<UserViewDTO> getUserList() throws DALException{
 		return UserViews;
 	}
 	
@@ -73,4 +73,5 @@ public class NpUserViewDAO {
 		} throw new DALException("User with user ID " + userID + " doesn't exist");
 	}
 }
+*/
 

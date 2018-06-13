@@ -1,4 +1,4 @@
-
+/*
 package npdao;
 
 public class NpStorage {
@@ -100,4 +100,5 @@ public class NpStorage {
 	
 
 }
+*/
 

@@ -1,4 +1,4 @@
-package npdao;
+/*package npdao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,3 +50,4 @@ public class NpProductBatchComponentDAO {
 		} throw new DALException("ProductBatchComponent with productBatchID " + produktBatchID + " and " + rawMaterialID + " not found");
 	}
 }
+*/

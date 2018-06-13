@@ -1,4 +1,4 @@
-package npdao;
+/*package npdao;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -54,3 +54,4 @@ public class NpUserDAO {
 	}
 
 }
+*/
