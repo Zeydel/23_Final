@@ -26,6 +26,16 @@ ArrayList<RoleDTO> roles = new ArrayList<RoleDTO>();
 		} throw new DALException("Role(s) with ID " + userID + " Not found");
 	}
 	
+	public ArrayList<RoleDTO> getRolesList(int userID){
+		ArrayList<RoleDTO> userRoles = new ArrayList<RoleDTO>();
+		for(int i = 0; i < roles.size(); i++) {
+			if(roles.get(i).getUserID() == userID ) {
+				userRoles.add(roles.get(i));
+			}
+		}
+		return userRoles;
+	}
+	
 	public ArrayList<RoleDTO> getRolesList(){  
 		return roles;
 	}

@@ -15,7 +15,7 @@ public class NpCprDAO {
 		cprlist.add(new CprDTO());
 	}
 		
-		public CprDTO getUser(int userID) throws DALException {
+		public CprDTO getCpr(int userID) throws DALException {
 			for(CprDTO cpr : cprlist) {
 				if(cpr.getUserID() == userID) {
 					return cpr;

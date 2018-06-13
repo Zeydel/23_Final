@@ -13,6 +13,7 @@ public class NpStorage {
 	NpProductBatchViewDAO ProductBatchView;
 	NpRawMaterialBatchViewDAO RawMaterialBatchView;
 	NpRoleDAO role;
+	NpUserViewDAO UserView;
 	
 	public NpStorage() {
 		this.ProductBatchComponent  = new NpProductBatchComponentDAO();
@@ -25,6 +26,7 @@ public class NpStorage {
 		this.RawMaterialBatchView = new NpRawMaterialBatchViewDAO();
 		this.Cpr = new NpCprDAO();
 		this.role = new NpRoleDAO();
+		this.UserView = new NpUserViewDAO();
 	}
 	public NpRawMaterialBatchViewDAO getRawMaterialBatchView() {
 		return RawMaterialBatchView;
@@ -86,6 +88,14 @@ public class NpStorage {
 	public void setRole(NpRoleDAO role) {
 		this.role = role;
 	}
+	public NpUserViewDAO getUserView() {
+		return UserView;
+	}
+	public void setUserView(NpUserViewDAO userView) {
+		UserView = userView;
+	}
+	
+	
 	
 	
 
