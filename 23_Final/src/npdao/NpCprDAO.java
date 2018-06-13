@@ -1,57 +1,57 @@
 package npdao;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import dto.CprDTO;
 import dto.DALException;
-import dto.ProductBatchComponentDTO;
-import dto.RecipeDTO;
 
 public class NpCprDAO {
 	
-	ArrayList<CprDTO> recipes = new ArrayList<CprDTO>();
+	ArrayList<CprDTO> cprlist = new ArrayList<CprDTO>();
 	
 	public NpCprDAO() {
-		recipes.add(new CprDTO(1, 12345678));
-		recipes.add(new CprDTO(2, 12890890));
-		recipes.add(new CprDTO(3, 21898890));
+		cprlist.add(new CprDTO(1, 12345678));
+		cprlist.add(new CprDTO());
+		cprlist.add(new CprDTO());
 	}
-	
-	public CprDTO getCpr(int userID) throws DALException{
-		for(CprDTO recipe : recipes) {
-			if(recipe.getUserID()== userID) {
-				return recipe;
+		
+		public CprDTO getUser(int userID) throws DALException {
+			for(CprDTO cpr : cprlist) {
+				if(cpr.getUserID() == userID) {
+					return cpr;
+				}
 			}
-				
-		} throw new DALException("Recipe with recipe ID" + userID + " Not found");
-	}
-	
-	public List<CprDTO> getCprList(){  
-		return recipes;
-	}
-
-	public void createCpr(CprDTO Recipe){
-		recipes.add(Recipe);
-	}
-	
-	public void updateCpr(CprDTO user) throws DALException{
-		for(int i = 0; i<recipes.size(); i++) {
-			if(recipes.get(i).getUserID() == user.getUserID()) {
-				recipes.set(i, user);
-				return;
+			throw new DALException("User with ID" + userID + " not found.");
+		}
+		
+		public ArrayList<CprDTO> getCpr(){
+			return cprlist;
+		}
+		
+		public void createCpr(CprDTO userID) {
+			cprlist.addAll(cprlist);
+			for(int i = 0; i<cprlist.size();i++) {
+				System.out.println(cprlist.get(i).toString());
 			}
-		}throw new DALException("Recipe with Recipe ID " + user.getUserID() + " doesn't exist");
-	}
-	
-	public void deleteCpr(int userID) throws DALException {
-		for(int i = 0; i < recipes.size(); i++) {
-			if(recipes.get(i).getUserID() == userID) {
-				recipes.remove(i);
-				return;
-			}
-		}throw new DALException("Recipe with recipe ID " + userID + "Doesn't exist.");
-	}
+		}
+		
+		public void updateCpr(CprDTO cpr) throws DALException {
+			for(int i = 0; i < cprlist.size(); i++) {
+				if(cprlist.get(i).getUserID() == cpr.getUserID()) {
+					cprlist.set(i, cpr);
+				}
+			} throw new DALException("User with ID" + cpr.getUserID() + " not found.");
+		}
+		
+		public void deleteCpr(int userID) throws DALException {
+			for(int i = 0; i < cprlist.size(); i++) {
+				if(cprlist.get(i).getUserID() == userID) {
+					cprlist.remove(i);
+					return;
+				}
+			} throw new DALException("User with ID" + userID + " not found.");
+		}
+		
 	
 
 }
