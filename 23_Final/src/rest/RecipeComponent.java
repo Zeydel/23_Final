@@ -50,6 +50,17 @@ public class RecipeComponent {
 		}
 		return null;
 	}
+	@GET
+	@Path("/recipes/{recipeID}")
+	public List<RecipeComponentDTO> getRecipeComponents(@PathParam("recipeID")String recipeID) {
+		try {
+			return Storage.getRecipeComponent().getRecipeComponentList(Integer.parseInt(recipeID));
+		} catch (DALException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
 
 	@DELETE
 	@Path("{value}")
