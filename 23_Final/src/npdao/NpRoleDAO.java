@@ -17,39 +17,41 @@ ArrayList<RoleDTO> roles = new ArrayList<RoleDTO>();
 		roles.add(new RoleDTO(3, "Administrator"));
 	}
 	
-	public CprDTO getCpr(int userID) throws DALException{
-		for(CprDTO roles : roles) {
-			if(recipe.getUserID()== userID) {
-				return recipe;
+	public RoleDTO getRole(int userID) throws DALException{
+		for(RoleDTO roles : roles) {
+			if(roles.getUserID()== userID) {
+				return roles;
 			}
 				
-		} throw new DALException("Recipe with recipe ID" + userID + " Not found");
+		} throw new DALException("Role(s) with ID " + userID + " Not found");
 	}
 	
-	public List<CprDTO> getCprList(){  
-		return recipes;
+	public ArrayList<RoleDTO> getRolesList(){  
+		return roles;
 	}
 
-	public void createCpr(CprDTO Recipe){
-		recipes.add(Recipe);
+	public void createRole(RoleDTO Role) throws DALException{
+		roles.add(Role);
 	}
 	
-	public void updateCpr(CprDTO user) throws DALException{
-		for(int i = 0; i<recipes.size(); i++) {
-			if(recipes.get(i).getUserID() == user.getUserID()) {
-				recipes.set(i, user);
+	public void updateRole(RoleDTO role) throws DALException{
+		for(int i = 0; i<roles.size(); i++) {
+			if(roles.get(i).getUserID() == role.getUserID()) {
+				roles.set(i, role);
 				return;
 			}
-		}throw new DALException("Recipe with Recipe ID " + user.getUserID() + " doesn't exist");
+		}throw new DALException("Role(s) with ID " + role.getUserID() + " doesn't exist");
 	}
 	
-	public void deleteCpr(int userID) throws DALException {
-		for(int i = 0; i < recipes.size(); i++) {
-			if(recipes.get(i).getUserID() == userID) {
-				recipes.remove(i);
-				return;
+	public void deleteRole(int userID) throws DALException {
+		int size = roles.size();
+		for(int i = 0; i < roles.size(); i++) {
+			if(roles.get(i).getUserID() == userID) {
+				roles.remove(i);
 			}
-		}throw new DALException("Recipe with recipe ID " + userID + "Doesn't exist.");
+		}if(size==roles.size()) {
+			throw new DALException("Role with user ID " + userID + " Doesn't exist.");
+		}
 	}
 	
 

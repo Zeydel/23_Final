@@ -24,7 +24,7 @@ public class NpProductBatchViewDAO {
 		} throw new DALException("Product batch with ID " + productBatchID + " doesn't exist.");
 	}
 	
-	public List<ProductBatchViewDTO> getProductBatchViewList(){
+	public List<ProductBatchViewDTO> getProductBatchViewList() throws DALException {
 		return ProductBatchViews;
 	}
 	
