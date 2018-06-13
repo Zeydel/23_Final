@@ -6,11 +6,11 @@ public class UserViewDTO {
 	private String userName;
 	private String initials;
 	private String password;
-	private String cpr;
+	private int cpr;
 	private ArrayList<String> roles;
 	private String repeat_password;
 	
-	public UserViewDTO(int userID, String userName, String initials, String password, String cpr, ArrayList<String> roles) {
+	public UserViewDTO(int userID, String userName, String initials, String password, int cpr, ArrayList<String> roles) {
 		this.userID = userID;
 		this.userName = userName;
 		this.initials = initials;
@@ -58,10 +58,10 @@ public class UserViewDTO {
 		this.password = password;
 	}
 
-	public String getCpr() {
+	public int getCpr() {
 		return cpr;
 	}
-	public void setCpr(String cpr) {
+	public void setCpr(int cpr) {
 		this.cpr = cpr;
 	}
 	public ArrayList<String> getRoles() {

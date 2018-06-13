@@ -24,7 +24,7 @@ public class DbUserViewDAO {
 		ResultSet rs = Connector.doQuery("SELECT * FROM userview WHERE userID = " + userID);
 		try {
 			if (!rs.first()) throw new DALException("The user with ID " + userID + " could not be found");
-			return new UserViewDTO (rs.getInt("userID"), rs.getString("userName"), rs.getString("initials"), rs.getString("password"), rs.getString("cpr"), stringToList(rs.getString("roles")) );
+			return new UserViewDTO (rs.getInt("userID"), rs.getString("userName"), rs.getString("initials"), rs.getString("password"), rs.getInt("cpr"), stringToList(rs.getString("roles")) );
 		}
 		catch (SQLException e) {throw new DALException("Recipe with recipe ID" + userID + " Not found"); }
 	}
@@ -36,7 +36,7 @@ public class DbUserViewDAO {
 		{
 			while (rs.next()) 
 			{
-				list.add(new UserViewDTO (rs.getInt("userID"), rs.getString("userName"), rs.getString("initials"), rs.getString("password"), rs.getString("cpr"), stringToList(rs.getString("roles"))));
+				list.add(new UserViewDTO (rs.getInt("userID"), rs.getString("userName"), rs.getString("initials"), rs.getString("password"), rs.getInt("cpr"), stringToList(rs.getString("roles"))));
 			}
 		}
 		catch (SQLException e) { throw new DALException("No list found", e); }

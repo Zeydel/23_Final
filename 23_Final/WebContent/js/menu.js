@@ -19,6 +19,7 @@ function getUser(userID){
 					$("#rawMaterialTable").show();
 					$("#productBatchTable").show();
 					$("#rawMateriablBatchTable").show();
+					$("#recipeComponentTable").show();
 				}if(data.roles[i] == "Production Manager"){
 					$("#productBatchTable").show();
 					$("#rawMateriablBatchTable").show();

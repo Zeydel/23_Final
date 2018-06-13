@@ -12,9 +12,9 @@ public class NpUserDAO {
 	
 	ArrayList<UserViewDTO> Users = new ArrayList<UserViewDTO>();
 	public NpUserDAO() {
-		Users.add(new UserViewDTO(1, "Angelo A", "AA", "lKie4fa", "080197-0761", new ArrayList<String>(Arrays.asList("Admin", "Pharmacist"))));
-		Users.add(new UserViewDTO(2, "Antonella B", "AB", "atoJ21v", "123456-7890", new ArrayList<String>(Arrays.asList("Pharmacist"))));
-		Users.add(new UserViewDTO(3, "Luigi C", "LC", "iEfm5aO", "987654-3210", new ArrayList<String>(Arrays.asList("Admin"))));
+		Users.add(new UserViewDTO(1, "Angelo A", "AA", "lKie4fa", 8019761, new ArrayList<String>(Arrays.asList("Admin", "Pharmacist"))));
+		Users.add(new UserViewDTO(2, "Antonella B", "AB", "atoJ21v", 1234567890, new ArrayList<String>(Arrays.asList("Pharmacist"))));
+		Users.add(new UserViewDTO(3, "Luigi C", "LC", "iEfm5aO", 98763210, new ArrayList<String>(Arrays.asList("Admin"))));
 	}
 	
 	public UserViewDTO getUser(int userID) throws DALException {

@@ -81,7 +81,6 @@ public class User {
 	@Path("{userID}")
 	public UserViewDTO getUser(@PathParam("userID")String userID) {
 		try {
-			System.out.println("tes 3432t");
 			UserViewDTO user = Storage.getUserView().getUser(Integer.parseInt(userID));
 			return user;
 		} catch (NumberFormatException e) {

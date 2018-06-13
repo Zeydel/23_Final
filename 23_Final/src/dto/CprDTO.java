@@ -2,16 +2,16 @@ package dto;
 
 public class CprDTO {
 	private int userID;
-	private String cpr;
+	private int cpr;
 
-	public CprDTO(int userID, String cpr) {
+	public CprDTO(int userID, int cpr) {
 		this.userID=userID;
 		this.cpr=cpr;
 	}
 	
 	public CprDTO() {
 		
-	}	
+	}
 	
 	public int getUserID() {
 		return userID;
@@ -21,13 +21,15 @@ public class CprDTO {
 		this.userID = userID;
 	}
 
-	public String getCpr() {
+	public int getCpr() {
 		return cpr;
 	}
 
-	public void setCpr(String cpr) {
+	public void setCpr(int cpr) {
 		this.cpr = cpr;
 	}
+	
+	
 
 
 
