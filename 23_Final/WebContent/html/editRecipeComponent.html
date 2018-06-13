@@ -10,13 +10,13 @@
 <script src="../js/header.js"></script>
 </head>
 
-<div class="Edit Recipe Component">
+<div class="login">
 	<h1>Edit Recipe Component</h1>
     <form id="editRecipeComponentForm">
         <input type="number" name="recipeID" placeholder="Recipe ID" required="required" id="recipeID" readonly/>
     		<input type="number" name="rawMaterialID" placeholder="Raw Material ID" required="required" id="rawMaterialID" readonly/>
-    		<input type="number" name="nom_netto" placeholder="Nom-Netto" required="required" id="nom-netto"/>
-        <input type="number" name="tolerance" placeholder="tolerance" required="required" id="tolerance" />
+    		<input type="number" step="0.0001" name="nom_netto" placeholder="Nom-Netto" required="required" id="nom-netto"/>
+        <input type="number" step="0.0001" name="tolerance" placeholder="tolerance" required="required" id="tolerance" />
 
         <input type="submit" class="btn btn-primary btn-block btn-large" id="createRecipeComponent" value="Register">
     </form>
