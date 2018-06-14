@@ -4,6 +4,8 @@ public class RoleDTO {
 	
 	int userID;
 	String role;
+	
+	//Contains information about a users role. Each user can have multiple roles
 	public RoleDTO(int userID, String role) {
 		this.userID = userID;
 		this.role = role;

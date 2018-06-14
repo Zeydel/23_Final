@@ -7,6 +7,7 @@ public class RecipeComponentDTO {
 	private float nom_netto;
 	private float tolerance;
 	
+	//Conatains information about a part of a recipe. Each ingredient of a recipe is stored as a seperate enitity
 	public RecipeComponentDTO(int recipeID, int rawMaterialID, float nom_netto, float tolerance) {
 		this.recipeID = recipeID;
 		this.rawMaterialID = rawMaterialID;

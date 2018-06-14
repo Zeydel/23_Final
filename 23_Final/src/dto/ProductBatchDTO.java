@@ -6,6 +6,7 @@ public class ProductBatchDTO {
 	private int status;
 	private int recipeID;
 	
+	//Contains information about a productbatch
 	public ProductBatchDTO(int productBatchID, int status, int recipeID) {
 		this.productBatchID = productBatchID;
 		this.status = status;

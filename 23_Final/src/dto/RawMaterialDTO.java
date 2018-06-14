@@ -6,6 +6,7 @@ public class RawMaterialDTO {
 	private String rawMaterialName;
 	private String supplier;
 
+	//Contains information about a rawmaterial
 	public RawMaterialDTO(int rawMaterialID, String rawMaterialName, String supplier) {
 		this.rawMaterialID = rawMaterialID;
 		this.rawMaterialName = rawMaterialName;

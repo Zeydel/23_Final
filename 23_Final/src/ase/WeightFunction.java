@@ -21,7 +21,7 @@ public class WeightFunction {
 			this.out = new PrintWriter(pingSocket.getOutputStream(), true);
 			this.in = new BufferedReader(new InputStreamReader(pingSocket.getInputStream()));
 			in.readLine();
-			out.println("K 3");
+			out.println("K 3"); //This line makes the weight respond with K 4, when the E-[>] button is pressed
 		} catch(IOException e) {
 			System.out.println("Connection Failed");
 		}
@@ -92,6 +92,7 @@ public class WeightFunction {
 		return str;
 	}
 	
+	//Wait for input on [->] button
 	public void waitForInput() {
 		try {
 			while(!in.ready()) {

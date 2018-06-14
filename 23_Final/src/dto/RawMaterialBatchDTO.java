@@ -6,6 +6,7 @@ public class RawMaterialBatchDTO {
 	private int rawMaterialID;
 	private float amount;
 	
+	//Contains information about a rawmaterialbatch
 	public RawMaterialBatchDTO(int rawMaterialBatchID, int rawMaterialID, float amount) {
 		this.rawMaterialBatchID = rawMaterialBatchID;
 		this.rawMaterialID = rawMaterialID;

@@ -49,7 +49,7 @@ public class DbProductBatchComponentDAO {
 
 	public void createProductBatchComponent(ProductBatchComponentDTO produktbatchkomponent) throws DALException {
 		Connector.doUpdate(
-				"INSERT INTO ProductBatchComponent(productBatchID, rawMaterialBatchID, tara, netto, userID) VALUES " +
+				"INSERT INTO productBatchComponent(productBatchID, rawMaterialBatchID, tara, netto, userID) VALUES " +
 				"('" + produktbatchkomponent.getProductbatchID() + "', '" + produktbatchkomponent.getRawMaterialBatchID() + "', '" + produktbatchkomponent.getTara() + "', '" + 
 				produktbatchkomponent.getNetto() + "', '" + produktbatchkomponent.getUserID() + "')"
 			);

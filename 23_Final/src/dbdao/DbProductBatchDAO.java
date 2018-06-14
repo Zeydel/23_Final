@@ -17,7 +17,7 @@ public class DbProductBatchDAO {
 			if (!rs.first()) throw new DALException("ProductBatch with ID " + productBatchID + " not found");
 			return new ProductBatchDTO (rs.getInt("productBatchID"), getStatus(rs.getString("status")), rs.getInt("recipeID"));
 		}
-		catch (SQLException e) {throw new DALException("FEJL", e); }
+		catch (SQLException e) {throw new DALException("Productbatch with id " + productBatchID + " not found", e); }
 	}
 
 	public List<ProductBatchDTO> getProduktBatchList() throws DALException {

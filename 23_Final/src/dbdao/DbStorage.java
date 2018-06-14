@@ -1,6 +1,8 @@
 
 package dbdao;
 
+
+//Contains all DAO's needed to communicate between business logic and database server
 public class DbStorage {
 	DbRecipeDAO Recipe;
 	DbUserDAO User;
