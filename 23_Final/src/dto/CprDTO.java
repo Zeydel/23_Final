@@ -1,5 +1,6 @@
 package dto;
 
+//Contains the CPR data of a user
 public class CprDTO {
 	private int userID;
 	private int cpr;

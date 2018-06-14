@@ -6,6 +6,7 @@ public class RecipeDTO {
 	private int recipeID;
 	private String recipeName;
 	
+	//Contains information about a recipe
 	public RecipeDTO(int recipeID, String recipeName) {
 		this.recipeID = recipeID;
 		this.recipeName = recipeName;

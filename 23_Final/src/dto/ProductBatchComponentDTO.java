@@ -1,5 +1,6 @@
 package dto;
 
+//Contains part of a productbatch. Each individual part of a productbatch is stored along with the user responsible
 public class ProductBatchComponentDTO {
 	
 	private int productbatchID;

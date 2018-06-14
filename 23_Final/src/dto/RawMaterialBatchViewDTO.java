@@ -6,6 +6,7 @@ public class RawMaterialBatchViewDTO {
 	private float amount;
 	private String rawMaterialName;
 	
+	//Contains information about a rawmaterialbatch along with the name of the rawmaterial
 	public RawMaterialBatchViewDTO(int rawMaterialBatchID, int rawMaterialID, float amount, String rawMaterialName) {
 		this.rawMaterialBatchID = rawMaterialBatchID;
 		this.rawMaterialID = rawMaterialID;

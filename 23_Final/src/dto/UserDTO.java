@@ -7,7 +7,7 @@ public class UserDTO {
 	private String password;
 	private String repeat_password;
 	
-	
+	//Contains information about the user.
 	public UserDTO(int userID, String userName, String initials, String password) {
 		this.userID = userID;
 		this.userName = userName;

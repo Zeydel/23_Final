@@ -10,6 +10,8 @@ public class UserViewDTO {
 	private ArrayList<String> roles;
 	private String repeat_password;
 	
+	
+	//Contains all information about a user.
 	public UserViewDTO(int userID, String userName, String initials, String password, int cpr, ArrayList<String> roles) {
 		this.userID = userID;
 		this.userName = userName;

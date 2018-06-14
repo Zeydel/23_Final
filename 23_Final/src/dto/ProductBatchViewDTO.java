@@ -6,6 +6,7 @@ public class ProductBatchViewDTO {
 	private int recipeID;
 	private String recipeName;
 	
+	//Contains information about a productbatch along with the recipe name of the productbatch
 	public ProductBatchViewDTO(int productBatchID, String status, int recipeID, String recipeName) {
 		this.productBatchID = productBatchID;
 		this.status = status;
