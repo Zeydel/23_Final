@@ -44,7 +44,19 @@ public class ProductBatchComponent {
 	@Path("{productBatchID}")
 	public List<ProductBatchComponentDTO> getProductBatchComponent(@PathParam("productBatchID")String productBatchID) {
 		try {
-			return Storage.getProductBatchComponent().getProductBatchKomponentList(Integer.parseInt(productBatchID));
+			return Storage.getProductBatchComponent().getProductBatchKomponentList(Integer.parseInt(productBatchID)); // getProductBatchKomponentList(Integer.parseInt(productBatchID));
+		} catch (DALException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	@GET
+	@Path("{productBatchID}/{rawMaterialBatchID}")
+	public ProductBatchComponentDTO getProductBatchComponent(@PathParam("productBatchID")String productBatchID, @PathParam("rawMaterialBatchID")String rawMaterialBatchID) {
+		try {
+			return Storage.getProductBatchComponent().getProductBatchComponent(Integer.parseInt(productBatchID), Integer.parseInt(rawMaterialBatchID)); // getProductBatchKomponentList(Integer.parseInt(productBatchID));
 		} catch (DALException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

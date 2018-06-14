@@ -64,6 +64,21 @@ public class RawMaterialBatchView {
 			return null;
 		}
 		
+		@GET
+		@Path("/batches/{rawMaterialBatchID}")
+		public List<RawMaterialBatchDTO> getRawMaterialBatches(@PathParam("rawMaterialID")String rawMaterialBatchID){
+			try {
+				return Storage.getRawMaterialBatch().getRawMaterialBatchList(Integer.parseInt(rawMaterialBatchID));
+			} catch (NumberFormatException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (DALException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return null;
+		}
+		
 		@DELETE
 		@Path("{rawMaterialBatchID}")
 		public void deleteRawMaterialBatch(@PathParam("rawMaterialBatchID")int rawMaterialBatchID) {

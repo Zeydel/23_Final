@@ -30,7 +30,7 @@ $(document).ready(function(){
 				'<td>' + ProductBatchViewDTO.recipeID + '</td>' + 
 				'<td>' + ProductBatchViewDTO.recipeName + '</td>' + 
 				'<td>' + '<button class="options" id="editProductBatchButton" onclick="location.href=\'editProductBatchForm.html?id=' + ProductBatchViewDTO.productBatchID +'\'' + '"><i class="fas fa-edit"></i> </button>' +
-				'<button class="options" onclick="deleteProductBatch($(this).val())" value="' + ProductBatchViewDTO.productBatchID + '"> <i class="fas fa-trash-alt"></i> </button>' + '</td>' + '</tr>';
+				'<button class="options" onclick="deleteProductBatch($(this).val())" value="' + ProductBatchViewDTO.productBatchID + '"> <i class="fas fa-trash-alt"></i> </button>' + '<button class="options" id="editProductBatchButton" onclick="location.href=\'production.html?id=' + ProductBatchViewDTO.productBatchID +'\'' + '"><i class="fas fa-print"></i> </button>' + '</td>' + '</tr>';
 	}
 	
 	function createProductBatch(){

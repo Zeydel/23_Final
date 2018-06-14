@@ -11,7 +11,7 @@ import dto.ProductBatchComponentDTO;
 public class DbProductBatchComponentDAO {
 	
 	public ProductBatchComponentDTO getProductBatchComponent(int productBatchID, int rawMaterialBatchID) throws DALException {
-		ResultSet rs = Connector.doQuery("SELECT * FROM ProductBatchComponent WHERE productbatchID = " + productBatchID + " AND rawMaterialBatchID = " + rawMaterialBatchID);
+		ResultSet rs = Connector.doQuery("SELECT * FROM productBatchComponent WHERE productbatchID = " + productBatchID + " AND rawMaterialBatchID = " + rawMaterialBatchID);
 	    try {
 	    	if (!rs.first()) throw new DALException("productBatchComponent with productBatchID " + productBatchID + " and " + rawMaterialBatchID + " not found");
 	    	return new ProductBatchComponentDTO (rs.getInt("productbatchID"), rs.getInt("rawMaterialBatchID"), rs.getFloat("tara"), rs.getFloat("netto"), rs.getInt("userID"));
