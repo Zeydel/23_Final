@@ -43,7 +43,7 @@ public class WeightController {
 					Weight.writeLongStringInDisplay("Please enter a number");
 					Weight.waitForInput();
 				} catch (DALException e) {
-					Weight.writeLongStringInDisplay("User not found. Try again");
+					Weight.writeLongStringInDisplay("Batch not found. Try again");
 					Weight.waitForInput();
 				}
 			}

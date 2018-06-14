@@ -11,7 +11,7 @@ import dto.ProductBatchComponentDTO;
 public class DbProductBatchComponentDAO {
 	
 	public ProductBatchComponentDTO getProductBatchComponent(int productBatchID, int rawMaterialBatchID) throws DALException {
-		ResultSet rs = Connector.doQuery("SELECT * FROM ProductBatchComponent WHERE productbatchID = " + productBatchID + " AND rawMaterialBatchID = " + rawMaterialBatchID);
+		ResultSet rs = Connector.doQuery("SELECT * FROM productBatchComponent WHERE productbatchID = " + productBatchID + " AND rawMaterialBatchID = " + rawMaterialBatchID);
 	    try {
 	    	if (!rs.first()) throw new DALException("ProductBatchComponent with productBatchID " + productBatchID + " and " + rawMaterialBatchID + " not found");
 	    	return new ProductBatchComponentDTO (rs.getInt("productbatchID"), rs.getInt("rawMaterialBatchID"), rs.getFloat("tara"), rs.getFloat("netto"), rs.getInt("userID"));
@@ -21,7 +21,7 @@ public class DbProductBatchComponentDAO {
 
 	public List<ProductBatchComponentDTO> getProductBatchKomponentList(int productbatchID) throws DALException {
 		List<ProductBatchComponentDTO> list = new ArrayList<ProductBatchComponentDTO>();
-		ResultSet rs = Connector.doQuery("SELECT * FROM ProductBatchComponent WHERE productbatchID = " + productbatchID);
+		ResultSet rs = Connector.doQuery("SELECT * FROM productBatchComponent WHERE productbatchID = " + productbatchID);
 		try
 		{
 			while (rs.next()) 
@@ -49,7 +49,7 @@ public class DbProductBatchComponentDAO {
 
 	public void createProductBatchComponent(ProductBatchComponentDTO produktbatchkomponent) throws DALException {
 		Connector.doUpdate(
-				"INSERT INTO ProductBatchComponent(productBatchID, rawMaterialBatchID, tara, netto, userID) VALUES " +
+				"INSERT INTO productBatchComponent(productBatchID, rawMaterialBatchID, tara, netto, userID) VALUES " +
 				"('" + produktbatchkomponent.getProductbatchID() + "', '" + produktbatchkomponent.getRawMaterialBatchID() + "', '" + produktbatchkomponent.getTara() + "', '" + 
 				produktbatchkomponent.getNetto() + "', '" + produktbatchkomponent.getUserID() + "')"
 			);
