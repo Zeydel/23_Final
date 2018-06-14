@@ -31,8 +31,6 @@ body {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3E1D6D', endColorstr='#092756',GradientType=1 );
 	background-repeat: no-repeat;
     background-attachment: fixed;
-    color:white; 
-    /*body text color*/
 }
 
 
@@ -44,7 +42,10 @@ body {
 	width:300px;
 	height:300px;
 }
+
 .login h1 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
+
+h2 {color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
 
 input {
 	width: 100%;
@@ -88,6 +89,7 @@ h1{
   text-align: center;
   margin-bottom: 15px;
 }
+
 table{
   width:100%;
   table-layout: fixed;

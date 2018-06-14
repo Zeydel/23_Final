@@ -15,8 +15,8 @@
     <form id="createRecipeComponentForm">
         <input type="number" name="recipeID" placeholder="Recipe ID" required="required" id="recipeID" />
     		<input type="number" name="rawMaterialID" placeholder="Raw Material ID" required="required" id="rawMaterialID"/>
-    		<input type="number" name="nom_netto" placeholder="Nom-Netto" required="required" id="nom-netto"/>
-        <input type="number" name="tolerance" placeholder="tolerance" required="required" id="tolerance" />
+    		<input type="number" name="nom_netto" step="0.0001" placeholder="Nom-Netto" required="required" id="nom-netto"/>
+        <input type="number" name="tolerance" step="0.0001" placeholder="tolerance" required="required" id="tolerance" />
 
         <input type="submit" class="btn btn-primary btn-block btn-large" id="createRecipeComponent" value="Register">
     </form>
