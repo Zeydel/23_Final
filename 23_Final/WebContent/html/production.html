@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"><meta charset="UTF-8">
+<meta charset="UTF-8">
+<title>Production</title>
+<script src="../js/jquery-3.3.1.js"></script>
+<script src="../js/productionView.js"></script>
+<script type="text/javascript" src="../js/jquery.serialze-objects.js"></script>
+<script src="../js/header.js"></script>
+<body>
+</head>
+<section>
+  <h1>Production</h1>
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th id="date">Printed: </th>
+        </tr>
+         <tr>
+          <th id="productBatchNr">Product Batch nr.: </th>
+        </tr>
+         <tr>
+          <th id="recipeNr">Recipe nr.: </th>
+        </tr>
+      </thead>
+       <tbody id=''>
+       	
+
+      </tbody>
+    </table>
+  </div>
+</section>
+<div class="centered-div">
+<button class="create-button"  onclick="location.href=''">Create  </button>
+</div>
+
+</body>
+
+<script>
+	var d = new Date();
+	document.getElementById("date").append(d.toDateString());
+</script>
+
+</html>
+

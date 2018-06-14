@@ -13,7 +13,7 @@ public class DbProductBatchComponentDAO {
 	public ProductBatchComponentDTO getProductBatchComponent(int productBatchID, int rawMaterialBatchID) throws DALException {
 		ResultSet rs = Connector.doQuery("SELECT * FROM productBatchComponent WHERE productbatchID = " + productBatchID + " AND rawMaterialBatchID = " + rawMaterialBatchID);
 	    try {
-	    	if (!rs.first()) throw new DALException("ProductBatchComponent with productBatchID " + productBatchID + " and " + rawMaterialBatchID + " not found");
+	    	if (!rs.first()) throw new DALException("productBatchComponent with productBatchID " + productBatchID + " and " + rawMaterialBatchID + " not found");
 	    	return new ProductBatchComponentDTO (rs.getInt("productbatchID"), rs.getInt("rawMaterialBatchID"), rs.getFloat("tara"), rs.getFloat("netto"), rs.getInt("userID"));
 	    }
 	    catch (SQLException e) {throw new DALException(null, e); }
@@ -26,7 +26,7 @@ public class DbProductBatchComponentDAO {
 		{
 			while (rs.next()) 
 			{
-				list.add(new ProductBatchComponentDTO(rs.getInt("productbatchID"), rs.getInt("rawMaterialBatchID"), rs.getFloat("tara"), rs.getFloat("netto"), rs.getInt("userID")));
+				list.add(new ProductBatchComponentDTO(rs.getInt("productBatchID"), rs.getInt("rawMaterialBatchID"), rs.getFloat("tara"), rs.getFloat("netto"), rs.getInt("userID")));
 			}
 		}
 		catch (SQLException e) { throw new DALException("No list found with ID " + productbatchID); }

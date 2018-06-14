@@ -6,6 +6,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
@@ -32,6 +33,18 @@ public class ProductBatchComponent {
 	public List<ProductBatchComponentDTO> getProductBatchComponent() {
 		try {
 			return Storage.getProductBatchComponent().getProductBatchKomponentList();
+		} catch (DALException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	@GET
+	@Path("{productBatchID}")
+	public List<ProductBatchComponentDTO> getProductBatchComponent(@PathParam("productBatchID")String productBatchID) {
+		try {
+			return Storage.getProductBatchComponent().getProductBatchKomponentList(Integer.parseInt(productBatchID));
 		} catch (DALException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
